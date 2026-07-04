@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#1565c0"/>
+  <!-- Camino gul skal-agtig baggrund -->
+  <circle cx="256" cy="256" r="150" fill="#ffd54a"/>
+  <!-- Stiliseret pilgrimspil (den gule Camino-pil) -->
+  <g fill="#1565c0">
+    <path d="M256 150 l70 90 h-45 v130 h-50 V240 h-45 z" transform="rotate(45 256 256)"/>
+  </g>
+</svg>

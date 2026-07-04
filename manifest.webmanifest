@@ -1,0 +1,14 @@
+{
+  "name": "Camino Português da Costa 2026",
+  "short_name": "Camino 2026",
+  "description": "Rejseplan, kort og guide til vores portugisiske kyst-camino.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf7f0",
+  "theme_color": "#e65100",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
