@@ -1,0 +1,44 @@
+name: Deploy PWA til GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Rettigheder som deploy-pages kræver
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Kør kun én deploy ad gangen; annullér igangværende ved nyt push
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Stempl commit-SHA ind i service-workerens cache-navn, så hver
+      # deploy busts cachen og brugerne automatisk får den nye version.
+      - name: Stempl cache-version i sw.js
+        run: |
+          sed -i -E 's/(const CACHE = ")[^"]*(")/\1camino-2026-'"${GITHUB_SHA::7}"'\2/' sw.js
+          echo "Cache-navn efter stempling:"
+          grep 'const CACHE' sw.js
+
+      - uses: actions/configure-pages@v5
+
+      - name: Byg artefakt (kun app-filerne, ikke .github)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
