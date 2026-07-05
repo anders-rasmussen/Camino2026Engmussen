@@ -217,7 +217,7 @@ const DAYS = [
     date: "20. juli", short: "20/7", weekday: "Mandag",
     title: "Nigrán → Redondela (Senda da Auga)",
     from: "Nigrán", to: "Redondela",
-    dist: "~15 km vandring (efter taxi)", terrain: "Fladt – skyggefuld skovsti langs vandkanal (Senda da Auga)",
+    dist: "~15 km vandring (efter taxi/bus)", terrain: "Fladt – skyggefuld skovsti langs vandkanal (Senda da Auga)",
     lodging: "Casa África y Ramona",
     address: "Rúa Campo das Redes 23, 36800 Redondela (Spanien)",
     breakfast: "Nej", washer: "Ja",
@@ -340,42 +340,42 @@ const DAYS = [
 const ROUTES = [
   { pois:[
       {n:"Mindelo (start)", lat:41.3105, lon:-8.7405, t:"start"},
-      {n:"Passadiços de Mindelo", lat:41.3160, lon:-8.7460, t:"sight"},
-      {n:"Santa Clara-klosteret", lat:41.3505, lon:-8.7405, t:"sight"},
-      {n:"Akvædukten", lat:41.3510, lon:-8.7270, t:"sight"},
+      {n:"Passadiços de Mindelo", lat:41.312, lon:-8.746, t:"sight"},
+      {n:"Santa Clara-klosteret", lat:41.352448, lon:-8.738753, t:"sight"},
+      {n:"Akvædukten", lat:41.374312, lon:-8.738293, t:"sight"},
       {n:"Vila do Conde (mål)", lat:41.3490644, lon:-8.7500668, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.7405,41.3105],[-8.7460,41.3200],[-8.7500668,41.3490644]]}] },
   { pois:[
       {n:"Vila do Conde (start)", lat:41.3490644, lon:-8.7500668, t:"start"},
-      {n:"Apúlia (vindmøller)", lat:41.4800, lon:-8.7700, t:"sight"},
-      {n:"Cávado-mundingen", lat:41.5150, lon:-8.7840, t:"sight"},
+      {n:"Apúlia (vindmøller)", lat:41.482443, lon:-8.765188, t:"sight"},
+      {n:"Cávado-mundingen", lat:41.533834, lon:-8.782639, t:"sight"},
       {n:"Esposende (mål)", lat:41.5347537, lon:-8.7797242, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.7500668,41.3490644],[-8.7770,41.4400],[-8.7770,41.4820],[-8.7855,41.5120],[-8.7797242,41.5347537]]}] },
   { pois:[
       {n:"Esposende (start)", lat:41.5347537, lon:-8.7797242, t:"start"},
-      {n:"Neiva-flodens delta", lat:41.5670, lon:-8.8030, t:"sight"},
+      {n:"Neiva-flodens delta", lat:41.6268, lon:-8.8042, t:"sight"},
       {n:"Castelo do Neiva (mål)", lat:41.6252325, lon:-8.8009528, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.7797242,41.5347537],[-8.7960,41.5550],[-8.8030,41.5670],[-8.8009528,41.6252325]]}] },
   { pois:[
       {n:"Castelo do Neiva (start)", lat:41.6252325, lon:-8.8009528, t:"start"},
-      {n:"Gil Eannes-skibet", lat:41.6880, lon:-8.8300, t:"sight"},
-      {n:"Eiffel-broen", lat:41.6900, lon:-8.8260, t:"sight"},
-      {n:"Santa Luzia-kirken", lat:41.7030, lon:-8.8380, t:"sight"},
+      {n:"Gil Eannes-skibet", lat:41.6936, lon:-8.8298, t:"sight"},
+      {n:"Eiffel-broen", lat:41.692753, lon:-8.818354, t:"sight"},
+      {n:"Santa Luzia-kirken", lat:41.701534, lon:-8.835109, t:"sight"},
       {n:"Viana do Castelo (mål)", lat:41.6925850, lon:-8.8272861, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.8009528,41.6252325],[-8.8250,41.6500],[-8.8320,41.6850],[-8.8272861,41.6925850]]}] },
   { pois:[
       {n:"Viana do Castelo (start)", lat:41.6925850, lon:-8.8272861, t:"start"},
-      {n:"Montedor-fyrtårnet", lat:41.7520, lon:-8.8760, t:"sight"},
-      {n:"Jernbanetunnel (Afife)", lat:41.7620, lon:-8.8760, t:"sight"},
-      {n:"Forte do Cão", lat:41.7820, lon:-8.8750, t:"sight"},
-      {n:"Dolmen de Barrosa", lat:41.8060, lon:-8.8660, t:"sight"},
+      {n:"Montedor-fyrtårnet", lat:41.751082, lon:-8.873491, t:"sight"},
+      {n:"Jernbanetunnel (Afife)", lat:41.778594, lon:-8.860871, t:"sight"},
+      {n:"Forte do Cão", lat:41.797675, lon:-8.874048, t:"sight"},
+      {n:"Dolmen de Barrosa", lat:41.810005, lon:-8.850726, t:"sight"},
       {n:"Vila Praia de Âncora (mål)", lat:41.8134990, lon:-8.8637160, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.8272861,41.6925850],[-8.8700,41.7350],[-8.8770,41.7620],[-8.8740,41.7950],[-8.8637160,41.8134990]]}] },
   { pois:[
       {n:"Vila Praia de Âncora (start)", lat:41.8134990, lon:-8.8637160, t:"start"},
-      {n:"Caminha (bådafgang)", lat:41.8740, lon:-8.8400, t:"sight"},
-      {n:"A Guarda / Camposancos", lat:41.9000, lon:-8.8760, t:"sight"},
-      {n:"Monte Santa Trega", lat:41.8920, lon:-8.8740, t:"sight"},
+      {n:"Caminha (bådafgang)", lat:41.878239, lon:-8.837477, t:"sight"},
+      {n:"A Guarda / Camposancos", lat:41.881415, lon:-8.864189, t:"sight"},
+      {n:"Monte Santa Trega", lat:41.888059, lon:-8.871494, t:"sight"},
       {n:"Monasterio de Oia (mål)", lat:42.0006950, lon:-8.8769042, t:"end"} ],
     legs:[
       {mode:"foot", via:[[-8.8637160,41.8134990],[-8.8550,41.8500],[-8.8400,41.8740]]},
@@ -383,26 +383,26 @@ const ROUTES = [
       {mode:"foot", via:[[-8.8760,41.9000],[-8.8780,41.9500],[-8.8730,41.9800],[-8.8769042,42.0006950]]} ] },
   { pois:[
       {n:"Monasterio de Oia (start)", lat:42.0006950, lon:-8.8769042, t:"start"},
-      {n:"Cabo Silleiro fyrtårn", lat:42.1040, lon:-8.8990, t:"sight"},
-      {n:"Monterreal-fæstningen", lat:42.1210, lon:-8.8550, t:"sight"},
-      {n:"Pinta-replikaen", lat:42.1200, lon:-8.8490, t:"sight"},
+      {n:"Cabo Silleiro fyrtårn", lat:42.104568, lon:-8.896341, t:"sight"},
+      {n:"Monterreal-fæstningen", lat:42.124878, lon:-8.84934, t:"sight"},
+      {n:"Pinta-replikaen", lat:42.120051, lon:-8.85154, t:"sight"},
       {n:"Baiona (mål)", lat:42.1182, lon:-8.8556, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.8769042,42.0006950],[-8.8850,42.0600],[-8.8990,42.1040],[-8.8600,42.1150],[-8.8556,42.1182]]}] },
   { pois:[
-      {n:"Monterreal-fæstningen", lat:42.1210, lon:-8.8550, t:"sight"},
-      {n:"Praia de Barbeira", lat:42.1200, lon:-8.8470, t:"sight"},
-      {n:"Colegiata Santa María", lat:42.1170, lon:-8.8490, t:"sight"},
-      {n:"Havnen (Islas Cíes-både)", lat:42.1230, lon:-8.8480, t:"sight"} ],
+      {n:"Monterreal-fæstningen", lat:42.124878, lon:-8.84934, t:"sight"},
+      {n:"Praia de Barbeira", lat:42.123421, lon:-8.848439, t:"sight"},
+      {n:"Colegiata Santa María", lat:42.118025, lon:-8.850471, t:"sight"},
+      {n:"Havnen (Islas Cíes-både)", lat:42.120273, lon:-8.847431, t:"sight"} ],
     legs:[] },
   { pois:[
       {n:"Baiona (start)", lat:42.1182, lon:-8.8556, t:"start"},
-      {n:"Ponte Románica (A Ramallosa)", lat:42.1350, lon:-8.8220, t:"sight"},
-      {n:"Playa América", lat:42.1450, lon:-8.8200, t:"sight"},
+      {n:"Ponte Románica (A Ramallosa)", lat:42.115457, lon:-8.812606, t:"sight"},
+      {n:"Playa América", lat:42.134945, lon:-8.817769, t:"sight"},
       {n:"Nigrán (mål)", lat:42.1267432, lon:-8.7923983, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.8556,42.1182],[-8.8300,42.1300],[-8.8220,42.1350],[-8.8200,42.1450],[-8.7923983,42.1267432]]}] },
   { pois:[
       {n:"Nigrán (start)", lat:42.1267432, lon:-8.7923983, t:"start"},
-      {n:"Zamáns (start på Senda da Auga)", lat:42.1880, lon:-8.6970, t:"sight"},
+      {n:"Zamáns (start på Senda da Auga)", lat:42.152851, lon:-8.687566, t:"sight"},
       {n:"Senda da Auga (vandkanal)", lat:42.2200, lon:-8.6550, t:"sight"},
       {n:"Udsigt til Rande & Vigo-fjord", lat:42.2450, lon:-8.6350, t:"sight"},
       {n:"Redondela (mål)", lat:42.2845513, lon:-8.6069624, t:"end"} ],
@@ -411,23 +411,23 @@ const ROUTES = [
       {mode:"foot", via:[[-8.6970,42.1880],[-8.6550,42.2200],[-8.6350,42.2450],[-8.6069624,42.2845513]]} ] },
   { pois:[
       {n:"Redondela (start)", lat:42.2845513, lon:-8.6069624, t:"start"},
-      {n:"Jernbaneviadukterne", lat:42.2810, lon:-8.6090, t:"sight"},
-      {n:"Ponte Sampaio", lat:42.3445, lon:-8.6075, t:"sight"},
+      {n:"Jernbaneviadukterne", lat:42.286016, lon:-8.609226, t:"sight"},
+      {n:"Ponte Sampaio", lat:42.345964, lon:-8.606845, t:"sight"},
       {n:"Arcade / Ponte Sampaio (mål)", lat:42.3471773, lon:-8.6072373, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.6069624,42.2845513],[-8.6250,42.3200],[-8.6350,42.3450],[-8.6072373,42.3471773]]}] },
   { pois:[
       {n:"Arcade / Ponte Sampaio (start)", lat:42.3471773, lon:-8.6072373, t:"start"},
       {n:"Río dos Gafos (skovsti)", lat:42.4100, lon:-8.6430, t:"sight"},
-      {n:"Basílica de Santa María", lat:42.4330, lon:-8.6480, t:"sight"},
-      {n:"Igrexa da Peregrina", lat:42.4310, lon:-8.6450, t:"sight"},
+      {n:"Basílica de Santa María", lat:42.4331, lon:-8.647, t:"sight"},
+      {n:"Igrexa da Peregrina", lat:42.431, lon:-8.6446, t:"sight"},
       {n:"Pontevedra (mål)", lat:42.4214794, lon:-8.6399188, t:"end"} ],
     legs:[{mode:"foot", via:[[-8.6072373,42.3471773],[-8.6380,42.3800],[-8.6430,42.4100],[-8.6399188,42.4214794]]}] },
   { pois:[
-      {n:"Igrexa da Peregrina", lat:42.4310, lon:-8.6450, t:"sight"},
-      {n:"Ruinerne af Santo Domingo", lat:42.4320, lon:-8.6470, t:"sight"},
-      {n:"Mercado de Abastos", lat:42.4340, lon:-8.6400, t:"sight"},
-      {n:"Praza da Ferrería", lat:42.4310, lon:-8.6460, t:"sight"},
-      {n:"Alameda", lat:42.4300, lon:-8.6480, t:"sight"} ],
+      {n:"Igrexa da Peregrina", lat:42.431, lon:-8.6446, t:"sight"},
+      {n:"Ruinerne af Santo Domingo", lat:42.431134, lon:-8.64704, t:"sight"},
+      {n:"Mercado de Abastos", lat:42.434237, lon:-8.643553, t:"sight"},
+      {n:"Praza da Ferrería", lat:42.431371, lon:-8.644222, t:"sight"},
+      {n:"Alameda", lat:42.430885, lon:-8.648584, t:"sight"} ],
     legs:[] },
   { pois:[
       {n:"Pontevedra busterminal (08:15)", lat:42.4218, lon:-8.6371, t:"start"},
@@ -464,16 +464,6 @@ const GENERAL = [
         "Hvorfor: en fantastisk souvenir med stempler fra hele turen. Vil I senere forlænge til Santiago, kræves mindst 2 stempler pr. dag på de sidste 100 km for Compostela-certifikatet.",
         "Tip: få mindst ét stempel om dagen – gerne to. Det er en del af oplevelsen at finde de mest kreative stempler.",
         "Hvis I fortsætter til Santiago: pilgrimskontoret dér har normalt åbent dagligt kl. 09–19. I højsæson bruger de et QR-køsystem, og udlevering samme dag kan ikke altid garanteres."
-      ]}
-    ]},
-  { key:"vejr", icon:"sun", title:"Vejr og klima i juli",
-    blocks:[
-      {type:"p", text:"I går ruten midt i højsæsonen. Forvent følgende:"},
-      {type:"list", items:[
-        "Temperaturer: 20–35 °C langs den portugisiske kyst, varmest kl. 12–16. Galicien er typisk 2–3 grader køligere.",
-        "Nedbør: juli er tørrest, men korte byger kan forekomme, især i Galicien. En let regnjakke er nok.",
-        "Havvind: en frisk brise fra Atlanterhavet gør varmen tålelig, stærkest om eftermiddagen.",
-        "UV-indeks: meget højt (8–10). Solcreme SPF 50, hat og solbriller er ikke til forhandling."
       ]}
     ]},
   { key:"pakkeliste", icon:"backpack", title:"Pakkeliste",
@@ -559,10 +549,11 @@ const GENERAL = [
   { key:"mad", icon:"coffee", title:"Mad, tider og hverdagslogistik",
     blocks:[
       {type:"list", items:[
-        "Morgenmad: ikke alle steder inkluderer det – hav altid en nødplan (bananer, barer, brød fra aftenen før).",
-        "Tidlige starter: caféer er ofte ikke åbne kl. 06–06:30. Køb vand og snacks aftenen før.",
-        "Spanske spisetider: mange køkkener åbner først igen ca. kl. 20. Sen frokost eller tapas er lettere at finde.",
-        "Søndage og siesta: mindre butikker kan holde lukket – regn ikke med at kunne handle spontant på de lange etaper."
+        "Morgenmad: ikke alle steder inkluderer morgenmad. Hav altid en nødplan på værelset: bananer, havrebarer, nødder eller lidt brød fra aftenen før.",
+        "Tidlige starter: hvis I går kl. 06.00-06.30, er caféer ofte ikke åbne endnu. Køb vand og snacks aftenen før. I Portugal åbner mange caféer dog tidligt (fra ca. kl. 07.00-08.00) og serverer kaffe og pastel de nata.",
+        "Portugisiske spisetider: portugiserne spiser tidligere end spanierne. Frokost er typisk kl. 12.00-15.00 og aftensmad kl. 19.00-22.00. Køkkenerne er forholdsvis fleksible, og det er ofte muligt at få et varmt måltid tidligt på aftenen.",
+        "Spanske spisetider: i Spanien (Galicien) forskydes alt 1-2 timer. Frokost er kl. 13.30-16.00, og mange køkkener åbner først til aftensmad omkring kl. 20.00-20.30. En sen frokost eller tapas sidst på eftermiddagen er ofte lettere at finde end en \"normal\" dansk aftensmad kl. 18.",
+        "Søndage og siesta: mindre butikker kan holde lukket søndag eller midt på dagen (siesta, typisk kl. 14-17 – mest udpræget i Spanien). På de lange kystetaper bør I ikke regne med, at I altid kan handle spontant undervejs."
       ]}
     ]},
   { key:"specialiteter", icon:"coffee", title:"Mad & drikke – specialiteter",
@@ -753,3 +744,19 @@ const GENERAL = [
       ]}
     ]}
 ];
+
+/* Mad- og pausestop pr. dag (fra dokumentet). Nøgle = dagindeks. Vises på dag-visningen. */
+const PAUSESTOP = {
+  0:["Vila do Conde: god første rigtige pauseby. Tag kaffe og Pastel de Nata eller en let frokost tæt ved floden, og gem den store middag til om aftenen."],
+  1:["Apúlia (undervejs): ideelt kaffestop på den lange dag mod Esposende. God by til en kold drink, is eller et hurtigt bagerstop, før de sidste kilometer.",
+     "Esposende: et godt sted at spise fisk og skaldyr om aftenen og købe snacks eller frugt til næste formiddag, inden I går ud på mere stille stræk."],
+  3:["Viana do Castelo: en af rutens bedste frokost- og pausebyer. Brug byen til et ordentligt måltid, fordi udvalget er større og stemningen bedre end i de små landsbyer."],
+  5:["Caminha (undervejs): sidste stærke portugisiske stop før Spanien. Godt sted til kaffe, toilet og en tidlig frokost, hvis I vil holde overfarten og resten af dagen enkel.",
+     "A Guarda (undervejs): første spanske madstop. Perfekt til sen frokost, frisk vand og et lille hvil efter overfarten, især hvis I overvejer afstikkeren op på Santa Trega.",
+     "Oia: smuk, men lille ankomstby. Regn ikke med kæmpe udvalg sent på dagen, så det er smart at have snacks med fra tidligere på etapen."],
+  6:["Baiona: den bedste \"forkælelsesby\" på ruten. Her giver det mening med god middag, dagligvareindkøb, vaskedag og måske lidt ekstra morgenmad til næste dag."],
+  8:["Playa América / Nigrán: god dag til strandpause og let frokost. Samtidig er det et vigtigt sted at købe alt ind til Senda da Auga-dagen, hvor der ikke er service."],
+  9:["Redondela: her begynder den mere klassiske pilgrimstemning. God by til et enkelt menú del día eller tapas, men ikke et sted hvor I behøver overplanlægge."],
+  10:["Arcade: stop for østers, Albariño og en lille luksusfrokost. Det er et af de mest oplagte steder på hele ruten at prioritere madoplevelsen."],
+  11:["Pontevedra: den stærkeste spiseby på turen. Brug markedet om formiddagen, tapasområderne om aftenen og gem gerne en rigtig afskedsmiddag til sidste aften."]
+};

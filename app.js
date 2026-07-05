@@ -137,10 +137,9 @@
     document.body.classList.remove("fs-lock");
   }
 
-  /* ---------- GPX-download (til Maps.me m.fl.) ---------- */
+  /* ---------- Rute-download: GPX + KML (til Maps.me / Organic Maps) ---------- */
   const dayHasFoot = (i) => ((ROUTES[i] || {}).legs || []).some((l) => l.mode === "foot");
-  const gpxEsc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const trkpts = (coords) => coords.map((c) => `<trkpt lat="${c[1].toFixed(6)}" lon="${c[0].toFixed(6)}"></trkpt>`).join("");
+  const xmlEsc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
   async function osrmFoot(via) {
     const coords = via.map((c) => c[0] + "," + c[1]).join(";");
@@ -152,32 +151,41 @@
     } catch (e) { return null; }
   }
 
-  // Bygger track + waypoints for én dag. Foot-ben bruger OSRM-geometri;
-  // transport-ben (båd/taxi/bus) bruges som rette segmenter.
-  async function buildDayTrk(i) {
+  // Rå geometri for én dag: foot-ben via OSRM, transport-ben som rette segmenter.
+  async function buildDayGeom(i) {
     const day = DAYS[i], route = ROUTES[i] || { pois: [], legs: [] };
-    let segs = "";
+    const legs = [];
     for (const leg of (route.legs || [])) {
       let coords = leg.mode === "foot" ? await osrmFoot(leg.via) : null;
       if (!coords) coords = leg.via;
-      segs += `<trkseg>${trkpts(coords)}</trkseg>`;
+      if (coords && coords.length) legs.push(coords);
     }
-    const name = `${day.date} – ${day.from} → ${day.to}`;
-    const trk = segs ? `<trk><name>${gpxEsc(name)}</name>${segs}</trk>` : "";
-    const wptsArr = (route.pois || []).map((p) => ({
-      key: p.n,
-      xml: `<wpt lat="${p.lat.toFixed(6)}" lon="${p.lon.toFixed(6)}"><name>${gpxEsc(p.n)}</name></wpt>`
-    }));
-    return { trk, wptsArr };
+    return { name: `${day.date} – ${day.from} → ${day.to}`, legs, pois: (route.pois || []) };
   }
 
+  /* GPX-serialisering (alle <wpt> før <trk> – GPX 1.1-schema). */
+  const gpxWpt = (p) => `<wpt lat="${p.lat.toFixed(6)}" lon="${p.lon.toFixed(6)}"><name>${xmlEsc(p.n)}</name></wpt>`;
+  const gpxTrk = (name, legs) => {
+    const segs = legs.map((c) => `<trkseg>${c.map((x) => `<trkpt lat="${x[1].toFixed(6)}" lon="${x[0].toFixed(6)}"></trkpt>`).join("")}</trkseg>`).join("");
+    return segs ? `<trk><name>${xmlEsc(name)}</name>${segs}</trk>` : "";
+  };
   const gpxDoc = (name, body) =>
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<gpx version="1.1" creator="Engmussen Camino 2026" xmlns="http://www.topografix.com/GPX/1/1">\n` +
-    `<metadata><name>${gpxEsc(name)}</name></metadata>\n${body}\n</gpx>\n`;
+    `<metadata><name>${xmlEsc(name)}</name></metadata>\n${body}\n</gpx>\n`;
 
-  function saveGpx(text, filename) {
-    const blob = new Blob([text], { type: "application/gpx+xml" });
+  /* KML-serialisering (Maps.me læser KML, ikke GPX). */
+  const kmlPoint = (p) => `<Placemark><name>${xmlEsc(p.n)}</name><Point><coordinates>${p.lon.toFixed(6)},${p.lat.toFixed(6)},0</coordinates></Point></Placemark>`;
+  const kmlLine = (name, legs) => legs.map((c) =>
+    `<Placemark><name>${xmlEsc(name)}</name>` +
+    `<Style><LineStyle><color>ff16451e</color><width>4</width></LineStyle></Style>` +
+    `<LineString><tessellate>1</tessellate><coordinates>${c.map((x) => `${x[0].toFixed(6)},${x[1].toFixed(6)},0`).join(" ")}</coordinates></LineString></Placemark>`).join("");
+  const kmlDoc = (name, body) =>
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<kml xmlns="http://www.opengis.net/kml/2.2">\n<Document>\n<name>${xmlEsc(name)}</name>\n${body}\n</Document>\n</kml>\n`;
+
+  function saveFile(text, filename, mime) {
+    const blob = new Blob([text], { type: mime });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url; a.download = filename;
@@ -185,61 +193,74 @@
     setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
   }
 
-  async function handleGpx(btn) {
-    const val = btn.getAttribute("data-gpx");
+  async function handleDownload(btn) {
+    const val = btn.getAttribute("data-dl");                       // "0".."13" | "all"
+    const fmt = btn.getAttribute("data-fmt") === "kml" ? "kml" : "gpx";
     const span = btn.querySelector("span"), orig = span ? span.textContent : "";
     if (btn.disabled) return;
     btn.disabled = true;
     try {
+      const geoms = [];
       if (val === "all") {
-        // GPX 1.1 kræver alle <wpt> før alle <trk> – saml derfor hver for sig.
-        const total = DAYS.length; let wpts = "", trks = ""; const seen = new Set();
-        for (let i = 0; i < total; i++) {
-          if (span) span.textContent = `Henter ${i + 1}/${total}…`;
-          const { trk, wptsArr } = await buildDayTrk(i);
-          wptsArr.forEach((w) => { if (!seen.has(w.key)) { seen.add(w.key); wpts += w.xml; } });
-          trks += trk;
+        for (let i = 0; i < DAYS.length; i++) {
+          if (span) span.textContent = `Henter ${i + 1}/${DAYS.length}…`;
+          geoms.push(await buildDayGeom(i));
         }
-        saveGpx(gpxDoc("Camino Português da Costa 2026 – hele turen", wpts + trks), "Camino2026-11-24_Juli.gpx");
       } else {
-        const i = Number(val), day = DAYS[i];
         if (span) span.textContent = "Henter…";
-        const { trk, wptsArr } = await buildDayTrk(i);
-        saveGpx(gpxDoc(`Camino ${day.date} – ${day.to}`, wptsArr.map((w) => w.xml).join("") + trk),
-          `Camino2026-${day.short.split("/")[0]}_Juli.gpx`);
+        geoms.push(await buildDayGeom(Number(val)));
       }
+      // Dedupér waypoints på navn (også på tværs af dage for hele turen).
+      const seen = new Set(), pois = [];
+      geoms.forEach((g) => g.pois.forEach((p) => { if (!seen.has(p.n)) { seen.add(p.n); pois.push(p); } }));
+      const docName = val === "all"
+        ? "Camino Português da Costa 2026 – hele turen"
+        : `Camino ${DAYS[Number(val)].date} – ${DAYS[Number(val)].to}`;
+      const base = val === "all"
+        ? "Camino2026-11-24_Juli"
+        : `Camino2026-${DAYS[Number(val)].short.split("/")[0]}_Juli`;
+
+      let text, mime;
+      if (fmt === "kml") {
+        text = kmlDoc(docName, pois.map(kmlPoint).join("") + geoms.map((g) => kmlLine(g.name, g.legs)).join(""));
+        mime = "application/vnd.google-earth.kml+xml";
+      } else {
+        text = gpxDoc(docName, pois.map(gpxWpt).join("") + geoms.map((g) => gpxTrk(g.name, g.legs)).join(""));
+        mime = "application/gpx+xml";
+      }
+      saveFile(text, `${base}.${fmt}`, mime);
     } catch (e) {
-      alert("Kunne ikke hente GPX. Tjek internetforbindelsen og prøv igen.");
+      alert("Kunne ikke hente ruten. Tjek internetforbindelsen og prøv igen.");
     } finally {
       btn.disabled = false; if (span) span.textContent = orig;
     }
   }
 
-  /* ---------- GPX-knap + Maps.me-hjælp (modal) ---------- */
-  // Blå download-knap + lille info-knap side om side.
-  function gpxRow(attr, label) {
-    return `<div class="gpxrow">
-      <button class="gpxbtn" data-gpx="${attr}">${ic("ic-download")}<span>${label}</span></button>
-      <button class="gpxinfo" data-modal="gpxhelp" title="Sådan importerer du i Maps.me" aria-label="Vejledning: importér i Maps.me">${ic("ic-info")}</button>
+  /* ---------- Rute-knapper (KML + GPX) + import-hjælp (modal) ---------- */
+  function gpxRow(attr) {
+    return `<div class="gpxwrap">
+      <div class="gpxcap">${ic("ic-download")}Download rute – KML til Maps.me · GPX til Organic Maps m.fl.</div>
+      <div class="gpxrow">
+        <button class="gpxbtn" data-dl="${attr}" data-fmt="kml"><span>KML</span></button>
+        <button class="gpxbtn ghost" data-dl="${attr}" data-fmt="gpx"><span>GPX</span></button>
+        <button class="gpxinfo" data-modal="gpxhelp" title="Sådan får du ruten på kortet" aria-label="Vejledning: importér ruten">${ic("ic-info")}</button>
+      </div>
     </div>`;
   }
 
   const GPX_HELP_HTML = `
     <div class="modal-head">
-      <h3><span class="ic">${ic("ic-map")}</span>Importér ruten i Maps.me</h3>
+      <h3><span class="ic">${ic("ic-map")}</span>Sådan får du ruten på kortet</h3>
       <button class="modal-close" data-modal-close aria-label="Luk">✕</button>
     </div>
-    <p class="modal-intro">Gør det gerne hjemmefra på wi-fi, før I rejser – så virker kort og rute offline undervejs.</p>
+    <p class="modal-intro">Til <b>Maps.me</b>: brug <b>KML</b>-knappen – Maps.me kan ikke læse GPX. Gør det gerne hjemmefra på wi-fi.</p>
     <ol class="modal-steps">
-      <li><b>Installér Maps.me</b> fra Google Play, hvis I ikke allerede har den.</li>
-      <li><b>Hent offline-kortene</b> i Maps.me: åbn appen → menuen → “Download maps”, og hent <b>Portugal (Norte)</b> og <b>Spanien (Galicia)</b>. Så fungerer kortet uden internet på ruten.</li>
-      <li><b>Download GPX-filen</b> her i appen med den blå knap ved siden af. Filen (fx <b>Camino2026-16_Juli.gpx</b>) lander i mappen <b>Downloads</b>.</li>
-      <li><b>Åbn filen i Maps.me:</b> gå ind i <b>Downloads</b> eller din filhåndtering → tryk på GPX-filen → vælg <b>Åbn med → Maps.me</b> (eller tryk på Del-ikonet → Maps.me).</li>
-      <li>Maps.me bekræfter med <b>“Bookmarks and tracks imported”</b>.</li>
-      <li><b>Find ruten:</b> tryk på <b>stjerne-/bogmærke-ikonet</b> nederst i Maps.me → vælg den importerede liste → tryk på sporet, så det tegnes på kortet.</li>
-      <li><b>Tip:</b> brug <b>øje-ikonet</b> ud for listen til at slå sporet til/fra på kortet. Seværdighederne ligger som nåle (waypoints) langs ruten.</li>
+      <li><b>Installér Maps.me</b> fra Google Play og hent offline-kortene: menu → “Download maps” → <b>Portugal (Norte)</b> + <b>Spanien (Galicia)</b>.</li>
+      <li><b>Download KML-filen</b> her i appen. Den lander i mappen <b>Downloads</b> (fx <b>Camino2026-16_Juli.kml</b>).</li>
+      <li><b>Åbn den:</b> gå i <b>Downloads</b> eller din filhåndtering → tryk på KML-filen → <b>Åbn med → Maps.me</b>. Nu dukker Maps.me op, fordi den genkender KML (i modsætning til GPX).</li>
+      <li>Maps.me svarer <b>“Bookmarks loaded successfully”</b>. Find ruten via <b>bogmærke-/stjerne-ikonet</b> → den importerede liste.</li>
     </ol>
-    <p class="modal-note">GPX-ruterne hentes live, så selve downloadet kræver internet. Bagefter kan vandringen foregå offline i Maps.me.</p>`;
+    <p class="modal-note"><b>Vil I importere inde fra selve appen?</b> Det kan Maps.me ikke – filen skal åbnes udefra (trin 3). Alternativet er <b>Organic Maps</b> (gratis, reklamefri, samme kort): åbn appen → bogmærke-ikonet → <b>Import Bookmarks and Tracks</b> → vælg <b>Download</b>-mappen. Organic Maps læser <b>GPX</b> direkte – brug GPX-knappen der. Download kræver internet; bagefter virker alt offline.</p>`;
 
   function closeModal() {
     const m = document.getElementById("modal");
@@ -386,6 +407,10 @@
         html += `<div class="card"><h3><span class="ic">${ic("ic-info")}</span>Tips &amp; tricks</h3>
           <ul class="tips">${day.tips.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>`;
       }
+      if (typeof PAUSESTOP !== "undefined" && PAUSESTOP[i] && PAUSESTOP[i].length) {
+        html += `<div class="card"><h3><span class="ic">${ic("ic-coffee")}</span>Mad- og pausestop</h3>
+          <ul class="tips">${PAUSESTOP[i].map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>`;
+      }
       if (day.lodging) {
         html += `<div class="card"><h3><span class="ic">${ic("ic-bed")}</span>Overnatning</h3>
           <div class="lodging"><span class="ic">${ic("ic-bed")}</span>
@@ -412,7 +437,7 @@
           <button class="${!isMap ? "active" : ""}" data-go="#/dag/${i}">${ic("ic-info")}Al info</button>
           <button class="${isMap ? "active" : ""}" data-go="#/dag/${i}/kort">${ic("ic-map")}Kort &amp; rute</button>
         </div>
-        ${isMap && dayHasFoot(i) ? gpxRow(i, "Download GPX til Maps.me") : ""}
+        ${isMap && dayHasFoot(i) ? gpxRow(i) : ""}
         ${body}
         ${day.lodging && weatherUrl(day) ? `<a class="weatherlink" href="${esc(weatherUrl(day))}" target="_blank" rel="noopener">${ic("ic-sun")}Vejrudsigt for ${esc(day.to)}<span class="src">yr.no</span></a>` : ""}
       </section>`;
@@ -425,7 +450,7 @@
         <div class="map" id="mapv"></div>
         ${legendHtml}
         <div class="maphint">Linjen er en forenklet oversigt mellem overnatningsbyerne. Vælg en enkelt dag på forsiden for den detaljerede rute. Tryk ⛶ for fuld skærm.</div>
-        ${gpxRow("all", "Download hele turen (GPX)")}
+        ${gpxRow("all")}
         <div class="maphint">GPX-filen indeholder alle etaper som spor + seværdigheder som waypoints. Åbn/del filen med <b>Maps.me</b> for at importere ruten – gør det gerne hjemmefra med wi-fi. Enkelte dage kan hentes hver for sig under den pågældende dag.</div>
       </section>`;
   }
@@ -565,8 +590,8 @@
       e.preventDefault(); closeModal(); return;
     }
     if (e.target.closest("[data-modal]")) { e.preventDefault(); openModal(GPX_HELP_HTML); return; }
-    const gpx = e.target.closest("[data-gpx]");
-    if (gpx) { e.preventDefault(); handleGpx(gpx); return; }
+    const dl = e.target.closest("[data-dl]");
+    if (dl) { e.preventDefault(); handleDownload(dl); return; }
     const reset = e.target.closest("[data-reset]");
     if (reset) {
       e.preventDefault();
