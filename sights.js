@@ -5,7 +5,8 @@ const SIGHTS = {
   "short": "Højt over Ave-floden knejser det mægtige Santa Clara-kloster – Vila do Condes vartegn og et af Nordportugals mest storslåede klosteranlæg, med rødder helt tilbage til 1300-tallet.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vila_do_Conde-Igreja_de_Santa_Clara_2.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Vila_do_Conde-Igreja_de_Santa_Clara_2.jpg/960px-Vila_do_Conde-Igreja_de_Santa_Clara_2.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/2/21/Vila_do_Conde-Igreja_de_Santa_Clara_2.jpg",
     "caption": "Den gotiske klosterkirke Santa Clara. Foto: António Amen / Wikimedia Commons (CC BY-SA 3.0)."
    }
   ],
@@ -33,7 +34,8 @@ const SIGHTS = {
   "short": "Med sine hele 999 buer holder Vila do Condes akvædukt verdensrekorden som det akvædukt med flest buer på jorden – et svimlende stykke barok ingeniørkunst, der snor sig 4 kilometer gennem landskabet.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vila_do_Conde-Aqueduto_de_Santa_Clara_(4).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Vila_do_Conde-Aqueduto_de_Santa_Clara_%284%29.jpg/960px-Vila_do_Conde-Aqueduto_de_Santa_Clara_%284%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Vila_do_Conde-Aqueduto_de_Santa_Clara_%284%29.jpg",
     "caption": "Buerækkerne fra Santa Clara-akvædukten. Foto: António Amen / Wikimedia Commons (CC BY-SA 3.0)."
    }
   ],
@@ -61,7 +63,8 @@ const SIGHTS = {
   "short": "Fortøjet i Ave-floden ligger en fuldskala-kopi af et portugisisk opdagelsesskib fra 1500-tallet – en drømmende tidsrejse tilbage til de store søfarters guldalder, bygget med de gamle skibstømreres håndværk.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A9plica_de_Nau_Quinhentista_-_Vila_do_Conde_-_Portugal_(38693558622).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/R%C3%A9plica_de_Nau_Quinhentista_-_Vila_do_Conde_-_Portugal_%2838693558622%29.jpg/960px-R%C3%A9plica_de_Nau_Quinhentista_-_Vila_do_Conde_-_Portugal_%2838693558622%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/3/3f/R%C3%A9plica_de_Nau_Quinhentista_-_Vila_do_Conde_-_Portugal_%2838693558622%29.jpg",
     "caption": "Nau Quinhentista ved Alfândega Régia. Foto: Vitor Oliveira / Wikimedia Commons (CC BY-SA 2.0)."
    }
   ],
@@ -90,7 +93,8 @@ const SIGHTS = {
   "short": "Ved selve flodmundingen, hvor Ave løber ud i Atlanterhavet, vogter et femkantet renæssancefort – engang byens skjold mod pirater, i dag et smukt udsigtspunkt ud over havet.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forte_de_S%C3%A3o_Jo%C3%A3o_-_Vila_do_Conde_-_Portugal_(49146364002).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Forte_de_S%C3%A3o_Jo%C3%A3o_-_Vila_do_Conde_-_Portugal_%2849146364002%29.jpg/960px-Forte_de_S%C3%A3o_Jo%C3%A3o_-_Vila_do_Conde_-_Portugal_%2849146364002%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/2/23/Forte_de_S%C3%A3o_Jo%C3%A3o_-_Vila_do_Conde_-_Portugal_%2849146364002%29.jpg",
     "caption": "Forte de São João Baptista set fra vandsiden. Foto: Vitor Oliveira / Wikimedia Commons (CC BY-SA 2.0)."
    }
   ],
@@ -119,11 +123,13 @@ const SIGHTS = {
   "short": "Vila do Conde er hele Portugals hovedstad for renda de bilros – den fine kniplede blonde – og i dette lille museum kan du følge den tålmodige kunst helt tæt på, tråd for tråd.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monumento_%C3%A0_Rendilheira_de_Vila_do_Conde_-_Portugal_(25276186298).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Monumento_%C3%A0_Rendilheira_de_Vila_do_Conde_-_Portugal_%2825276186298%29.jpg/960px-Monumento_%C3%A0_Rendilheira_de_Vila_do_Conde_-_Portugal_%2825276186298%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/71/Monumento_%C3%A0_Rendilheira_de_Vila_do_Conde_-_Portugal_%2825276186298%29.jpg",
     "caption": "Monumentet til rendilheira – kniplersken – i Vila do Conde. Foto: Vitor Oliveira / Wikimedia Commons (CC BY-SA 2.0)."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Almofada_e_Bilros.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Almofada_e_Bilros.jpg/960px-Almofada_e_Bilros.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/98/Almofada_e_Bilros.jpg",
     "caption": "Pude og kniplepinde – de klassiske redskaber i renda de bilros. Foto: RuiMalheiro / Wikimedia Commons (CC BY-SA 4.0)."
    }
   ],
@@ -151,7 +157,8 @@ const SIGHTS = {
   "short": "Nord for Vila do Conde snor der sig kilometervis af træbroer henover klitterne – en af de smukkeste og mest afslappende kyststrækninger på hele Camino Português da Costa.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PASSEIO_NA_RESERVA.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/PASSEIO_NA_RESERVA.jpg/960px-PASSEIO_NA_RESERVA.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/9d/PASSEIO_NA_RESERVA.jpg",
     "caption": "Passadiço gennem Paisagem Protegida Regional do Litoral de Vila do Conde og Reserva Ornitológica de Mindelo (foto: Wikimedia Commons, CC BY-SA 4.0)."
    }
   ],
@@ -180,11 +187,13 @@ const SIGHTS = {
   "short": "I klitterne ved Apúlia strand står en række gamle stenvindmøller som stille vidner om et landskab, hvor både vinden og havet engang blev høstet med håndkraft.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moinhos_da_Ap%C3%BAlia_(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Moinhos_da_Ap%C3%BAlia_%281%29.jpg/960px-Moinhos_da_Ap%C3%BAlia_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/90/Moinhos_da_Ap%C3%BAlia_%281%29.jpg",
     "caption": "Moinhos da Apúlia, Esposende (foto: Joseolgon, Wikimedia Commons, CC BY-SA 4.0)."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moinhos_da_Ap%C3%BAlia_2018_(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Moinhos_da_Ap%C3%BAlia_2018_%281%29.jpg/960px-Moinhos_da_Ap%C3%BAlia_2018_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Moinhos_da_Ap%C3%BAlia_2018_%281%29.jpg",
     "caption": "Rækken af møller forbindes i dag af en træbro (foto: Joseolgon, Wikimedia Commons, CC BY-SA 4.0)."
    }
   ],
@@ -233,7 +242,8 @@ const SIGHTS = {
   "short": "Mellem Póvoa de Varzim og Esposende gemmer der sig et af Portugals mest særegne landbrugslandskaber: frodige grøntsagsmarker gravet dybt ned i klitternes sand.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vinha_Masseira_Rio_Alto_PVarzim.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Vinha_Masseira_Rio_Alto_PVarzim.jpg/960px-Vinha_Masseira_Rio_Alto_PVarzim.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/03/Vinha_Masseira_Rio_Alto_PVarzim.jpg",
     "caption": "Vinranker på kanten af en masseira ved Rio Alto, Póvoa de Varzim (foto: Wikimedia Commons, CC BY-SA)."
    }
   ],
@@ -262,11 +272,13 @@ const SIGHTS = {
   "short": "Ved Cávado-flodens munding vogter et stjerneformet kystfort og et sjældent metalfyrtårn over indsejlingen – et dramatisk og fotogent stop lige inden Esposende by.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forte_de_S%C3%A3o_Jo%C3%A3o_Baptista_-_Esposende.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Forte_de_S%C3%A3o_Jo%C3%A3o_Baptista_-_Esposende.jpg/960px-Forte_de_S%C3%A3o_Jo%C3%A3o_Baptista_-_Esposende.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Forte_de_S%C3%A3o_Jo%C3%A3o_Baptista_-_Esposende.jpg",
     "caption": "Forte de São João Baptista de Esposende (foto: Wikimedia Commons, CC BY-SA)."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Farol_de_Esposende_2019_(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Farol_de_Esposende_2019_%281%29.jpg/960px-Farol_de_Esposende_2019_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/57/Farol_de_Esposende_2019_%281%29.jpg",
     "caption": "Det rødmalede jerntårn Farol de Esposende (foto: Joseolgon, Wikimedia Commons, CC BY-SA 4.0)."
    }
   ],
@@ -295,7 +307,8 @@ const SIGHTS = {
   "short": "Dér hvor Rio Neiva løber ud i Atlanterhavet – mellem Castelo do Neiva på den nordlige bred og Antas på den sydlige – ligger et stille, frodigt vådområde, som markerer den nordligste grænse for Parque Natural do Litoral Norte. Det er et pusterum af siv, klitter og pinjeskov midt på Caminoen.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte%20Rio%20Neiva%20(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Ponte_Rio_Neiva_%281%29.jpg/960px-Ponte_Rio_Neiva_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Ponte_Rio_Neiva_%281%29.jpg",
     "caption": "Den lette gangbro fører vandrere og cyklister tørskoede over Neivas rolige vand tæt ved havet."
    }
   ],
@@ -322,7 +335,8 @@ const SIGHTS = {
   "short": "Denne beskedne granitkirke gemmer på en af hele Caminoens største historiske overraskelser: en indskrift fra år 862, der er det tidligst kendte vidnesbyrd om dyrkelsen af apostlen Sankt Jakob (Santiago) uden for spansk jord.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cami%C3%B1o%20Portugu%C3%A9s%20pola%20Costa%2004-36b%20(24.02.2019),%20Santiago%20de%20Neiva%20(Viana%20do%20Castelo).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Cami%C3%B1o_Portugu%C3%A9s_pola_Costa_04-36b_%2824.02.2019%29%2C_Santiago_de_Neiva_%28Viana_do_Castelo%29.jpg/960px-Cami%C3%B1o_Portugu%C3%A9s_pola_Costa_04-36b_%2824.02.2019%29%2C_Santiago_de_Neiva_%28Viana_do_Castelo%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Cami%C3%B1o_Portugu%C3%A9s_pola_Costa_04-36b_%2824.02.2019%29%2C_Santiago_de_Neiva_%28Viana_do_Castelo%29.jpg",
     "caption": "Et kakkelbeklædt vejmærke ved Santiago de Neiva viser rutens etaper – og en tegning af selve sognekirken."
    }
   ],
@@ -349,7 +363,8 @@ const SIGHTS = {
   "short": "Lidt syd for ruten, nær kirken i São Bartolomeu do Mar, rejser en over 2 meter høj granitmenhir sig – et forhistorisk monument fra kobber- eller bronzealderen, hvis form allerede peger frem mod de menneskelignende statue-menhirer.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1tua-menir%20de%20S.%20Bartolomeu%20do%20Mar.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Est%C3%A1tua-menir_de_S._Bartolomeu_do_Mar.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Est%C3%A1tua-menir_de_S._Bartolomeu_do_Mar.jpg",
     "caption": "Den vejrbidte granitmenhir, kaldet \"Pedrão\", vogter kysten få hundrede meter fra Atlanterhavet."
    }
   ],
@@ -380,23 +395,24 @@ const SIGHTS = {
   "short": "Højt over byen troner Viana do Castelos vartegn, den mægtige kuppelkirke på Monte de Santa Luzia – officielt Templo do Sagrado Coração de Jesus. Herfra åbner et af Portugals mest berømte panoramaer sig over Lima-floden, Atlanterhavet og de røde tage nedenfor.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bas%C3%ADlica%20de%20Santa%20Luzia%20-%20Viana%20do%20Castelo%20-%20Portugal%20(7780272088).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Bas%C3%ADlica_de_Santa_Luzia_-_Viana_do_Castelo_-_Portugal_%287780272088%29.jpg/960px-Bas%C3%ADlica_de_Santa_Luzia_-_Viana_do_Castelo_-_Portugal_%287780272088%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Bas%C3%ADlica_de_Santa_Luzia_-_Viana_do_Castelo_-_Portugal_%287780272088%29.jpg",
     "caption": "Den nybyzantinske basilika kroner bjerget over Viana do Castelo."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Elevador%20de%20Santa%20Luzia%20(1).jpg",
-    "caption": ""
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Elevador_de_Santa_Luzia_%281%29.jpg/960px-Elevador_de_Santa_Luzia_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Elevador_de_Santa_Luzia_%281%29.jpg",
+    "caption": "Den historiske funicular sparer jer for de mere end 600 trin op til toppen."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cit%C3%A2nia%20de%20Santa%20Luzia%20-%20Viana%20do%20Castelo%20-%20Portugal%20(5050013495).jpg",
-    "caption": ""
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cit%C3%A2nia_de_Santa_Luzia_-_Viana_do_Castelo_-_Portugal_%285050013495%29.jpg/960px-Cit%C3%A2nia_de_Santa_Luzia_-_Viana_do_Castelo_-_Portugal_%285050013495%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/60/Cit%C3%A2nia_de_Santa_Luzia_-_Viana_do_Castelo_-_Portugal_%285050013495%29.jpg",
+    "caption": "De cirkulære stenfundamenter fra den keltiske castro bag basilikaen."
    }
   ],
   "long": [
    "Byggeriet begyndte i 1904 efter tegninger af arkitekten Miguel Ventura Terra og trak ud helt til 1943 (indvielsen af selve tempelrummet), mens de sidste detaljer først faldt på plads i slutningen af 1950'erne. Stilen er nybyzantinsk med tydelige lån fra Sacré-Cœur i Paris, og de vældige rosetvinduer regnes blandt de største på hele Den Iberiske Halvø. Går man op i kuplen ad de snævre trapper, belønnes man med en 360-graders udsigt, som mange rejsende kårer til en af de smukkeste i verden.",
-   "*Den historiske funicular sparer jer for de mere end 600 trin op til toppen.*",
-   "Familier med trætte ben behøver ikke at gå op ad de over 600 trin: den charmerende funicular (Elevador de Santa Luzia) fra 1923 klatrer de cirka 160 højdemeter på syv minutter og er Portugals længste kabelbane af sin art. Bag basilikaen gemmer sig desuden et helt andet lag af historie – Citânia de Santa Luzia, en keltisk-iberisk castro-bosættelse fra jernalderen. På forhøjede gangbroer af stål kan man vandre mellem stenfundamenterne af de runde huse og fornemme, hvordan folk levede her længe før romerne kom. Sæt god tid af: kombinationen af kirke, udsigt, kabelbane og oldtidsruin gør bjerget til en oplevelse i sig selv.",
-   "*De cirkulære stenfundamenter fra den keltiske castro bag basilikaen.*"
+   "Familier med trætte ben behøver ikke at gå op ad de over 600 trin: den charmerende funicular (Elevador de Santa Luzia) fra 1923 klatrer de cirka 160 højdemeter på syv minutter og er Portugals længste kabelbane af sin art. Bag basilikaen gemmer sig desuden et helt andet lag af historie – Citânia de Santa Luzia, en keltisk-iberisk castro-bosættelse fra jernalderen. På forhøjede gangbroer af stål kan man vandre mellem stenfundamenterne af de runde huse og fornemme, hvordan folk levede her længe før romerne kom. Sæt god tid af: kombinationen af kirke, udsigt, kabelbane og oldtidsruin gør bjerget til en oplevelse i sig selv."
   ],
   "links": [
    {
@@ -422,7 +438,8 @@ const SIGHTS = {
   "short": "Viana do Castelos hjerte og naturlige mødested er dette elegante torv, hvor byens gyldne 1500-tal stadig kan aflæses i granit og udskåret sten.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chafariz%20da%20Pra%C3%A7a%20da%20Rep%C3%BAblica%20(39713750743).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Chafariz_da_Pra%C3%A7a_da_Rep%C3%BAblica_%2839713750743%29.jpg/960px-Chafariz_da_Pra%C3%A7a_da_Rep%C3%BAblica_%2839713750743%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Chafariz_da_Pra%C3%A7a_da_Rep%C3%BAblica_%2839713750743%29.jpg",
     "caption": "Renæssance-springvandet Chafariz midt på Praça da República, med de gamle Paços do Concelho og Misericórdia bag ved."
    }
   ],
@@ -450,17 +467,18 @@ const SIGHTS = {
   "short": "Nede ved fiskerihavnen ligger et knaldgult skib, der er blevet til et af Vianas mest populære museer: hospitalsskibet Gil Eannes, bygget netop her på byens værft i 1955.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gil%20Eannes%20Viana%20do%20Castelo.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Gil_Eannes_Viana_do_Castelo.jpg/960px-Gil_Eannes_Viana_do_Castelo.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/70/Gil_Eannes_Viana_do_Castelo.jpg",
     "caption": "Det gule hospitalsskib Gil Eannes ligger fast fortøjet ved fiskerihavnen."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viana%20do%20Castelo%20-%20Buque%20Gil%20Eannes%20-%2001.jpg",
-    "caption": ""
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Viana_do_Castelo_-_Buque_Gil_Eannes_-_01.jpg/960px-Viana_do_Castelo_-_Buque_Gil_Eannes_-_01.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Viana_do_Castelo_-_Buque_Gil_Eannes_-_01.jpg",
+    "caption": "Skibet blev bygget på Vianas eget værft i 1955."
    }
   ],
   "long": [
    "Skibet blev bygget for at støtte den store portugisiske torskefiskerflåde, der år efter år sejlede til de barske farvande ved Newfoundland og Grønland. Ombord kunne fiskerne få lægehjælp langt hjemmefra, men Gil Eannes fungerede også som flagskib, postskib, bugserbåd, isbryder og forsyningsskib for flåden. Da eventyret sluttede, sejlede skibet en tid som fragtbåd og blev udrangeret i 1980'erne, hvorefter det lå og forfaldt i Lissabon. I 1998 blev det reddet hjem til Viana og kærligt restaureret af Fundação Gil Eannes.",
-   "*Skibet blev bygget på Vianas eget værft i 1955.*",
    "I dag kan familien gå ombord og udforske skibet fra kommandobro til maskinrum. Undervejs kommer man forbi kabyssen, bageriet, operationsstuen, lægens konsultationsrum, røntgenrummet, kahytter og endda skibskapellet – alt sammen bevaret, så det føles som at træde ind i en anden tid. Børnene vil elske de stejle lejdere og de mange rum, og et besøg tager typisk halvanden til to timer. Det er en levende og letforståelig fortælling om det hårde liv til søs, som passer perfekt ind i en dag med både bjerg, by og flod."
   ],
   "links": [
@@ -483,17 +501,18 @@ const SIGHTS = {
   "short": "Over Lima-floden strækker sig en elegant jernbro i to etager – Ponte de Santa Luzia, som alle kalder Ponte Eiffel eller blot Ponte Metálica. Den blev bygget af Gustave Eiffels firma og indviet 30. juni 1878.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte%20Eiffel%20over%20the%20Lima%20river%20in%20Viana%20do%20Castelo,%20Portugal.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Ponte_Eiffel_over_the_Lima_river_in_Viana_do_Castelo%2C_Portugal.jpg/960px-Ponte_Eiffel_over_the_Lima_river_in_Viana_do_Castelo%2C_Portugal.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/12/Ponte_Eiffel_over_the_Lima_river_in_Viana_do_Castelo%2C_Portugal.jpg",
     "caption": "Dobbeltdækkerbroen fører jernbanen nederst og vejen øverst over floden."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte%20Met%C3%A1lica%20sobre%20o%20Rio%20Lima%20em%20Viana%20do%20Castelo,%20de%20Gustave%20Eiffel.jpg",
-    "caption": ""
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Ponte_Met%C3%A1lica_sobre_o_Rio_Lima_em_Viana_do_Castelo%2C_de_Gustave_Eiffel.jpg/960px-Ponte_Met%C3%A1lica_sobre_o_Rio_Lima_em_Viana_do_Castelo%2C_de_Gustave_Eiffel.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ponte_Met%C3%A1lica_sobre_o_Rio_Lima_em_Viana_do_Castelo%2C_de_Gustave_Eiffel.jpg",
+    "caption": "Jernbroen på Minho-jernbanen er kandidat til status som nationalmonument."
    }
   ],
   "long": [
    "Broen er et smukt eksempel på jernalderens støbejernsarkitektur – samme designskole, der senere gav verden Eiffeltårnet. Konstruktionen er en dobbeltdækker: nederst løber jernbanen på Minho-linjen, mens vejtrafik og fodgængere krydser floden på det øverste dæk. Da broen åbnede, erstattede den den gamle træbro, der forbandt São Bento-kvarteret i Viana med Lima-flodens venstre bred ved Darque, og den knyttede dermed byen sammen med det nationale jernbanenet.",
-   "*Jernbroen på Minho-jernbanen er kandidat til status som nationalmonument.*",
    "At gå over broen er en oplevelse i sig selv: fra det øverste dæk har man en fremragende udsigt til Lima-floden, dens brede bredder og – som en perfekt baggrund – basilikaen på toppen af Santa Luzia-bjerget. For en vandrerfamilie er broen desuden et naturligt orienteringspunkt, hvor Camino'ens ruter og flodens løb mødes. Broen er i dag kandidat til at blive klassificeret som portugisisk nationalmonument, og den står stadig som et stolt symbol på 1800-tallets ingeniørkunst."
   ],
   "links": [
@@ -516,17 +535,18 @@ const SIGHTS = {
   "short": "Bag en køligt sober renæssancefacade gemmer denne kirke sig på et af Portugals mest overdådige barokinteriører, en sand fest af forgyldt træ og blå-hvide azulejos.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viana%20do%20Castelo,%20Igreja%20da%20Miseric%C3%B3rdia%20001.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Viana_do_Castelo%2C_Igreja_da_Miseric%C3%B3rdia_001.JPG/960px-Viana_do_Castelo%2C_Igreja_da_Miseric%C3%B3rdia_001.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Viana_do_Castelo%2C_Igreja_da_Miseric%C3%B3rdia_001.JPG",
     "caption": "Kirkens usædvanlige facade med etagevis af loggiaer båret af figursøjler, et af Portugals mest originale renæssanceværker."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viana%20do%20Castelo,%20Igreja%20da%20Miseric%C3%B3rdia%20016.JPG",
-    "caption": ""
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Viana_do_Castelo%2C_Igreja_da_Miseric%C3%B3rdia_016.JPG/960px-Viana_do_Castelo%2C_Igreja_da_Miseric%C3%B3rdia_016.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/76/Viana_do_Castelo%2C_Igreja_da_Miseric%C3%B3rdia_016.JPG",
+    "caption": "Interiøret er en barok Gesamtkunstwerk med forgyldte altre, helgenfigurer og vægge klædt i azulejos."
    }
   ],
   "long": [
    "Barmhjertighedsbroderskabet Misericórdia blev grundlagt i Viana i 1523, og den nuværende bygning fra 1589 blev tegnet af João Lopes den Yngre. Facaden er enestående i Portugal: to etager af åbne loggiaer båret af slanke figursøjler (atlanter og karyatider) i en blanding af renæssance, manierisme og flamske og italienske forbilleder, snarere som et fornemt palads end en kirke.",
-   "*Interiøret er en barok Gesamtkunstwerk med forgyldte altre, helgenfigurer og vægge klædt i azulejos.*",
    "Kontrasten indenfor er slående. Under en ombygning fra 1716, ledet af militæringeniøren Manuel Pinto de Vilalobos, blev rummet forvandlet til et barokt totalkunstværk. Væggene er beklædt med blå-hvide azulejos signeret af mestrene António og Policarpo de Oliveira Bernardes (1719-21), der forestiller Jomfru Marias og Jesu liv samt de barmhjertighedsgerninger, broderskabet var viet til. Hovedalteret er en pragtfuld forgyldt træudskæring udført af Ambrósio Coelho i 1719, og loftet er dekoreret med grotesk-malerier. Sammen skaber azulejos, det gyldne snitværk og de malede lofter et af Nordportugals fineste barokrum, som er vel værd et stop på vejen gennem den historiske bykerne."
   ],
   "links": [
@@ -549,7 +569,8 @@ const SIGHTS = {
   "short": "Portugals farverige folkedragter har fået deres eget museum i en markant bankbygning direkte ud til Praça da República, et must for alle, der vil forstå Vianas berømte dragttradition.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Museu%20do%20Traje.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Museu_do_Traje.jpg/960px-Museu_do_Traje.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Museu_do_Traje.jpg",
     "caption": "Museu do Traje har til huse i den tidligere Banco de Portugal-bygning fra 1950'erne på Praça da República."
    }
   ],
@@ -577,7 +598,8 @@ const SIGHTS = {
   "short": "Ved Lima-flodens munding, tæt på marinaen, ligger den stjerneformede fæstning Castelo de Santiago da Barra – bygningsværket, der har givet byen navnet \"Viana do Castelo\".",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Castelo%20de%20Santiago%20da%20Barra%20-%20Viana%20do%20Castelo%20-%20Portugal%20(53364600056).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Castelo_de_Santiago_da_Barra_-_Viana_do_Castelo_-_Portugal_%2853364600056%29.jpg/960px-Castelo_de_Santiago_da_Barra_-_Viana_do_Castelo_-_Portugal_%2853364600056%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Castelo_de_Santiago_da_Barra_-_Viana_do_Castelo_-_Portugal_%2853364600056%29.jpg",
     "caption": "Den stjerneformede fæstning vogter indsejlingen til Lima-floden."
    }
   ],
@@ -609,7 +631,8 @@ const SIGHTS = {
   "short": "Nord for Viana do Castelo fører kyststien pilgrimmene ind i noget så usædvanligt som en nedlagt jernbanetunnel – en kølig, mørk passage gennem klippen ved Afife, der i dag er en fast del af Camino-oplevelsen.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viana%20do%20Castelo%E2%80%93Vila%20Praia%20de%20%C3%82ncora,%20June%207,%202024%20(53881081325).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Viana_do_Castelo%E2%80%93Vila_Praia_de_%C3%82ncora%2C_June_7%2C_2024_%2853881081325%29.jpg/960px-Viana_do_Castelo%E2%80%93Vila_Praia_de_%C3%82ncora%2C_June_7%2C_2024_%2853881081325%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/3/34/Viana_do_Castelo%E2%80%93Vila_Praia_de_%C3%82ncora%2C_June_7%2C_2024_%2853881081325%29.jpg",
     "caption": "Kyststien på Caminho da Costa nær Afife, mellem Viana do Castelo og Vila Praia de Âncora."
    }
   ],
@@ -636,7 +659,8 @@ const SIGHTS = {
   "short": "Ved den brede sandstrand mellem Gelfa og Vila Praia de Âncora ligger det lille stjerneformede kystfort Forte do Cão og vogter over Âncora-flodens munding – et stykke levende forsvarshistorie lige ved stien.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forte%20do%20C%C3%A3o%20(1).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Forte_do_C%C3%A3o_%281%29.jpg/960px-Forte_do_C%C3%A3o_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/19/Forte_do_C%C3%A3o_%281%29.jpg",
     "caption": "Det lille kystfort Forte do Cão med sine karakteristiske bastioner ud mod Atlanten."
    }
   ],
@@ -663,7 +687,8 @@ const SIGHTS = {
   "short": "På et vindomsust granitnæs ved Carreço rejser Farol de Montedor sig – Portugals nordligste fyrtårn og et ikonisk landemærke, som pilgrimme kan se på lang afstand.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Farol%20Montedor.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/93/Farol_Montedor.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/93/Farol_Montedor.JPG",
     "caption": "Det firkantede granitfyrtårn med det karakteristiske røde tag på næsset ved Montedor."
    }
   ],
@@ -690,7 +715,8 @@ const SIGHTS = {
   "short": "En kort afstikker fra ruten fører til Anta da Barrosa – en over 5.000 år gammel megalitgrav, der er et af Den Iberiske Halvøs mest markante stenalderminder og portugisisk nationalmonument siden 1910.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anta%20da%20Barrosa%20-%20Vila%20Praia%20de%20%C3%82ncora%20-%20Portugal%20(53205048201).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Anta_da_Barrosa_-_Vila_Praia_de_%C3%82ncora_-_Portugal_%2853205048201%29.jpg/960px-Anta_da_Barrosa_-_Vila_Praia_de_%C3%82ncora_-_Portugal_%2853205048201%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Anta_da_Barrosa_-_Vila_Praia_de_%C3%82ncora_-_Portugal_%2853205048201%29.jpg",
     "caption": "Den megalitiske gravkammer af opretstående granitpiller med dæksten."
    }
   ],
@@ -717,7 +743,8 @@ const SIGHTS = {
   "short": "Ikke langt fra fyrtårnet står en klynge restaurerede stenvindmøller på højderyggen ved Montedor – blandt dem den enestående Moinho do Marinheiro med sine sjældne trapezformede træsejl.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moinho%20do%20Marinheiro.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Moinho_do_Marinheiro.jpg/960px-Moinho_do_Marinheiro.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Moinho_do_Marinheiro.jpg",
     "caption": "De runde granitvindmøller på højderyggen ved Montedor, Carreço."
    }
   ],
@@ -744,7 +771,8 @@ const SIGHTS = {
   "short": "Langs klippekysten ved Montedor og Canto Marinho gemmer sig et af Nordvest-Iberiens mest fascinerende arkæologiske landskaber: hundredvis af små saltpander hugget direkte ind i klippen af folk fra jernalderen.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pias%20salineiras%20de%20Fornelos.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pias_salineiras_de_Fornelos.jpg/960px-Pias_salineiras_de_Fornelos.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/13/Pias_salineiras_de_Fornelos.jpg",
     "caption": "Jernalderens saltpander hugget ind i klippen ved Fornelos, Carreço."
    }
   ],
@@ -771,15 +799,18 @@ const SIGHTS = {
   "short": "Caminhas middelalderlige hjerte samler sig om den stemningsfulde Praça Conselheiro Silva Torres – det gamle \"Terreiro\" – hvor granitarkader, uret i Torre do Relógio og den mægtige Igreja Matriz danner en af Nordportugals smukkeste bykerner.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_do_Rel%C3%B3gio_-_Caminha_%281%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Torre_do_Rel%C3%B3gio_-_Caminha_%281%29.jpg/960px-Torre_do_Rel%C3%B3gio_-_Caminha_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/87/Torre_do_Rel%C3%B3gio_-_Caminha_%281%29.jpg",
     "caption": "Torre do Relógio – det gamle byporttårn med uret, indgangen til den historiske kerne."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chafariz_do_Terreiro_in_Caminha_%281%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chafariz_do_Terreiro_in_Caminha_%281%29.jpg/960px-Chafariz_do_Terreiro_in_Caminha_%281%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/86/Chafariz_do_Terreiro_in_Caminha_%281%29.jpg",
     "caption": "Renæssancefontænen (Chafariz do Terreiro) midt på Praça Conselheiro Silva Torres."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Igreja_Matriz_de_Caminha.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Igreja_Matriz_de_Caminha.jpg/960px-Igreja_Matriz_de_Caminha.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/45/Igreja_Matriz_de_Caminha.jpg",
     "caption": "Igreja Matriz – den gotisk-manuelinske sognekirke fra Opdagelsernes tidsalder."
    }
   ],
@@ -806,7 +837,8 @@ const SIGHTS = {
   "short": "Højt over A Guarda på den spanske side af Miño-mundingen ligger Castro de Santa Trega – en af Galiciens mest imponerende keltiske castro-byer fra jernalderen, med hundredvis af runde stenhuse spredt ned ad bjergsiden.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2014_Castro_de_Santa_Trega._A_Guarda._Galiza-10.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2014_Castro_de_Santa_Trega._A_Guarda._Galiza-10.jpg/960px-2014_Castro_de_Santa_Trega._A_Guarda._Galiza-10.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/73/2014_Castro_de_Santa_Trega._A_Guarda._Galiza-10.jpg",
     "caption": "De rekonstruerede runde stenhuse i den keltiske castro-by på Monte Santa Trega."
    }
   ],
@@ -833,7 +865,8 @@ const SIGHTS = {
   "short": "Lige ved Atlanterhavets bølger ligger Santa María de Oia – verdens eneste cistercienserkloster bygget helt ude ved havkanten, med en mægtig barokfacade vendt mod det åbne hav.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2906-Monasterio_de_Santa_Maria_de_Oia_%28Pontevedra%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/2906-Monasterio_de_Santa_Maria_de_Oia_%28Pontevedra%29.jpg/960px-2906-Monasterio_de_Santa_Maria_de_Oia_%28Pontevedra%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/70/2906-Monasterio_de_Santa_Maria_de_Oia_%28Pontevedra%29.jpg",
     "caption": "Cistercienserklostret Santa María de Oia set fra kysten."
    }
   ],
@@ -860,7 +893,8 @@ const SIGHTS = {
   "short": "Ud for Moledo og Camarido-skoven, kun et par hundrede meter fra kysten, ligger den stjerneformede ø-fæstning Forte da Ínsua med et gammelt franciskanerkloster indenfor murene.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forte_da_%C3%8Dnsua_01.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Forte_da_%C3%8Dnsua_01.jpg/960px-Forte_da_%C3%8Dnsua_01.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Forte_da_%C3%8Dnsua_01.jpg",
     "caption": "Stjernefæstningen Forte da Ínsua på sin klippeø ud for Moledo."
    }
   ],
@@ -887,7 +921,8 @@ const SIGHTS = {
   "short": "Ned mod klipperne syd for A Guarda ligger Cetárea da Redonda – en klippehugget skaldyrsbrønd fra slutningen af 1800-tallet, hvor fiskerfamilier holdt hummere og krabber levende, til de kunne sælges.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cet%C3%A1rea_cerca_de_A_Guarda_-_panoramio.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Cet%C3%A1rea_cerca_de_A_Guarda_-_panoramio.jpg/960px-Cet%C3%A1rea_cerca_de_A_Guarda_-_panoramio.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/85/Cet%C3%A1rea_cerca_de_A_Guarda_-_panoramio.jpg",
     "caption": "En cetárea – klippehugget saltvandsbrønd til levende skaldyr – ved kysten nær A Guarda."
    }
   ],
@@ -914,7 +949,8 @@ const SIGHTS = {
   "short": "Omkring en kilometer før Oia hilser det lille kystkapel Ermida de San Sebastián pilgrimmene velkommen med enkel granitcharme og vidt udsyn over Atlanten.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ermida_de_S._Sebasti%C3%A1n,_O_Arrabal,_Oia.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ermida_de_S._Sebasti%C3%A1n%2C_O_Arrabal%2C_Oia.JPG/960px-Ermida_de_S._Sebasti%C3%A1n%2C_O_Arrabal%2C_Oia.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Ermida_de_S._Sebasti%C3%A1n%2C_O_Arrabal%2C_Oia.JPG",
     "caption": "Det lille kystkapel Ermida de San Sebastián ved O Arrabal, kort før Oia."
    }
   ],
@@ -941,7 +977,8 @@ const SIGHTS = {
   "short": "På det yderste af næsset Cabo Silleiro – hvor Ría de Vigo møder det åbne Atlanterhav – står et af Galiciens mest fotogene fyrtårne, med sit karakteristiske røde og hvide tårn vendt mod Cíes-øerne i horisonten.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/El_faro_de_Cabo_Silleiro_al_anochecer_(22180855796).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/El_faro_de_Cabo_Silleiro_al_anochecer_%2822180855796%29.jpg/960px-El_faro_de_Cabo_Silleiro_al_anochecer_%2822180855796%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/59/El_faro_de_Cabo_Silleiro_al_anochecer_%2822180855796%29.jpg",
     "caption": "Fyret ved Cabo Silleiro fanget i den atlantiske skumring."
    }
   ],
@@ -965,7 +1002,8 @@ const SIGHTS = {
   "short": "Den befæstede halvø Monte Boi rager ud i havet ved Baiona og er kronet af fæstningen Monterreal, hvis omkring 3 km lange krenelerede mure i dag omkranser byens statslige luksushotel, Parador de Baiona.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baiona_-_Fortaleza_de_Monterreal_01.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Baiona_-_Fortaleza_de_Monterreal_01.JPG/960px-Baiona_-_Fortaleza_de_Monterreal_01.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Baiona_-_Fortaleza_de_Monterreal_01.JPG",
     "caption": "Fæstningsmurene på Monte Boi-halvøen ved Baiona."
    }
   ],
@@ -993,7 +1031,8 @@ const SIGHTS = {
   "short": "I Baionas havn ligger en fuldskala-replika af karavellen La Pinta – en flydende hyldest til det øjeblik, hvor Baiona som den allerførste plet i Europa fik nyheden om Den Nye Verden.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baiona_-_Museo-R%C3%A9plica_de_la_Carabela_Pinta_1.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Baiona_-_Museo-R%C3%A9plica_de_la_Carabela_Pinta_1.JPG/960px-Baiona_-_Museo-R%C3%A9plica_de_la_Carabela_Pinta_1.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/60/Baiona_-_Museo-R%C3%A9plica_de_la_Carabela_Pinta_1.JPG",
     "caption": "Fuldskala-replikaen af La Pinta fortøjet i Baionas havn."
    }
   ],
@@ -1021,11 +1060,13 @@ const SIGHTS = {
   "short": "Lige ved fyret gemmer sig et forladt kystartilleri-batteri fra Franco-tiden – et dystert, men fascinerende kompleks af betonbunkers, kanonstillinger og underjordiske tunneller, der bogstaveligt talt er hugget ind i klippen.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Bater%C3%ADa_J-4_de_Cabo_Silleiro,_vista_desde_lo_alto_(22597532130).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/La_Bater%C3%ADa_J-4_de_Cabo_Silleiro%2C_vista_desde_lo_alto_%2822597532130%29.jpg/960px-La_Bater%C3%ADa_J-4_de_Cabo_Silleiro%2C_vista_desde_lo_alto_%2822597532130%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/75/La_Bater%C3%ADa_J-4_de_Cabo_Silleiro%2C_vista_desde_lo_alto_%2822597532130%29.jpg",
     "caption": "Luftperspektiv over det forladte batteri J-4 ved Cabo Silleiro."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ca%C3%B1ones_Vickers_de_la_antigua_Bater%C3%ADa_J-4_de_Cabo_Silleiro_(22597530150).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Ca%C3%B1ones_Vickers_de_la_antigua_Bater%C3%ADa_J-4_de_Cabo_Silleiro_%2822597530150%29.jpg/960px-Ca%C3%B1ones_Vickers_de_la_antigua_Bater%C3%ADa_J-4_de_Cabo_Silleiro_%2822597530150%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Ca%C3%B1ones_Vickers_de_la_antigua_Bater%C3%ADa_J-4_de_Cabo_Silleiro_%2822597530150%29.jpg",
     "caption": "De rustne Vickers-kanoner står stadig og peger ud mod Atlanten."
    }
   ],
@@ -1049,7 +1090,8 @@ const SIGHTS = {
   "short": "Ved foden af fæstningsmurene, i Parque da Palma tæt på havnen, står et markant granitmonument, der fejrer mødet mellem den gamle og den nye verden.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baiona,_Encontro_entre_dous_mundos,_1993.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Baiona%2C_Encontro_entre_dous_mundos%2C_1993.JPG/960px-Baiona%2C_Encontro_entre_dous_mundos%2C_1993.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Baiona%2C_Encontro_entre_dous_mundos%2C_1993.JPG",
     "caption": "Granitmonumentet \"Encontro entre dous mundos\" ved Baionas havn."
    }
   ],
@@ -1073,7 +1115,8 @@ const SIGHTS = {
   "short": "Islas Cíes er en lille øgruppe ud for Vigo-fjordens munding og selve juvelen i Islas Atlánticas-nationalparken. Med kridhvide strande, klippekyst og krystalklart vand er øerne et oplagt – om end krævende – udflugtsmål på en hviledag.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_de_Rodas,_Illas_C%C3%ADes.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Praia_de_Rodas%2C_Illas_C%C3%ADes.jpg/960px-Praia_de_Rodas%2C_Illas_C%C3%ADes.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Praia_de_Rodas%2C_Illas_C%C3%ADes.jpg",
     "caption": "Praia de Rodas, af det britiske dagblad The Guardian engang kåret som verdens smukkeste strand."
    }
   ],
@@ -1101,7 +1144,8 @@ const SIGHTS = {
   "short": "På bakken Monte de San Roque syd for byen troner Virxe da Rocha, en monumental 15 meter høj granitstatue af Jomfru Maria, der holder en stenbåd, man faktisk kan gå op i.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Virxe_da_Rocha,_Antonio_Palacios.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Virxe_da_Rocha%2C_Antonio_Palacios.jpg/960px-Virxe_da_Rocha%2C_Antonio_Palacios.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Virxe_da_Rocha%2C_Antonio_Palacios.jpg",
     "caption": "Virxe da Rocha, tegnet af arkitekten Antonio Palacios og indviet i 1930."
    }
   ],
@@ -1129,7 +1173,8 @@ const SIGHTS = {
   "short": "Tæt på Colexiata-kirken ligger den lille barokke Ermida de Santa Liberata, et charmerende kapel fra 1600-tallet viet til en af kristendommens mest usædvanlige helgener: den skæggede kvindehelgen Santa Liberata.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baiona_-_Capela_de_Santa_Liberata_10.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Baiona_-_Capela_de_Santa_Liberata_10.JPG/960px-Baiona_-_Capela_de_Santa_Liberata_10.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/df/Baiona_-_Capela_de_Santa_Liberata_10.JPG",
     "caption": "Det forgyldte barokke retablo i kapellet for Santa Liberata."
    }
   ],
@@ -1157,17 +1202,18 @@ const SIGHTS = {
   "short": "Ved grænsen mellem Baiona og Nigrán fører den smukke Ponte Românica de A Ramallosa pilgrimmen over floden Rio Miñor – en middelalderbro med ti buer, som Camino da Costa har benyttet i århundreder.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bridge_of_A_Ramallosa_1.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bridge_of_A_Ramallosa_1.jpg/960px-Bridge_of_A_Ramallosa_1.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Bridge_of_A_Ramallosa_1.jpg",
     "caption": "Den ti-buede stenbro over Rio Miñor forbinder Baiona og Nigrán."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baiona_01,_Ponte_da_Ramallosa_01-04a,_San_Telmo.jpg",
-    "caption": ""
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Baiona_01%2C_Ponte_da_Ramallosa_01-04a%2C_San_Telmo.jpg/960px-Baiona_01%2C_Ponte_da_Ramallosa_01-04a%2C_San_Telmo.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Baiona_01%2C_Ponte_da_Ramallosa_01-04a%2C_San_Telmo.jpg",
+    "caption": "Cruceiro de San Telmo står midt på broen med helgenens figur ved foden."
    }
   ],
   "long": [
    "Broen stammer fra 1200-tallet og regnes som et overgangsværk mellem romansk og gotisk stil med sine ti let spidsbuede stenbuer. Ifølge overleveringen blev den genopført på initiativ af San Telmo (Sankt Erasmus), sømændenes skytshelgen, mens han var biskop i Tui omkring 1230'erne – deraf den sene romanske karakter. Broen har i generationer markeret sognegrænsen midt over floden, og det siges, at børn født her på selve broen kunne vælge, hvilket sogn de ville tilhøre.",
-   "*Cruceiro de San Telmo står midt på broen med helgenens figur ved foden.*",
    "Midt på broen står et stenkors, Cruceiro de San Telmo, med en figur af helgenen ved foden – et klassisk galicisk vejkors (cruceiro), som pilgrimme har passeret i århundreder. Stå et øjeblik og lyt til floden løbe under de gamle buer; det er et af de steder på ruten, hvor man tydeligst mærker fodtrinnenes historie. Tag et gruppebillede ved korset, inden I går videre mod Nigrán."
   ],
   "links": [
@@ -1190,7 +1236,8 @@ const SIGHTS = {
   "short": "Kort efter broen åbner landskabet sig mod Playa América, en næsten to kilometer lang sandstrand i Nigrán, der er en af Val Miñors mest populære badestrande.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Praia_Am%C3%A9rica,_Nigr%C3%A1n.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Praia_Am%C3%A9rica%2C_Nigr%C3%A1n.jpg/960px-Praia_Am%C3%A9rica%2C_Nigr%C3%A1n.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/49/Praia_Am%C3%A9rica%2C_Nigr%C3%A1n.jpg",
     "caption": "Praia América strækker sig langs Vigo-fjorden med udsigt mod Panxón og Monte Lourido."
    }
   ],
@@ -1218,7 +1265,8 @@ const SIGHTS = {
   "short": "I fiskerlejet Panxón rejser den monumentale granitkirke Templo Votivo do Mar sig – \"Havets Votivtempel\" – endnu et storslået værk af arkitekten Antonio Palacios.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_votivo_do_mar_-_Panx%C3%B3n_-_Nigr%C3%A1n_-_Galiza-16.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Templo_votivo_do_mar_-_Panx%C3%B3n_-_Nigr%C3%A1n_-_Galiza-16.jpg/960px-Templo_votivo_do_mar_-_Panx%C3%B3n_-_Nigr%C3%A1n_-_Galiza-16.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Templo_votivo_do_mar_-_Panx%C3%B3n_-_Nigr%C3%A1n_-_Galiza-16.jpg",
     "caption": "Det stemningsfulde indre af Templo Votivo do Mar, viet til Jomfruen af Karmelbjerget, sømændenes beskytter."
    }
   ],
@@ -1246,7 +1294,8 @@ const SIGHTS = {
   "short": "Lige ved siden af det store votivtempel gemmer sig et langt ældre skatkammer: Arco visigótico de Panxón, resterne af en visigotisk kirke fra 600-tallet.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Panx%C3%B3n_Arco_Visig%C3%B3tico_121.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Panx%C3%B3n_Arco_Visig%C3%B3tico_121.JPG/960px-Panx%C3%B3n_Arco_Visig%C3%B3tico_121.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/71/Panx%C3%B3n_Arco_Visig%C3%B3tico_121.JPG",
     "caption": "Den bevarede hesteskobue fra den visigotiske kirke San Xoán de Panxón, med votivtemplet i baggrunden."
    }
   ],
@@ -1274,7 +1323,8 @@ const SIGHTS = {
   "short": "Skjult ved foden af bjerget Serra do Galiñeiro, mere end 300 meter over havet, ligger den stille dæmningssø Encoro de Zamáns – Vigos oprindelige drikkevandsmagasin.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Embalse%20de%20Zam%C3%A1ns%20(3356005910).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Embalse_de_Zam%C3%A1ns_%283356005910%29.jpg/960px-Embalse_de_Zam%C3%A1ns_%283356005910%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/97/Embalse_de_Zam%C3%A1ns_%283356005910%29.jpg",
     "caption": "Den rolige reservoirsø ved Zamáns, omgivet af galiciske skovklædte bakker."
    }
   ],
@@ -1301,7 +1351,8 @@ const SIGHTS = {
   "short": "Midt i Redondelas pilgrimsgade knejser Casa da Torre, et renæssance-adelstårn fra 1500-tallet, der i dag byder trætte pilgrimme velkommen som offentligt herberg.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Casa%20da%20Torre,%20Redondela.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Casa_da_Torre%2C_Redondela.JPG/960px-Casa_da_Torre%2C_Redondela.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/51/Casa_da_Torre%2C_Redondela.JPG",
     "caption": "Casa da Torre – herskabshuset fra 1500-tallet, nu museum og albergue for pilgrimme."
    }
   ],
@@ -1328,7 +1379,8 @@ const SIGHTS = {
   "short": "Øverst i Redondelas gamle bykerne, direkte på pilgrimsruten, rejser byens sognekirke Igrexa de Santiago sig med sin imponerende stenfacade og senmiddelalderlige stil.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Igrexa%20Santiago%20Redondela%2001.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Igrexa_Santiago_Redondela_01.jpg/960px-Igrexa_Santiago_Redondela_01.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/09/Igrexa_Santiago_Redondela_01.jpg",
     "caption": "Sognekirken Santiago i Redondela, viet til selve pilgrimshelgenen Sankt Jakob."
    }
   ],
@@ -1355,7 +1407,8 @@ const SIGHTS = {
   "short": "Redondela kaldes med god grund \"viadukternes by\" – to majestætiske jernbaneviadukter fra 1800-tallet spænder henover husene og bymidten, som pilgrimme går lige under.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Redondela%20-%20Viaducto%20de%20Madrid%201.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Redondela_-_Viaducto_de_Madrid_1.jpg/960px-Redondela_-_Viaducto_de_Madrid_1.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Redondela_-_Viaducto_de_Madrid_1.jpg",
     "caption": "Viaducto de Madrid, indviet i 1876, tårner over Redondelas tage."
    }
   ],
@@ -1384,11 +1437,13 @@ const SIGHTS = {
   "short": "Den lange middelalderbro over Río Verdugo forbinder Pontevedra og Soutomaior – et af Caminoens smukkeste og mest historiemættede overgangssteder.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Puente%20de%20Ponte%20Sampaio%20%28633595231%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Puente_de_Ponte_Sampaio_%28633595231%29.jpg/960px-Puente_de_Ponte_Sampaio_%28633595231%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Puente_de_Ponte_Sampaio_%28633595231%29.jpg",
     "caption": "Ponte Sampaios ti stenbuer spejler sig i Río Verdugo."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Los%20puentes%20de%20Pontesampaio%20%285077953602%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Los_puentes_de_Pontesampaio_%285077953602%29.jpg/960px-Los_puentes_de_Pontesampaio_%285077953602%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/7/71/Los_puentes_de_Pontesampaio_%285077953602%29.jpg",
     "caption": "Den gamle stenbro flankeres i dag af en nyere vejbro."
    }
   ],
@@ -1417,11 +1472,13 @@ const SIGHTS = {
   "short": "Fra højderne omkring Redondela åbner der sig en storslået udsigt over Vigo-fjorden, hvor den enorme skråstagsbro Ponte de Rande spænder over vandet, og hvor havet er prikket med muslingeflåder.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ria%20de%20Vigo-A%20ponte%20de%20Rande%20e%20as%20bateas%20de%20Arealonga%20%289551115187%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Ria_de_Vigo-A_ponte_de_Rande_e_as_bateas_de_Arealonga_%289551115187%29.jpg/960px-Ria_de_Vigo-A_ponte_de_Rande_e_as_bateas_de_Arealonga_%289551115187%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Ria_de_Vigo-A_ponte_de_Rande_e_as_bateas_de_Arealonga_%289551115187%29.jpg",
     "caption": "Skråstagsbroen Ponte de Rande med muslingeflåder i forgrunden."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bateas%20na%20r%C3%ADa%20de%20Vigo.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Bateas_na_r%C3%ADa_de_Vigo.jpg/960px-Bateas_na_r%C3%ADa_de_Vigo.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bateas_na_r%C3%ADa_de_Vigo.jpg",
     "caption": "Flåderne \"bateas\" er et ikonisk syn i den galiciske fjord."
    }
   ],
@@ -1465,7 +1522,8 @@ const SIGHTS = {
   "short": "I Arcade løber en fredfyldt flodpromenade langs Río Verdugo – en grøn oase med træstier, gamle stenmøller og østersbanker, som er den perfekte pause efter dagens etape.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arcade%2C%20Spain%20%2853191798510%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arcade%2C_Spain_%2853191798510%29.jpg/960px-Arcade%2C_Spain_%2853191798510%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Arcade%2C_Spain_%2853191798510%29.jpg",
     "caption": "Arcade ligger smukt ved mundingen af Río Verdugo."
    }
   ],
@@ -1493,7 +1551,8 @@ const SIGHTS = {
   "short": "Den sidste bid ind mod Pontevedra følger en skyggefuld skovsti langs den lille flod Río dos Gafos, der leder pilgrimme næsten helt ind i byens hjerte uden om trafikken.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra-R%C3%ADo%20dos%20Gafos%20(15025642004).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Pontevedra-R%C3%ADo_dos_Gafos_%2815025642004%29.jpg/960px-Pontevedra-R%C3%ADo_dos_Gafos_%2815025642004%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Pontevedra-R%C3%ADo_dos_Gafos_%2815025642004%29.jpg",
     "caption": "Den frodige flodsti langs Río dos Gafos."
    }
   ],
@@ -1520,11 +1579,13 @@ const SIGHTS = {
   "short": "Højt over Pontevedras gamle bydel knejser byens store senmiddelalderlige kirke med sin overdådigt udsmykkede facade – et pragtstykke skabt af og for byens mægtige sømandslaug.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra%20-%20Bas%C3%ADlica%20de%20Santa%20Mar%C3%ADa%20la%20Mayor%2001.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pontevedra_-_Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Mayor_01.jpg/960px-Pontevedra_-_Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Mayor_01.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Pontevedra_-_Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Mayor_01.jpg",
     "caption": "Basilikaen set udefra med sit tårn."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bas%C3%ADlica%20de%20Santa%20Mar%C3%ADa%20la%20Mayor,%20Pontevedra.%20Portada.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Mayor%2C_Pontevedra._Portada.jpg/960px-Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Mayor%2C_Pontevedra._Portada.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/3/32/Bas%C3%ADlica_de_Santa_Mar%C3%ADa_la_Mayor%2C_Pontevedra._Portada.jpg",
     "caption": "Den rigt udskårne vestportal, fuldført i 1541."
    }
   ],
@@ -1571,11 +1632,13 @@ const SIGHTS = {
   "short": "Et lille stenkapel ved vejkanten i landsbyen Santa Marta markerer det sidste hvilepunkt, inden pilgrimmene når Pontevedra – en enkel og fredfyldt rasteplads midt i den galiciske landidyl.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capela%20de%20Santa%20Marta,%20en%20Santa%20Comba%20de%20B%C3%A9rtola%20(Vilaboa).jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Capela_de_Santa_Marta%2C_en_Santa_Comba_de_B%C3%A9rtola_%28Vilaboa%29.jpg/960px-Capela_de_Santa_Marta%2C_en_Santa_Comba_de_B%C3%A9rtola_%28Vilaboa%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Capela_de_Santa_Marta%2C_en_Santa_Comba_de_B%C3%A9rtola_%28Vilaboa%29.jpg",
     "caption": "Det beskedne vejkapel Santa Marta ved Caminoen."
    },
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capela%20de%20Santa%20Marta,%20en%20Santa%20Comba%20de%20B%C3%A9rtola%20(Vilaboa)%2001.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Capela_de_Santa_Marta%2C_en_Santa_Comba_de_B%C3%A9rtola_%28Vilaboa%29_01.jpg/960px-Capela_de_Santa_Marta%2C_en_Santa_Comba_de_B%C3%A9rtola_%28Vilaboa%29_01.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/d/db/Capela_de_Santa_Marta%2C_en_Santa_Comba_de_B%C3%A9rtola_%28Vilaboa%29_01.jpg",
     "caption": "Kapellet ligger i sognet Santa Comba de Bértola i Vilaboa."
    }
   ],
@@ -1602,7 +1665,8 @@ const SIGHTS = {
   "short": "Pilgrimsjomfruens kirke er Pontevedras ubestridte vartegn – en lille, rund barok- og nyklassicistisk kirke, hvis grundplan er formet som en muslingeskal, pilgrimmenes eget symbol.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia_de_la_Virgen_Peregrina,_Pontevedra.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Iglesia_de_la_Virgen_Peregrina%2C_Pontevedra.jpg/960px-Iglesia_de_la_Virgen_Peregrina%2C_Pontevedra.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Iglesia_de_la_Virgen_Peregrina%2C_Pontevedra.jpg",
     "caption": "Den konvekse, muslingeformede facade med de to slanke klokketårne."
    }
   ],
@@ -1629,7 +1693,8 @@ const SIGHTS = {
   "short": "Midt i byen står de romantiske ruiner af det gotiske dominikanerkloster Santo Domingo – i dag en åben, mosgroet stenhave og en del af Museo de Pontevedra.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra_-_Convento_de_Santo_Domingo_01.JPG",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pontevedra_-_Convento_de_Santo_Domingo_01.JPG/960px-Pontevedra_-_Convento_de_Santo_Domingo_01.JPG",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/42/Pontevedra_-_Convento_de_Santo_Domingo_01.JPG",
     "caption": "De fem bevarede gotiske apsider – enestående i galicisk arkitektur."
    }
   ],
@@ -1656,7 +1721,8 @@ const SIGHTS = {
   "short": "Pontevedras store fødevaremarked er stedet, hvor byen henter sine friske råvarer – fisk fra Rías Baixas, galiciske oste, grøntsager og frugt – lige ved kanten af den gamle bydel.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercado_Pontevedra.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Mercado_Pontevedra.jpg/960px-Mercado_Pontevedra.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/4/46/Mercado_Pontevedra.jpg",
     "caption": "Den overdækkede markedshal tæt på Ponte do Burgo."
    }
   ],
@@ -1679,7 +1745,8 @@ const SIGHTS = {
   "short": "Praza da Ferrería er den gamle bydels største og mest livlige plads – en vidtstrakt firkant af arkader, springvand, træer og fortovscaféer, hvor byens puls slår.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra-Praza_da_Ferrer%C3%ADa_%2814912666433%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Pontevedra-Praza_da_Ferrer%C3%ADa_%2814912666433%29.jpg/960px-Pontevedra-Praza_da_Ferrer%C3%ADa_%2814912666433%29.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Pontevedra-Praza_da_Ferrer%C3%ADa_%2814912666433%29.jpg",
     "caption": "Den store plads med sine buegange, set mod Peregrina-kirken."
    }
   ],
@@ -1706,7 +1773,8 @@ const SIGHTS = {
   "short": "Alameda de Pontevedra er byens grønne åndehul – en klassisk boulevard og park fra 1800-tallet med skyggefulde trærækker, stenbænke og en pavillon, tæt på floden Lérez.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra_capital_Alameda.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pontevedra_capital_Alameda.jpg/960px-Pontevedra_capital_Alameda.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/8/85/Pontevedra_capital_Alameda.jpg",
     "caption": "Den monumentale vestindgang til Alameda, vogtet af stenløver."
    }
   ],
@@ -1729,7 +1797,8 @@ const SIGHTS = {
   "short": "Ravachol er byens frækkeste beboer: en jernstatue af en berygtet, bandende papegøje, der engang boede i et apotek ved Praza da Peregrina og blev til et af Pontevedras mest elskede symboler.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra_Capital_Escultura_Loro_Ravachol.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Pontevedra_Capital_Escultura_Loro_Ravachol.jpg/960px-Pontevedra_Capital_Escultura_Loro_Ravachol.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/1/18/Pontevedra_Capital_Escultura_Loro_Ravachol.jpg",
     "caption": "Papegøjen Ravachol, foreviget i jern af billedhuggeren José Luis Penado."
    }
   ],
@@ -1752,7 +1821,8 @@ const SIGHTS = {
   "short": "Ponte do Burgo er middelalderbroen, der i århundreder har ført pilgrimme over floden Río Lérez og ind i Pontevedra – bygget oven på ældre romerske fundamenter.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_do_Burgo,_Pontevedra.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ponte_do_Burgo%2C_Pontevedra.jpg/960px-Ponte_do_Burgo%2C_Pontevedra.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Ponte_do_Burgo%2C_Pontevedra.jpg",
     "caption": "Middelalderbroens lave rundbuer spejler sig i Lérez."
    }
   ],
@@ -1779,7 +1849,8 @@ const SIGHTS = {
   "short": "Praza da Leña er en lille, intim og fotogen plads i hjertet af den gamle bydel – med et gammelt stenkors (cruceiro) i midten og granitfacader hele vejen rundt.",
   "images": [
    {
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pontevedra._Crucero_da_Praza_da_Le%C3%B1a.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Pontevedra._Crucero_da_Praza_da_Le%C3%B1a.jpg",
+    "full": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Pontevedra._Crucero_da_Praza_da_Le%C3%B1a.jpg",
     "caption": "Det gamle stenkors, cruceiroet, midt på den stemningsfulde plads."
    }
   ],

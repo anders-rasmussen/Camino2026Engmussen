@@ -289,7 +289,7 @@
   }
   function sightModalHtml(s) {
     const gallery = (s.images && s.images.length) ? `<div class="sightgallery">${s.images.map((im) =>
-      `<figure class="sightfig"><img class="sightthumb" loading="lazy" src="${esc(im.url)}" alt="${esc(im.caption || s.name)}" data-full="${esc(im.url)}">${im.caption ? `<figcaption>${esc(im.caption)}</figcaption>` : ""}</figure>`).join("")}</div>` : "";
+      `<figure class="sightfig"><img class="sightthumb" loading="lazy" src="${esc(im.thumb || im.url)}" alt="${esc(im.caption || s.name)}" data-full="${esc(im.full || im.url)}">${im.caption ? `<figcaption>${esc(im.caption)}</figcaption>` : ""}</figure>`).join("")}</div>` : "";
     const long = (s.long || []).map((p) => `<p>${esc(p)}</p>`).join("");
     const links = (s.links && s.links.length) ? `<h4>Læs mere</h4><ul class="links">${s.links.map((l) =>
       `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a></li>`).join("")}</ul>` : "";
