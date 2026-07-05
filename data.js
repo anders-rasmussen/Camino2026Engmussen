@@ -989,8 +989,8 @@ const ROUTES = [
       },
       {
         "n": "Jernalder-saltpander",
-        "lat": 41.7525,
-        "lon": -8.8745,
+        "lat": 41.749,
+        "lon": -8.8752,
         "t": "sight"
       },
       {
@@ -1062,14 +1062,14 @@ const ROUTES = [
       },
       {
         "n": "Cetárea da Redonda",
-        "lat": 41.93,
-        "lon": -8.88,
+        "lat": 41.918709,
+        "lon": -8.884199,
         "t": "sight"
       },
       {
         "n": "Ermita de San Sebastián",
-        "lat": 41.99,
-        "lon": -8.877,
+        "lat": 41.994999,
+        "lon": -8.880437,
         "t": "sight"
       },
       {
@@ -1161,14 +1161,14 @@ const ROUTES = [
       },
       {
         "n": "Batería J4 (Cabo Silleiro)",
-        "lat": 42.105,
-        "lon": -8.895,
+        "lat": 42.108984,
+        "lon": -8.893137,
         "t": "sight"
       },
       {
         "n": "Encontro entre dous mundos",
-        "lat": 42.1206,
-        "lon": -8.8505,
+        "lat": 42.122429,
+        "lon": -8.850553,
         "t": "sight"
       },
       {
