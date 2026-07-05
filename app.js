@@ -216,15 +216,10 @@
     </div>
     <p class="modal-intro">Gør det gerne hjemmefra på wi-fi, før I rejser – så virker kort og rute offline undervejs.</p>
     <ol class="modal-steps">
-      <li><b>Installér Maps.me</b> fra App Store (iPhone) eller Google Play (Android), hvis I ikke allerede har den.</li>
+      <li><b>Installér Maps.me</b> fra Google Play, hvis I ikke allerede har den.</li>
       <li><b>Hent offline-kortene</b> i Maps.me: åbn appen → menuen → “Download maps”, og hent <b>Portugal (Norte)</b> og <b>Spanien (Galicia)</b>. Så fungerer kortet uden internet på ruten.</li>
-      <li><b>Download GPX-filen</b> her i appen med den blå knap ved siden af. Filen (fx <b>Camino2026-16_Juli.gpx</b>) lander i “Overførsler”/Filer.</li>
-      <li><b>Åbn filen i Maps.me:</b>
-        <ul>
-          <li><b>iPhone:</b> åbn <b>Filer</b> → find GPX-filen under Overførsler → tryk på den → tryk på <b>Del</b>-ikonet → vælg <b>Maps.me</b> (eller “Kopiér til Maps.me”).</li>
-          <li><b>Android:</b> åbn <b>Downloads</b> eller filhåndtering → tryk på GPX-filen → vælg <b>Åbn med → Maps.me</b> (eller Del → Maps.me).</li>
-        </ul>
-      </li>
+      <li><b>Download GPX-filen</b> her i appen med den blå knap ved siden af. Filen (fx <b>Camino2026-16_Juli.gpx</b>) lander i mappen <b>Downloads</b>.</li>
+      <li><b>Åbn filen i Maps.me:</b> gå ind i <b>Downloads</b> eller din filhåndtering → tryk på GPX-filen → vælg <b>Åbn med → Maps.me</b> (eller tryk på Del-ikonet → Maps.me).</li>
       <li>Maps.me bekræfter med <b>“Bookmarks and tracks imported”</b>.</li>
       <li><b>Find ruten:</b> tryk på <b>stjerne-/bogmærke-ikonet</b> nederst i Maps.me → vælg den importerede liste → tryk på sporet, så det tegnes på kortet.</li>
       <li><b>Tip:</b> brug <b>øje-ikonet</b> ud for listen til at slå sporet til/fra på kortet. Seværdighederne ligger som nåle (waypoints) langs ruten.</li>

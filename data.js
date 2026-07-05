@@ -480,47 +480,59 @@ const GENERAL = [
     blocks:[
       {type:"subhead", text:"Fodtøj (det allervigtigste!)"},
       {type:"checklist", items:[
-        "Vandresko / trail runners: lette, indgåede sko med god sål. Undgå tunge støvler – ruten er flad og varm.",
+        "Vandresko/trail runners: lette, indgåede sko med god sål. Undgå tunge støvler – ruten er flad og varm. Trail runners er ideelle.",
         "Sandaler til aftenen: giv fødderne luft efter dagens vandring.",
-        "Sokker: 3–4 par i merino-uld eller syntetisk. Undgå bomuld – det giver vabler."
+        "Sokker: mindst 3-4 par vandresokker i merino-uld eller syntetisk materiale. Undgå bomuld – det holder på fugt og giver vabler."
       ]},
       {type:"subhead", text:"Tøj"},
       {type:"checklist", items:[
-        "2 hurtigtørrende t-shirts","1 langærmet trøje (sol-/vindbeskyttelse)","1 let fleece eller softshell til kølige aftener",
-        "2 par lette vandrebukser/tights (gerne zip-off)","3 sæt hurtigtørrende undertøj (merino uld anbefales)",
-        "Let regnjakke eller poncho","Solhat med bred skygge + solbriller"
+        "2-3 hurtigtørrende t-shirts",
+        "1 langærmet trøje (sol-/vindbeskyttelse)",
+        "1 let fleece eller softshell (til kølige aftener)",
+        "1-2 par lette shorts",
+        "1 par lange vandrebukser/tights",
+        "3 sæt hurtigtørrende undertøj (helst ikke bomuld)",
+        "Solhat med bred skygge",
+        "Solbriller"
       ]},
       {type:"subhead", text:"Udstyr"},
       {type:"checklist", items:[
-        "Let rygsæk (30–40 liter) med regncover","Vandflasker/drikkeblære – mindst 1,5 liter","Vandrestave (sparer knæene på de lange etaper)",
-        "Pandelampe (tidlige morgenstarter)","Powerbank + ladekabel","Opladning: Portugal/Spanien bruger stiktype C/F – de fleste danske opladere passer."
+        "Let rygsæk (30-40 liter) med regncover",
+        "Vandflasker/drikkeblære – mindst 1,5 liter kapacitet",
+        "Powerbank + ladekabel",
+        "Opladning: Portugal og Spanien bruger primært stiktype C/F. De fleste danske mobilopladere passer direkte, men tjek evt. kraftige jordstik hjemmefra."
       ]},
       {type:"subhead", text:"Pleje og førstehjælp"},
       {type:"checklist", items:[
-        "Compeed (vabler!) – køb en stor pakke hjemmefra","Vaseline eller Bodyglide mod gnavesår","Solcreme SPF 50 + læbepomade med SPF",
-        "Håndsprit","Ibuprofen / paracetamol","Elastisk bandage","Personlig medicin","Fodpudder/talkum"
+        "Compeed (vabler!) – køb en stor pakke hjemmefra",
+        "Vaseline eller Bodyglide (mod gnavesår/skrubsår)",
+        "Solcreme SPF 50 + læbepomade med SPF",
+        "Håndsprit",
+        "Ibuprofen / paracetamol",
+        "Elastisk bandage",
+        "Personlig medicin",
+        "Fodpudder/talkum"
       ]}
     ]},
   { key:"forberedelser", icon:"check", title:"Forberedelser hjemmefra",
     blocks:[
       {type:"subhead", text:"Fysisk træning"},
       {type:"list", items:[
-        "Start mindst 6–8 uger før. Gå lange ture (15–25 km) med rygsæk i de sko, I vil bruge.",
-        "Fokusér på udholdenhed, ikke tempo – I skal gå 10–26 km dagligt i varme.",
-        "Tommelfingerregel for rygsækvægt: maks 10 % af kropsvægt (ekskl. vand)."
+        "Start træningen mindst 6-8 uger før afgang. Gå lange ture (15-25 km) med rygsæk, gerne i det terræn og de sko I vil bruge.",
+        "Fokusér på udholdenhed, ikke tempo. I skal gå 10-26 km dagligt i varme – det kræver tilvænning.",
+        "Træn gerne med den fulde rygsækvægt. Tommelfingerregel: maks 10 % af jeres kropsvægt (ekskl. vand)."
       ]},
       {type:"subhead", text:"Økonomi og betaling"},
       {type:"list", items:[
         "Valuta: både Portugal og Spanien bruger euro.",
-        "Kort accepteres de fleste steder, men hav altid 50–100 € kontant til små caféer og landsbyer.",
-        "Budget: ca. 30–50 € pr. person pr. dag til mad og drikke. Portugal er billigst.",
-        "Giv banken besked om rejsen, så kortet ikke spærres."
+        "Kort: Visa/Mastercard accepteres de fleste steder, men hav altid lidt kontanter (50-100 €) til små caféer og landsbyer uden kortterminaler.",
+        "Budget: regn med ca. 30-50 € pr. person pr. dag til mad og drikke (frokost, aftensmad, snacks). Portugal er generelt billigere end Spanien."
       ]},
       {type:"subhead", text:"Forsikring og sundhed"},
       {type:"list", items:[
-        "Rejseforsikring der dækker vandring og hjemtransport – tjek at jeres dækker langdistancevandring.",
-        "Det blå EU-sygesikringskort: bestil gratis via borger.dk (tager 1–2 uger).",
-        "Apoteker (farmácia/farmacia) findes i de fleste byer – Compeed og ibuprofen fås overalt."
+        "Rejseforsikring: sørg for en forsikring, der dækker vandring og eventuel hjemtransport. Tjek jeres eksisterende – mange kreditkortforsikringer dækker ikke langdistancevandring.",
+        "Det blå EU-sygesikringskort: giver ret til behandling på offentlige hospitaler i EU-lande. Bestil det gratis via borger.dk – det tager typisk 1-2 uger.",
+        "Apotek: både Portugal og Spanien har veludstyrede apoteker (farmácia/farmacia) i de fleste byer. Compeed og ibuprofen kan købes overalt."
       ]}
     ]},
   { key:"apps", icon:"phone", title:"Apps og navigation",
@@ -534,14 +546,14 @@ const GENERAL = [
   { key:"raad", icon:"star", title:"Generelle råd til ruten",
     blocks:[
       {type:"list", items:[
-        "Start tidligt: gå afsted kl. 06–07, så I er fremme inden den værste middagsvarme.",
-        "Hydrering: drik løbende, vent ikke til I er tørstige. Regn med 2–3 liter pr. person pr. dag.",
-        "Siesta-strategi: ankommer I kl. 12–14, tag pause i skyggen og udforsk byen om aftenen.",
-        "Vabelforebyggelse: smør fødderne med Vaseline om morgenen, skift sokker ved frokost, behandl hotspots med det samme.",
-        "Pak let: alt hvad I medbringer skal I bære. Vær brutale med pakkelisten – I kan købe det meste undervejs.",
-        "Vasketøj: de fleste steder har mulighed for håndvask, og hurtigtørrende tøj er klar næste morgen. Planlæg en stor vask i Baiona (17.–18./7), hvor der er vaskemaskine.",
-        "Grænseovergang: Portugal → Spanien foregår med båd over Rio Minho fra Caminha til A Guarda (ca. 10 min). Book den officielle Xacobeo Transfer online i forvejen på xacobeotransfer.com (6 € pr. person). Bekræft dagen før, da tider kan afhænge af vejr og tidevand.",
-        "Sprog: portugisisk i første halvdel, galicisk/spansk i anden. Basale fraser som Bom dia / Buenos días (godmorgen), Obrigado/a / Gracias (tak) og Buen Camino! er alt, hvad I behøver. Alle forstår den universelle pilgrimshilsen \"Buen Camino!\"."
+        "Start tidligt: den vigtigste regel i juli. Gå afsted mellem kl. 06 og 07, så I er fremme inden den værste middagsvarme. Mange pilgrimme starter endda ved solopgang (ca. 06.30 i juli).",
+        "Hydrering: drik løbende – vent ikke til I er tørstige. Regn med mindst 2-3 liter vand pr. person pr. dag. Fyld op ved hver mulighed.",
+        "Siesta-strategi: hvis I ankommer tidligt (kl. 12-14), tag en pause i skyggen og udforsk byen om aftenen, når det køler af.",
+        "Vabelforebyggelse: smør fødderne med Vaseline om morgenen. Skift sokker ved frokostpausen. Stop og behandl hotspots med det samme – vent ikke til det bliver en vabel.",
+        "Pak let: alt hvad I medbringer, skal I bære. Vær brutale med pakkelisten. I kan købe det meste undervejs i Portugal og Spanien.",
+        "Vasketøj: de fleste overnatningssteder har mulighed for håndvask. Hurtigtørrende tøj er klar igen næste morgen. I Baiona (17-18/7) har I adgang til vaskemaskine – planlæg en stor vask dér.",
+        "Grænseovergang: Portugal → Spanien foregår med båd over Rio Minho fra Caminha til A Guarda (ca. 10 min). Book den officielle Xacobeo Transfer online i forvejen på xacobeotransfer.com (6 € pr. person). Der er ingen pascheck, men det er et magisk øjeblik. Bekræft overfarten dagen før, da tider kan afhænge af vejr og tidevand.",
+        "Sprog: portugisisk i den første halvdel, galicisk/spansk i den anden. Basale fraser som Bom dia / Buenos días (godmorgen), Obrigado/a / Gracias (tak) og Buen Camino! (god vej!) er alt, hvad I behøver. Alle forstår den universelle pilgrimshilsen \"Buen Camino!\"."
       ]}
     ]},
   { key:"mad", icon:"coffee", title:"Mad, tider og hverdagslogistik",
@@ -677,17 +689,18 @@ const GENERAL = [
   { key:"checkliste", icon:"check", title:"Afrejsecheckliste",
     blocks:[
       {type:"checklist", items:[
-        "Pas, betalingskort, blåt EU-sygesikringskort og rejseforsikring pakket og fotograferet digitalt",
-        "Pilgrimspas købt/reserveret, og første sted til stempel kendt",
-        "Alle bookingbekræftelser og adresser gemt som screenshots/offline",
-        "Telefoner, powerbank og ladekabler pakket og testet",
-        "Offline-kort til Portugal, Galicien og Senda da Auga downloadet",
-        "Skoene gået til, og mindst én længere træningstur med fuld oppakning",
-        "Compeed, solcreme, smertestillende og personlig medicin pakket",
-        "50–100 € i kontanter hævet til småkøb",
-        "Plan for bådoverfarten Caminha → A Guarda noteret",
-        "Taxa-planen til Zamáns/Senda da Auga aftalt med vært",
-        "Hjemrejse fra Pontevedra til Porto dobbelttjekket et par dage før"
+        "Pas, betalingskort, det blå EU-sygesikringskort og rejseforsikring er pakket og fotograferet digitalt",
+        "Pilgrimspas er købt eller reserveret, og første sted til stempel er kendt",
+        "Alle bookingbekræftelser og adresser er gemt som screenshots/offline",
+        "Telefoner, powerbank og ladekabler er pakket og testet",
+        "Offline-kort til Portugal, Galicien og Senda da Auga er downloadet",
+        "Skoene er gået til, og mindst én længere træningstur er gået med fuld oppakning",
+        "Compeed, solcreme, smertestillende og personlig medicin er pakket",
+        "50-100 € i kontanter er hævet til småkøb og steder uden kort",
+        "Plan for bådoverfarten Caminha → A Guarda er noteret",
+        "Taxa-planen til Zamáns/Senda da Auga er gemt i noter eller aftalt med vært",
+        "Hjemrejse med tog/bus fra Pontevedra til Porto er dobbelttjekket et par dage før",
+        "Første dags snack og vand er tænkt ind, så I ikke starter halvtomme fra lufthavnen"
       ]}
     ]},
   { key:"ptvses", icon:"compass", title:"Portugal vs. Spanien",
@@ -724,7 +737,7 @@ const GENERAL = [
     blocks:[
       {type:"list", items:[
         "Anti-gnidning: ud over fødderne er lår, hofter og skuldre klassiske problemzoner. Bodyglide eller Vaseline kan spare jer for meget irritation i varme og salt luft.",
-        "Undertøj i merino-uld: svedabsorberende og holder lugt væk. Icebreaker Anatomica er et godt mærke; ellers er ExOfficio Give-N-Go 2.0 Sport Mesh også godt.",
+        "Undertøj i merino-uld: svedabsorberende og holder lugt væk. Icebreaker Anatomica (Fjeld og Fritid) er et godt mærke. Ellers er ExOfficio Give-N-Go 2.0 Sport Mesh også godt.",
         "Småpenge: hav mønter og små sedler til kaffe, is, små køb og steder hvor kort ikke er en selvfølge.",
         "Ziplocks og safety pins: guld værd til vådt tøj, opladere, kvitteringer og hurtig håndvask undervejs.",
         "Aftenen før: fyld vand, tjek vejret, læg morgentøj frem og aftal første stop for kaffe eller mad, inden I går i seng. Det gør tidlige starter meget lettere.",
