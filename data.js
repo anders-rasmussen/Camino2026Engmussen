@@ -1,0 +1,635 @@
+/* Camino Português da Costa 2026 – al rejsedata ét sted.
+   Rute-data (pois/legs/koordinater) genbrugt fra det oprindelige kort.
+   Følsom data (bookingnumre, priser, tracking-URL'er, rejsendes navne) er
+   bevidst udeladt – appen serveres offentligt. */
+
+const DAYS = [
+  {
+    date: "11. juli", short: "11/7", weekday: "Lørdag",
+    title: "Porto Lufthavn → Vila do Conde",
+    from: "Mindelo", to: "Vila do Conde",
+    dist: "~10–12 km", terrain: "Fladt – passadiços (træbroer), sandstier",
+    lodging: "Casa da Praia",
+    address: "Av. Cidade de Olinda 41-2DTO, 4480-661 Vila do Conde",
+    breakfast: "–", washer: "Ja",
+    desc: "Efter landing i Porto kl. 09:30 starter eventyret. For at undgå Portos forstæder og industri tager I Metroens linje E (lilla) til stationen Verdes. Her skifter I til linje B (rød) mod Póvoa de Varzim og står af ved Mindelo. Herfra går I de få kilometer ned mod kysten, hvor I rammer de første træbroer (passadiços). Den perfekte bløde start langs vandet ind til Vila do Conde.",
+    transport: {
+      title: "Fra lufthavnen til Mindelo",
+      lines: [
+        "Linje E (lilla) starter direkte i terminalen, dagligt ca. 06:00–01:00, afgang hvert 20.–30. min.",
+        "Skift til linje B (rød) mod Póvoa de Varzim ved stationen Verdes; stå af ved Mindelo.",
+        "Billet: køb én Andante Azul-billet pr. person til Mindelo (papkort 0,60 € pr. stk. + zonebillet). Regn med ca. Z6–Z7 = 3,20–3,65 € pr. person.",
+        "Rejsetid ca. 45–60 min inkl. skiftet. Tjek på metrodoporto.pt at linje B-toget standser i Mindelo."
+      ]
+    },
+    highlights: [
+      { n: "Santa Clara-klosteret", d: "Det enorme middelalder-kloster fra 1318 dominerer Vila do Condes skyline." },
+      { n: "Akvædukten", d: "Berømt akvædukt fra 1700-tallet med 999 buer, der strækker sig 4 km." },
+      { n: "De første passadiços", d: "Boardwalkene starter allerede ved Mindelo-stranden – magisk at gå over klitterne med havet ved siden af." }
+    ],
+    tips: [
+      "Første stempel: få jeres første \"sello\" i pilgrimspasset på turistkontoret eller i en kirke i Vila do Conde.",
+      "Frokost: find en café i Vila Chã på vejen og få den første portugisiske kaffe og Pastel de Nata.",
+      "Aftensmad: prøv frisk fisk langs floden Ave – Vila do Conde er en gammel fiskeby."
+    ]
+  },
+  {
+    date: "12. juli", short: "12/7", weekday: "Søndag",
+    title: "Vila do Conde → Esposende",
+    from: "Vila do Conde", to: "Esposende",
+    dist: "~26 km", terrain: "Fladt til let bølget – boardwalks, sandstier, korte asfaltstræk",
+    lodging: "Vivas House",
+    address: "Rua Manuel de Boaventura 6, 4740-305 Esposende",
+    breakfast: "Nej", washer: "Ja",
+    desc: "Dagens lange etape fører jer langs en af Portugals mest spektakulære kyststræk. I starter med Passadiços do Mindelo – kilometer efter kilometer af træ-boardwalks svævende over klipper og klitter. Derefter passerer I kystbyen Apúlia, kendt for sine vindmøller. Etapen kulminerer med krydsningen af Cávado-floden, hvor I ankommer til Esposende med udsigt over flodmundingen og Atlanterhavet.",
+    highlights: [
+      { n: "Passadiços do Mindelo", d: "Ikoniske træstier langs klipperne nord for Vila do Conde – etapens mest fotogene strækning." },
+      { n: "Apúlia", d: "Charmerende kystby med traditionelle vindmøller i klitterne – godt pausested." },
+      { n: "Cávado-flodens munding", d: "Den dramatiske overgang fra kyststi til Esposende over floden." }
+    ],
+    tips: [
+      "Senda Litoral: vælg stien helt ude ved vandet mod Viana – fladere og køligere i juli-varmen.",
+      "Tidlig start (senest kl. 07): 26 km i juli, og passadiços har næsten ingen skygge.",
+      "Vand: pak mindst 1,5 liter pr. person – langt mellem caféerne i klitterne.",
+      "Solbeskyttelse: solcreme, hat og solbriller – næsten ingen skygge på denne etape."
+    ]
+  },
+  {
+    date: "13. juli", short: "13/7", weekday: "Mandag",
+    title: "Esposende → Castelo do Neiva",
+    from: "Esposende", to: "Castelo do Neiva",
+    dist: "~14 km", terrain: "Fladt – Senda Litoral (kyststier), korte skovstræk",
+    lodging: "Minho at home",
+    address: "Rua de Sendim 173, 4935-564 Viana do Castelo (Castelo do Neiva)",
+    breakfast: "Ja", washer: "",
+    desc: "En bevidst kort etape efter gårsdagens 26 km. I forlader Esposende ad Senda Litoral og bevæger jer ind i et mere landligt og frodigt område. Landskabet skifter fra åbne klitter til grønne marker og pinjeskov. I krydser Neiva-floden over en smuk bro og ankommer til den stille landsby Castelo do Neiva – et af de mest autentiske steder på hele ruten.",
+    highlights: [
+      { n: "Neiva-flodens delta", d: "Naturskønt kryds med fiskerbåde og fugleliv, fredet som naturreservat." },
+      { n: "Landsbystemning", d: "Castelo do Neiva er ægte portugisisk provins med vinmarker og stille gader." },
+      { n: "Solnedgang over havet", d: "Gå de få hundrede meter ned til stranden og nyd solnedgangen over Atlanterhavet." }
+    ],
+    tips: [
+      "Overnatningsstedet har morgenmad inkluderet – slap af og nyd omgivelserne.",
+      "Køb frugt og vand i Esposende inden I går – få butikker undervejs.",
+      "Brug den korte dag til at pleje fødderne og vaske tøj."
+    ]
+  },
+  {
+    date: "14. juli", short: "14/7", weekday: "Tirsdag",
+    title: "Castelo do Neiva → Viana do Castelo",
+    from: "Castelo do Neiva", to: "Viana do Castelo",
+    dist: "~11 km", terrain: "Fladt langs kysten, let stigning ind mod byen",
+    lodging: "Rua Grande Hotel",
+    address: "Rua Grande 78, 4900-542 Viana do Castelo",
+    breakfast: "Ja", washer: "",
+    desc: "Endnu en kort og behagelig etape. I følger kyststien nordpå gennem pinjeskov og over små sandstrande. Viana do Castelo åbenbarer sig langsomt – først ser I Monte de Santa Luzia med kirken på toppen, og derefter glider I ind i byen over den imponerende jernbro bygget af Gustave Eiffels firma (1878). Viana er en af rutens absolutte perler og fortjener en hel eftermiddag.",
+    highlights: [
+      { n: "Santa Luzia-kirken", d: "Tag kabelbanen (~3 €) op. Udsigten over Atlanterhavet, Lima-mundingen og byen er verdensklasse." },
+      { n: "Praça da República", d: "Byens smukke hovedtorv med gammelt rådhus og springvand." },
+      { n: "Gil Eannes hospitalsskib", d: "Gammelt hospitalsskib ved havnen, omdannet til museum og vandrerhjem." },
+      { n: "Eiffel-broen", d: "Den elegante jernbro over Lima-floden er byens vartegn." }
+    ],
+    tips: [
+      "Med kun 11 km er I fremme til frokost – brug eftermiddagen på Santa Luzia og den gamle bydel.",
+      "Aftensmad: prøv bacalhau (klipfisk) på en lokal restaurant.",
+      "Morgenmad inkluderet – sov lidt længere i morgen."
+    ]
+  },
+  {
+    date: "15. juli", short: "15/7", weekday: "Onsdag",
+    title: "Viana do Castelo → Vila Praia de Âncora",
+    from: "Viana do Castelo", to: "Vila Praia de Âncora",
+    dist: "~21 km", terrain: "Blandet – kyststi, skovsti, kort passage gennem gammel jernbanetunnel",
+    lodging: "Baixinho Guest House",
+    address: "Rua Cândido dos Reis 16, 4910-460 Vila Praia de Âncora",
+    breakfast: "Nej", washer: "",
+    desc: "En længere dag med et af rutens mest varierede landskaber. I forlader Viana over Lima-floden og følger kysten nordpå. Ved Afife passerer I et dramatisk klippelandskab og den gamle, nedlagte jernbanetunnel – et sjovt fotostop. Længere fremme ligger Forte do Cão med udsigt over havet. Dagen slutter i den charmerende badeby Vila Praia de Âncora med sin lange sandstrand.",
+    highlights: [
+      { n: "Jernbanetunnelen ved Afife", d: "En gammel nedlagt jernbanetunnel, som stien fører igennem – stemningsfuld og elsket af pilgrimme." },
+      { n: "Forte do Cão", d: "Lille, velplaceret kystfort med panoramaudsigt. Godt sted til en drikkepause." },
+      { n: "Montedor-fyrtårnet", d: "Hvidt fyrtårn på en klippepynt med vild udsigt." },
+      { n: "Dolmen de Barrosa", d: "5.000 år gammel megalit-grav lige ud til stranden – arkæologi og hav i ét." }
+    ],
+    tips: [
+      "Strandtid: Âncora er en skøn badeby – en dukkert i Atlanterhavet er god restitution.",
+      "Fiskemarked: prøv grillfisk til aftensmad ved havnen.",
+      "Pak rigeligt vand – få caféer mellem Afife og Âncora."
+    ]
+  },
+  {
+    date: "16. juli", short: "16/7", weekday: "Torsdag",
+    title: "Vila Praia de Âncora → Oia (grænseovergang)",
+    from: "Vila Praia de Âncora", to: "Oia",
+    dist: "~20 km", terrain: "Fladt til Caminha, derefter kuperet klippekyst i Spanien",
+    lodging: "Casa Picota",
+    address: "Calle la Palma 5, 36794 Oia (Spanien)",
+    breakfast: "Ja", washer: "",
+    desc: "En episk dag med to lande! Først går I langs kysten til Caminha, den sidste portugisiske by ved Minhos flodmunding. Her tager I båden over til Spanien og lander i A Guarda. Herfra ændrer alt sig: landskabet bliver dramatisk med klipper, og stien bugter sig langs klippekysten hele vejen til Oia, hvor det betagende Monasterio de Santa María de Oia ligger lige ned til havet.",
+    transport: {
+      title: "Bådoverfart Caminha → A Guarda",
+      lines: [
+        "Booket med Xacobeo Transfer (den officielle pilgrimsbåd). Afgang kl. 09:30 (portugisisk tid) fra Caminha.",
+        "Overfarten tager ca. 10 min. I lander i Camposancos (A Guarda) ca. 10:40 spansk tid – Spanien er én time foran.",
+        "Vær ved kajen i Caminha i god tid før 09:30. Ved vejrvarsel der suspenderer sejladsen, giver de besked.",
+        "Kontakt: +34 613 01 12 26 / info@xacobeotransfer.com. Hold jer til Xacobeo Transfer – ikke konkurrenten Taximar."
+      ]
+    },
+    highlights: [
+      { n: "Caminha", d: "Smuk Praça da República med middelalderligt klokketårn. Sidste chance for billig portugisisk kaffe." },
+      { n: "Bådturen over Minho", d: "Kort (~10 min), men magisk overfart – se Portugal og Spanien samtidig." },
+      { n: "Monte Santa Trega (A Guarda)", d: "Valgfri afstikker (~3 km ekstra) op til det keltiske castro-anlæg med 360° udsigt." },
+      { n: "Klosterkysten mod Oia", d: "De sidste kilometer langs klipperne er rute-højdepunktet." }
+    ],
+    tips: [
+      "Vigtigt! Stil uret én time frem, når I træder i land i Spanien (UTC+2 om sommeren).",
+      "Husk et spansk stempel i A Guarda eller Oia.",
+      "Stadig euro – men prisniveauet er lidt højere end i Portugal.",
+      "Morgenmad på Casa Picota, så I ikke behøver bekymre jer om det næste morgen."
+    ]
+  },
+  {
+    date: "17. juli", short: "17/7", weekday: "Fredag",
+    title: "Oia → Baiona",
+    from: "Oia", to: "Baiona",
+    dist: "~16 km", terrain: "Kuperet klippekyst, derefter faldende mod Baiona-bugten",
+    lodging: "Airbnb-lejlighed",
+    address: "Baiona, Galicien (nøjagtig adresse oplyses efter booking; ca. ved Monterreal)",
+    breakfast: "Nej", washer: "Ja",
+    desc: "En fantastisk kystvandring langs Galiciens dramatiske Atlanterhavskyst. I forlader Oia og følger klippestien med åndeløse udsigter. Ved Cabo Silleiro passerer I det ikoniske fyrtårn, og herfra åbner Baiona-bugten sig med Monterreal-fæstningen tronende i horisonten. Nedgangen til Baiona er magisk – byen vokser langsomt frem foran jer.",
+    highlights: [
+      { n: "Cabo Silleiro fyrtårn", d: "Hvidt fyrtårn på en klippepynt med vild udsigt over Atlanterhavet." },
+      { n: "Monterreal-fæstningen", d: "Enorm fæstning (nu Parador-hotel), Baionas vartegn. Gratis gåtur langs 2 km fæstningsmur." },
+      { n: "Pinta-replikaen", d: "Kopi af karavellen der i 1493 bragte nyheden om Amerika til Europa – Baiona hørte det først." },
+      { n: "Havnepromenaden", d: "Farverige fiskerbåde, tapas-barer og udsigt til fæstningen." }
+    ],
+    tips: [
+      "Vaskedag: I har vaskemaskine i lejligheden – vask alt vandretøjet nu.",
+      "Aftensmad: prøv pulpo á feira (blæksprutte) og et glas kølig Albariño-vin.",
+      "2 nætter i lejlighed – handl ind til morgenmad og snacks i centrum."
+    ]
+  },
+  {
+    date: "18. juli", short: "18/7", weekday: "Lørdag",
+    title: "Hviledag i Baiona",
+    from: "Baiona", to: "Baiona",
+    dist: "0 km", terrain: "Hviledag – afslapning",
+    rest: true,
+    lodging: "Airbnb-lejlighed",
+    address: "Baiona, Galicien",
+    breakfast: "Nej", washer: "Ja",
+    desc: "En velfortjent pause midt på turen. Baiona er som skabt til at slappe af i – en af Galiciens smukkeste kystbyer med historisk charme, der går helt tilbage til romertiden.",
+    highlights: [
+      { n: "Fæstningsvandring (2 km)", d: "Langsom tur rundt om Monterreal-murene – fladt, smukt, ~45 min." },
+      { n: "Stranddag", d: "Praia de Barbeira ligger tættest på centrum og er god til en rolig formiddag." },
+      { n: "Islas Cíes (valgfri udflugt)", d: "Både fra havnen til øgruppen \"Galiciens Caribien\". Skal bookes på forhånd (pirenaica.es / islasCies.net)." }
+    ],
+    tips: [
+      "Find en tapasbar bag havnen og nyd Albariño og lokale skaldyr (mejillones, navajas).",
+      "Pilgrimsstempel: Colegiata de Santa María i centrum.",
+      "Fodpleje: køb Compeed eller Betadine på apoteket – det er midt på turen, invester i fødderne."
+    ]
+  },
+  {
+    date: "19. juli", short: "19/7", weekday: "Søndag",
+    title: "Baiona → Nigrán",
+    from: "Baiona", to: "Nigrán",
+    dist: "~10–12 km", terrain: "Fladt langs kysten, let kuperet gennem A Ramallosa",
+    lodging: "Rincón Do Demo",
+    address: "Rúa Carrasca A 18, 36379 Nigrán (Spanien)",
+    breakfast: "Nej", washer: "",
+    desc: "Efter hviledagen er dette en bevidst blød start. I forlader Baiona og går langs kysten til A Ramallosa, hvor I krydser den smukke romanske middelalder-bro over Miñor-floden. Herefter følger I kysten forbi den brede, hvide sandstrand Playa América – en af Galiciens fineste – og videre til det rolige Nigrán.",
+    highlights: [
+      { n: "Ponte Románica de A Ramallosa", d: "Smuk middelalder-bro med rundbuede stenportaler – et klassisk Camino-fotomotiv." },
+      { n: "Playa América", d: "Lang, bred sandstrand med roligt vand. Perfekt til en pause eller dukkert." },
+      { n: "Udsigt mod Islas Cíes", d: "Fra strandpromenaden ses øerne ude i fjorden – smukt i eftermiddagslyset." }
+    ],
+    tips: [
+      "Kort etape – brug et par timer på Playa América før I tjekker ind.",
+      "Køb frokost, snacks og rigeligt vand i dag: morgendagens Senda da Auga har INGEN butikker eller caféer.",
+      "Bed værten bestille en taxa til i morgen tidlig til Zamáns (starten af Senda da Auga)."
+    ]
+  },
+  {
+    date: "20. juli", short: "20/7", weekday: "Mandag",
+    title: "Nigrán → Redondela (Senda da Auga)",
+    from: "Nigrán", to: "Redondela",
+    dist: "~15 km vandring (efter taxi)", terrain: "Fladt – skyggefuld skovsti langs vandkanal (Senda da Auga)",
+    lodging: "Casa África y Ramona",
+    address: "Rúa Campo das Redes 23, 36800 Redondela (Spanien)",
+    breakfast: "Nej", washer: "Ja",
+    desc: "Den officielle kystrute går tværs igennem Vigo – ca. 25 km ad trafikerede veje og kedelig forstad, turens eneste virkelig grimme strækning. Løsningen: tag en taxi fra Nigrán til Zamáns og gå Senda da Auga derfra – en fantastisk flad sti langs en gammel vandledning højt oppe på bjergsiden bag Vigo, med udsigt over hele Vigo-fjorden og Rande-broen, helt uden trafik.",
+    transport: {
+      title: "Undgå det kedelige gennem Vigo",
+      lines: [
+        "Taxi (anbefalet): bestil fra overnatningsstedet direkte til Zamáns (\"inicio de la Senda da Auga\", koordinater 42.1880, -8.6970). Ca. 20 min, ~15–20 €.",
+        "Alternativ: bybus L15A mod Zamáns fra Vigo busstation – men taxa hele vejen er nemmere med rygsække og 4 personer.",
+        "Fra Zamáns er der ca. 12–15 km ad Senda da Auga ned til Redondela.",
+        "INGEN caféer eller butikker på selve Senda da Auga – pak frokost, snacks og rigeligt vand. Download ruten offline (Mapy.cz / Gronze)."
+      ]
+    },
+    highlights: [
+      { n: "Senda da Auga", d: "Bred, flad sti langs den gamle vandkanal, skygget af eukalyptus- og egeskove. Små vandfald og mosbegroede stenmure." },
+      { n: "Udsigt til Rande & Vigo-fjord", d: "I går bogstaveligt talt \"over\" storbyen med panorama ud over fjorden." },
+      { n: "Mødet med den centrale rute", d: "Nær Redondela mødes I med pilgrimmene fra den centrale rute – pludselig \"Buen Camino\" overalt." }
+    ],
+    tips: [
+      "Pak alt ind aftenen før i Nigrán – ingen service på ruten.",
+      "Stien er velmarkeret med blå pile, men et offline kort giver tryghed."
+    ]
+  },
+  {
+    date: "21. juli", short: "21/7", weekday: "Tirsdag",
+    title: "Redondela → Arcade / Ponte Sampaio",
+    from: "Redondela", to: "Arcade",
+    dist: "~7 km", terrain: "Let kuperet – en lille bakke ud af Redondela, derefter fladt",
+    lodging: "Casa Héroes de Pontesampaio",
+    address: "Lugar Puente, Puentesampaio, 36690 (ved Ponte Sampaio-broen, Spanien)",
+    breakfast: "Nej", washer: "",
+    desc: "Turens korteste vandringsdag. I går ud af Redondela og over en lille bakke med udsigt til de to imponerende jernbaneviadukter. Herfra følger I stien langs vandet til Arcade og den historiske bro Ponte Sampaio. Jeres overnatning ligger lige ved broen, hvor historien virkelig kan mærkes.",
+    highlights: [
+      { n: "Redondelas viadukter", d: "To massive jernbaneviadukter (1876 og 1884) spænder over dalen – I passerer lige under dem." },
+      { n: "Ponte Sampaio", d: "Middelalderbro over Río Verdugo: her besejrede galiciske oprørere Napoleons tropper i 1809." },
+      { n: "Fjord-udsigten", d: "Udsigt over Ría de Vigo med Rande-broen i baggrunden." }
+    ],
+    tips: [
+      "Østers i Arcade: Galiciens østers-hovedstad – forkæl jer med friske østers og Albariño til overraskende lav pris.",
+      "Kun 7 km: brug formiddagen på Redondelas hyggelige gamle bydel.",
+      "Se muslingebådene (\"bateas\") i fjorden – de berømte galiciske muslingefarme."
+    ]
+  },
+  {
+    date: "22. juli", short: "22/7", weekday: "Onsdag",
+    title: "Arcade → Pontevedra",
+    from: "Arcade", to: "Pontevedra",
+    dist: "~13 km", terrain: "Let kuperet skovsti, derefter fladt ind i Pontevedra",
+    lodging: "Apartamento Lugris",
+    address: "Rúa Pintor Urbano Lugris 3, 1N, 36003 Pontevedra (Spanien)",
+    breakfast: "Nej", washer: "Ja",
+    desc: "I krydser Ponte Sampaio-broen og følger de gamle stenbelagte veje op gennem klassisk galicisk landskab: dybe eukalyptus- og kastanjeskove, mosbegroede stenmure og små kapeller. Stien følger til sidst Río dos Gafos ind i Pontevedra – en fredelig skovsti langs floden helt ind i den bilfrie bymidte. Pontevedra er turens store finale-by.",
+    highlights: [
+      { n: "Skovstien langs Río dos Gafos", d: "De sidste kilometer ind i Pontevedra er magiske – smal sti langs en lille flod, fuld af bregner og fuglesang." },
+      { n: "Basílica de Santa María a Maior", d: "Gotisk kirke med fantastisk udsmykket façade." },
+      { n: "Bilfri bymidte", d: "Pontevedra er berømt for at have fjernet næsten alle biler – en vidunderligt fredelig by." }
+    ],
+    tips: [
+      "To nætter her – tag det roligt. Måske den hyggeligste by på hele Caminoen.",
+      "Tapas omkring Praza da Leña og Praza da Ferrería: raxo, pimientos de Padrón og mere Albariño.",
+      "Sidste pilgrimsstempel i Igrexa da Peregrina – den runde barokkirke."
+    ]
+  },
+  {
+    date: "23. juli", short: "23/7", weekday: "Torsdag",
+    title: "Ekstra dag i Pontevedra",
+    from: "Pontevedra", to: "Pontevedra",
+    dist: "0 km", terrain: "Hviledag – udforskning til fods",
+    rest: true,
+    lodging: "Apartamento Lugris",
+    address: "Rúa Pintor Urbano Lugris 3, 1N, 36003 Pontevedra (Spanien)",
+    breakfast: "Nej", washer: "Ja",
+    desc: "Jeres sidste hele dag i Spanien. Pontevedra fortjener at blive udforsket til fods – hvert hjørne af den gamle bydel byder på nye opdagelser.",
+    highlights: [
+      { n: "Igrexa da Peregrina", d: "Den ikoniske runde, muslingeskalformede barokkirke – Pontevedras symbol." },
+      { n: "Ruinerne af Santo Domingo", d: "Stemningsfuld klosterruin med gotiske buer åbne mod himlen – meget fotogent." },
+      { n: "Mercado de Abastos", d: "Lokalt fødevaremarked med frisk fisk og skaldyr. Åbent om formiddagen." },
+      { n: "Praza da Ferrería", d: "Byens største plads med springvand og caféer under træerne." },
+      { n: "Alameda", d: "Bred boulevard langs floden Lérez – perfekt til en rolig eftermiddagsspadsering." }
+    ],
+    tips: [
+      "Afskeds-middag: forkæl jer med galicisk mad – pulpo á feira og empanada gallega.",
+      "Tjek togtiderne til i morgen (Renfe.es). Pak rygsækkene aftenen før, så morgenen bliver stressfri.",
+      "Sæt en alarm – I skal afsted tidligt til hjemrejsen."
+    ]
+  },
+  {
+    date: "24. juli", short: "24/7", weekday: "Fredag",
+    title: "Hjemrejse: Pontevedra → Porto Lufthavn",
+    from: "Pontevedra", to: "Porto Lufthavn",
+    dist: "Bus 08:15 → 10:10", terrain: "Hjemrejse med FlixBus – direkte til lufthavnen",
+    depart: true,
+    lodging: null,
+    address: null,
+    breakfast: "", washer: "",
+    desc: "Den store finale. Hjemrejsen til Porto Lufthavn er booket med FlixBus – direkte til lufthavnen, ingen metro nødvendig.",
+    transport: {
+      title: "FlixBus Pontevedra → Porto Lufthavn",
+      lines: [
+        "Afgang fredag 24. juli kl. 08:15 fra Pontevedra busterminal (Rúa da Estación).",
+        "Stop i Vigo 08:35, videre 08:50 – samme bus fortsætter, I skal ikke skifte.",
+        "Ankomst Porto Lufthavn kl. 10:10 (stoppested P8, ankomstniveau).",
+        "Fly afgår kl. 13:00 – ca. 2t50 buffer. Vær ved lufthavnen senest kl. 11:00 og ved Pontevedra busterminal senest kl. 08:00."
+      ]
+    },
+    highlights: [],
+    tips: [
+      "Pak aftenen før og aftal en tidlig morgenmadsplan – de fleste steder serverer først morgenmad fra kl. 08:00.",
+      "Følg bussen i realtid via FlixBus-appen."
+    ]
+  }
+];
+
+/* Rute-geometri pr. dag (koordinater [lon,lat] for ruteberegneren).
+   Indekseret med samme rækkefølge som DAYS. */
+const ROUTES = [
+  { pois:[
+      {n:"Mindelo (start)", lat:41.3105, lon:-8.7405, t:"start"},
+      {n:"Passadiços de Mindelo", lat:41.3160, lon:-8.7460, t:"sight"},
+      {n:"Santa Clara-klosteret", lat:41.3505, lon:-8.7405, t:"sight"},
+      {n:"Akvædukten", lat:41.3510, lon:-8.7270, t:"sight"},
+      {n:"Vila do Conde (mål)", lat:41.3490644, lon:-8.7500668, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.7405,41.3105],[-8.7460,41.3200],[-8.7500668,41.3490644]]}] },
+  { pois:[
+      {n:"Vila do Conde (start)", lat:41.3490644, lon:-8.7500668, t:"start"},
+      {n:"Apúlia (vindmøller)", lat:41.4800, lon:-8.7700, t:"sight"},
+      {n:"Cávado-mundingen", lat:41.5150, lon:-8.7840, t:"sight"},
+      {n:"Esposende (mål)", lat:41.5347537, lon:-8.7797242, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.7500668,41.3490644],[-8.7770,41.4400],[-8.7770,41.4820],[-8.7855,41.5120],[-8.7797242,41.5347537]]}] },
+  { pois:[
+      {n:"Esposende (start)", lat:41.5347537, lon:-8.7797242, t:"start"},
+      {n:"Neiva-flodens delta", lat:41.5670, lon:-8.8030, t:"sight"},
+      {n:"Castelo do Neiva (mål)", lat:41.6252325, lon:-8.8009528, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.7797242,41.5347537],[-8.7960,41.5550],[-8.8030,41.5670],[-8.8009528,41.6252325]]}] },
+  { pois:[
+      {n:"Castelo do Neiva (start)", lat:41.6252325, lon:-8.8009528, t:"start"},
+      {n:"Gil Eannes-skibet", lat:41.6880, lon:-8.8300, t:"sight"},
+      {n:"Eiffel-broen", lat:41.6900, lon:-8.8260, t:"sight"},
+      {n:"Santa Luzia-kirken", lat:41.7030, lon:-8.8380, t:"sight"},
+      {n:"Viana do Castelo (mål)", lat:41.6925850, lon:-8.8272861, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.8009528,41.6252325],[-8.8250,41.6500],[-8.8320,41.6850],[-8.8272861,41.6925850]]}] },
+  { pois:[
+      {n:"Viana do Castelo (start)", lat:41.6925850, lon:-8.8272861, t:"start"},
+      {n:"Montedor-fyrtårnet", lat:41.7520, lon:-8.8760, t:"sight"},
+      {n:"Jernbanetunnel (Afife)", lat:41.7620, lon:-8.8760, t:"sight"},
+      {n:"Forte do Cão", lat:41.7820, lon:-8.8750, t:"sight"},
+      {n:"Dolmen de Barrosa", lat:41.8060, lon:-8.8660, t:"sight"},
+      {n:"Vila Praia de Âncora (mål)", lat:41.8134990, lon:-8.8637160, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.8272861,41.6925850],[-8.8700,41.7350],[-8.8770,41.7620],[-8.8740,41.7950],[-8.8637160,41.8134990]]}] },
+  { pois:[
+      {n:"Vila Praia de Âncora (start)", lat:41.8134990, lon:-8.8637160, t:"start"},
+      {n:"Caminha (bådafgang)", lat:41.8740, lon:-8.8400, t:"sight"},
+      {n:"A Guarda / Camposancos", lat:41.9000, lon:-8.8760, t:"sight"},
+      {n:"Monte Santa Trega", lat:41.8920, lon:-8.8740, t:"sight"},
+      {n:"Monasterio de Oia (mål)", lat:42.0006950, lon:-8.8769042, t:"end"} ],
+    legs:[
+      {mode:"foot", via:[[-8.8637160,41.8134990],[-8.8550,41.8500],[-8.8400,41.8740]]},
+      {mode:"boat", via:[[-8.8400,41.8740],[-8.8760,41.9000]]},
+      {mode:"foot", via:[[-8.8760,41.9000],[-8.8780,41.9500],[-8.8730,41.9800],[-8.8769042,42.0006950]]} ] },
+  { pois:[
+      {n:"Monasterio de Oia (start)", lat:42.0006950, lon:-8.8769042, t:"start"},
+      {n:"Cabo Silleiro fyrtårn", lat:42.1040, lon:-8.8990, t:"sight"},
+      {n:"Monterreal-fæstningen", lat:42.1210, lon:-8.8550, t:"sight"},
+      {n:"Pinta-replikaen", lat:42.1200, lon:-8.8490, t:"sight"},
+      {n:"Baiona (mål)", lat:42.1182, lon:-8.8556, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.8769042,42.0006950],[-8.8850,42.0600],[-8.8990,42.1040],[-8.8600,42.1150],[-8.8556,42.1182]]}] },
+  { pois:[
+      {n:"Monterreal-fæstningen", lat:42.1210, lon:-8.8550, t:"sight"},
+      {n:"Praia de Barbeira", lat:42.1200, lon:-8.8470, t:"sight"},
+      {n:"Colegiata Santa María", lat:42.1170, lon:-8.8490, t:"sight"},
+      {n:"Havnen (Islas Cíes-både)", lat:42.1230, lon:-8.8480, t:"sight"} ],
+    legs:[] },
+  { pois:[
+      {n:"Baiona (start)", lat:42.1182, lon:-8.8556, t:"start"},
+      {n:"Ponte Románica (A Ramallosa)", lat:42.1350, lon:-8.8220, t:"sight"},
+      {n:"Playa América", lat:42.1450, lon:-8.8200, t:"sight"},
+      {n:"Nigrán (mål)", lat:42.1267432, lon:-8.7923983, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.8556,42.1182],[-8.8300,42.1300],[-8.8220,42.1350],[-8.8200,42.1450],[-8.7923983,42.1267432]]}] },
+  { pois:[
+      {n:"Nigrán (start)", lat:42.1267432, lon:-8.7923983, t:"start"},
+      {n:"Zamáns (start på Senda da Auga)", lat:42.1880, lon:-8.6970, t:"sight"},
+      {n:"Senda da Auga (vandkanal)", lat:42.2200, lon:-8.6550, t:"sight"},
+      {n:"Udsigt til Rande & Vigo-fjord", lat:42.2450, lon:-8.6350, t:"sight"},
+      {n:"Redondela (mål)", lat:42.2845513, lon:-8.6069624, t:"end"} ],
+    legs:[
+      {mode:"taxi", via:[[-8.7923983,42.1267432],[-8.6970,42.1880]]},
+      {mode:"foot", via:[[-8.6970,42.1880],[-8.6550,42.2200],[-8.6350,42.2450],[-8.6069624,42.2845513]]} ] },
+  { pois:[
+      {n:"Redondela (start)", lat:42.2845513, lon:-8.6069624, t:"start"},
+      {n:"Jernbaneviadukterne", lat:42.2810, lon:-8.6090, t:"sight"},
+      {n:"Ponte Sampaio", lat:42.3445, lon:-8.6075, t:"sight"},
+      {n:"Arcade / Ponte Sampaio (mål)", lat:42.3471773, lon:-8.6072373, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.6069624,42.2845513],[-8.6250,42.3200],[-8.6350,42.3450],[-8.6072373,42.3471773]]}] },
+  { pois:[
+      {n:"Arcade / Ponte Sampaio (start)", lat:42.3471773, lon:-8.6072373, t:"start"},
+      {n:"Río dos Gafos (skovsti)", lat:42.4100, lon:-8.6430, t:"sight"},
+      {n:"Basílica de Santa María", lat:42.4330, lon:-8.6480, t:"sight"},
+      {n:"Igrexa da Peregrina", lat:42.4310, lon:-8.6450, t:"sight"},
+      {n:"Pontevedra (mål)", lat:42.4214794, lon:-8.6399188, t:"end"} ],
+    legs:[{mode:"foot", via:[[-8.6072373,42.3471773],[-8.6380,42.3800],[-8.6430,42.4100],[-8.6399188,42.4214794]]}] },
+  { pois:[
+      {n:"Igrexa da Peregrina", lat:42.4310, lon:-8.6450, t:"sight"},
+      {n:"Ruinerne af Santo Domingo", lat:42.4320, lon:-8.6470, t:"sight"},
+      {n:"Mercado de Abastos", lat:42.4340, lon:-8.6400, t:"sight"},
+      {n:"Praza da Ferrería", lat:42.4310, lon:-8.6460, t:"sight"},
+      {n:"Alameda", lat:42.4300, lon:-8.6480, t:"sight"} ],
+    legs:[] },
+  { pois:[
+      {n:"Pontevedra busterminal (08:15)", lat:42.4218, lon:-8.6371, t:"start"},
+      {n:"Vigo busterminal (stop)", lat:42.2290, lon:-8.7120, t:"sight"},
+      {n:"Porto Lufthavn (10:10)", lat:41.2359, lon:-8.6699, t:"end"} ],
+    legs:[{mode:"bus", via:[[-8.6371,42.4218],[-8.7120,42.2290],[-8.7000,41.7000],[-8.6699,41.2359]]}] }
+];
+
+/* Oversigtskort: overnatningsbyer i rækkefølge */
+const OVERVIEW_PTS = [
+  {n:"Mindelo (start)", lat:41.3105, lon:-8.7405, t:"start"},
+  {n:"Vila do Conde", lat:41.3490644, lon:-8.7500668, t:"sight"},
+  {n:"Esposende", lat:41.5347537, lon:-8.7797242, t:"sight"},
+  {n:"Castelo do Neiva", lat:41.6252325, lon:-8.8009528, t:"sight"},
+  {n:"Viana do Castelo", lat:41.6925850, lon:-8.8272861, t:"sight"},
+  {n:"Vila Praia de Âncora", lat:41.8134990, lon:-8.8637160, t:"sight"},
+  {n:"Caminha (båd)", lat:41.8740, lon:-8.8400, t:"sight"},
+  {n:"A Guarda", lat:41.9000, lon:-8.8760, t:"sight"},
+  {n:"Oia", lat:42.0006950, lon:-8.8769042, t:"sight"},
+  {n:"Baiona", lat:42.1182, lon:-8.8556, t:"sight"},
+  {n:"Nigrán", lat:42.1267432, lon:-8.7923983, t:"sight"},
+  {n:"Redondela", lat:42.2845513, lon:-8.6069624, t:"sight"},
+  {n:"Arcade", lat:42.3471773, lon:-8.6072373, t:"sight"},
+  {n:"Pontevedra (mål)", lat:42.4214794, lon:-8.6399188, t:"end"}
+];
+
+/* Generel information – ikke-følsomme afsnit fra rejseguiden. */
+const GENERAL = [
+  { key:"pilgrimspas", icon:"passport", title:"Pilgrimspas (Credencial)",
+    blocks:[
+      {type:"p", text:"Et pilgrimspas er jeres officielle dokumentation som pilgrimme. I får det stemplet ved overnatningssteder, kirker, caféer og turistkontorer undervejs – stemplerne beviser, at I har gået ruten."},
+      {type:"list", items:[
+        "Hvor: køb online hos Pilgrim (pilgrim.es) eller den danske Camino-forening. Fås også ved katedralen i Porto eller pilgrimskontorer i startbyerne.",
+        "Hvorfor: en fantastisk souvenir med stempler fra hele turen. Vil I senere forlænge til Santiago, kræves mindst 2 stempler pr. dag på de sidste 100 km for Compostela-certifikatet.",
+        "Tip: få mindst ét stempel om dagen – gerne to. Det er en del af oplevelsen at finde de mest kreative stempler."
+      ]}
+    ]},
+  { key:"vejr", icon:"sun", title:"Vejr og klima i juli",
+    blocks:[
+      {type:"p", text:"I går ruten midt i højsæsonen. Forvent følgende:"},
+      {type:"list", items:[
+        "Temperaturer: 20–35 °C langs den portugisiske kyst, varmest kl. 12–16. Galicien er typisk 2–3 grader køligere.",
+        "Nedbør: juli er tørrest, men korte byger kan forekomme, især i Galicien. En let regnjakke er nok.",
+        "Havvind: en frisk brise fra Atlanterhavet gør varmen tålelig, stærkest om eftermiddagen.",
+        "UV-indeks: meget højt (8–10). Solcreme SPF 50, hat og solbriller er ikke til forhandling."
+      ]}
+    ]},
+  { key:"pakkeliste", icon:"backpack", title:"Pakkeliste",
+    blocks:[
+      {type:"subhead", text:"Fodtøj (det allervigtigste!)"},
+      {type:"list", items:[
+        "Vandresko / trail runners: lette, indgåede sko med god sål. Undgå tunge støvler – ruten er flad og varm.",
+        "Sandaler til aftenen: giv fødderne luft efter dagens vandring.",
+        "Sokker: 3–4 par i merino-uld eller syntetisk. Undgå bomuld – det giver vabler."
+      ]},
+      {type:"subhead", text:"Tøj"},
+      {type:"list", items:[
+        "2 hurtigtørrende t-shirts","1 langærmet trøje (sol-/vindbeskyttelse)","1 let fleece eller softshell til kølige aftener",
+        "2 par lette vandrebukser/tights (gerne zip-off)","3 sæt hurtigtørrende undertøj (merino uld anbefales)",
+        "Let regnjakke eller poncho","Solhat med bred skygge + solbriller"
+      ]},
+      {type:"subhead", text:"Udstyr"},
+      {type:"list", items:[
+        "Let rygsæk (30–40 liter) med regncover","Vandflasker/drikkeblære – mindst 1,5 liter","Vandrestave (sparer knæene på de lange etaper)",
+        "Pandelampe (tidlige morgenstarter)","Powerbank + ladekabel","Opladning: Portugal/Spanien bruger stiktype C/F – de fleste danske opladere passer."
+      ]},
+      {type:"subhead", text:"Pleje og førstehjælp"},
+      {type:"list", items:[
+        "Compeed (vabler!) – køb en stor pakke hjemmefra","Vaseline eller Bodyglide mod gnavesår","Solcreme SPF 50 + læbepomade med SPF",
+        "Håndsprit","Ibuprofen / paracetamol","Elastisk bandage","Personlig medicin","Fodpudder/talkum"
+      ]}
+    ]},
+  { key:"forberedelser", icon:"check", title:"Forberedelser hjemmefra",
+    blocks:[
+      {type:"subhead", text:"Fysisk træning"},
+      {type:"list", items:[
+        "Start mindst 6–8 uger før. Gå lange ture (15–25 km) med rygsæk i de sko, I vil bruge.",
+        "Fokusér på udholdenhed, ikke tempo – I skal gå 10–26 km dagligt i varme.",
+        "Tommelfingerregel for rygsækvægt: maks 10 % af kropsvægt (ekskl. vand)."
+      ]},
+      {type:"subhead", text:"Økonomi og betaling"},
+      {type:"list", items:[
+        "Valuta: både Portugal og Spanien bruger euro.",
+        "Kort accepteres de fleste steder, men hav altid 50–100 € kontant til små caféer og landsbyer.",
+        "Budget: ca. 30–50 € pr. person pr. dag til mad og drikke. Portugal er billigst.",
+        "Giv banken besked om rejsen, så kortet ikke spærres."
+      ]},
+      {type:"subhead", text:"Forsikring og sundhed"},
+      {type:"list", items:[
+        "Rejseforsikring der dækker vandring og hjemtransport – tjek at jeres dækker langdistancevandring.",
+        "Det blå EU-sygesikringskort: bestil gratis via borger.dk (tager 1–2 uger).",
+        "Apoteker (farmácia/farmacia) findes i de fleste byer – Compeed og ibuprofen fås overalt."
+      ]}
+    ]},
+  { key:"apps", icon:"phone", title:"Apps og navigation",
+    blocks:[
+      {type:"list", items:[
+        "Buen Camino (app): gratis, med GPS-tracking, vandpunkter, caféer og herberger. Fungerer offline.",
+        "Maps.me eller Google Maps offline: download kort over Nordportugal og Galicien hjemmefra – svag dækning i klitter og skove.",
+        "Wise / Revolut: rejsekort med gode kurser og ingen udenlandske hævegebyrer."
+      ]}
+    ]},
+  { key:"raad", icon:"star", title:"Generelle råd til ruten",
+    blocks:[
+      {type:"list", items:[
+        "Start tidligt: gå afsted kl. 06–07, så I er fremme inden den værste middagsvarme.",
+        "Hydrering: drik løbende, vent ikke til I er tørstige. Regn med 2–3 liter pr. person pr. dag.",
+        "Siesta-strategi: ankommer I kl. 12–14, tag pause i skyggen og udforsk byen om aftenen.",
+        "Vabelforebyggelse: smør fødderne med Vaseline om morgenen, skift sokker ved frokost, behandl hotspots med det samme.",
+        "Pak let: alt hvad I medbringer skal I bære. I kan købe det meste undervejs.",
+        "Vasketøj: hurtigtørrende tøj er klar næste morgen. Planlæg en stor vask i Baiona (17.–18./7)."
+      ]}
+    ]},
+  { key:"mad", icon:"coffee", title:"Mad, tider og hverdagslogistik",
+    blocks:[
+      {type:"list", items:[
+        "Morgenmad: ikke alle steder inkluderer det – hav altid en nødplan (bananer, barer, brød fra aftenen før).",
+        "Tidlige starter: caféer er ofte ikke åbne kl. 06–06:30. Køb vand og snacks aftenen før.",
+        "Spanske spisetider: mange køkkener åbner først igen ca. kl. 20. Sen frokost eller tapas er lettere at finde.",
+        "Søndage og siesta: mindre butikker kan holde lukket – regn ikke med at kunne handle spontant på de lange etaper."
+      ]}
+    ]},
+  { key:"pauseguide", icon:"coffee", title:"Mad- og pauseguide by for by",
+    blocks:[
+      {type:"list", items:[
+        "Vila do Conde: god første pauseby – kaffe og Pastel de Nata ved floden, gem den store middag til aftenen.",
+        "Apúlia: ideelt kaffestop på den lange dag mod Esposende.",
+        "Esposende: fisk og skaldyr om aftenen, køb snacks/frugt til næste formiddag.",
+        "Viana do Castelo: en af rutens bedste frokostbyer – større udvalg og bedre stemning.",
+        "Caminha: sidste stærke portugisiske stop før Spanien – kaffe, toilet og tidlig frokost.",
+        "A Guarda: første spanske madstop – sen frokost og hvil efter overfarten.",
+        "Oia: smuk, men lille – hav snacks med fra tidligere på etapen.",
+        "Baiona: den bedste forkælelsesby – god middag, indkøb, vaskedag.",
+        "Playa América / Nigrán: strandpause og let frokost. Køb alt ind til Senda da Auga her.",
+        "Redondela: klassisk pilgrimstemning – enkelt menú del día eller tapas.",
+        "Arcade: østers, Albariño og lille luksusfrokost.",
+        "Pontevedra: turens stærkeste spiseby – marked om formiddagen, tapas om aftenen, afskedsmiddag."
+      ]}
+    ]},
+  { key:"toilet", icon:"info", title:"Toiletforhold på ruten",
+    blocks:[
+      {type:"list", items:[
+        "Brug toilettet når I kan – langt mellem dem på lange kyststræk og især Senda da Auga.",
+        "Caféer, barer og restauranter er den sikreste løsning (køb en kaffe først).",
+        "Offentlige toiletter findes i byer og havne, men kan være lukkede eller mangle papir.",
+        "Hav altid en lille nødpakke: lommetørklæder, håndsprit, affaldspose.",
+        "Planlæg stop i Apúlia, Caminha, A Guarda og Nigrán før de øde stræk."
+      ]}
+    ]},
+  { key:"mobil", icon:"phone", title:"Mobil, strøm og dokumenter",
+    blocks:[
+      {type:"list", items:[
+        "EU-roaming: danske abonnementer virker normalt i både Portugal og Spanien – tjek fair-use hjemmefra.",
+        "Offline backup: gem bookingbekræftelser, adresser og værtsnumre som screenshots og i en note der kan åbnes offline.",
+        "Vandtæt dokumentpose: pas, pilgrimspas, EU-sygesikringskort og kort i en ziplock – kystvind og sved er hårdt ved papir.",
+        "Strømstrategi: lad powerbank og telefon fuldt op hver aften. Brug den anden telefon som reserve."
+      ]}
+    ]},
+  { key:"sikkerhed", icon:"shield", title:"Sikkerhed, varme og plan B",
+    blocks:[
+      {type:"list", items:[
+        "112 er gratis alarmnummer i både Portugal og Spanien, fra fastnet og mobil.",
+        "Varmeslag-plan: afkort etapen uden dårlig samvittighed hvis det bliver for varmt – en taxa er bedre end at miste vandredage.",
+        "Lokale taxaer: Uber/Bolt kan I ikke regne med uden for byerne – bed værten bestille taxa aftenen før.",
+        "Del dagens plan: send næste overnatningsadresse og forventet ankomst til hinanden eller familie hjemme.",
+        "Glatte underlag: træbroer, granit og skaller kan være glatte, især om morgenen eller efter regn."
+      ]}
+    ]},
+  { key:"checkliste", icon:"check", title:"Afrejsecheckliste",
+    blocks:[
+      {type:"checklist", items:[
+        "Pas, betalingskort, blåt EU-sygesikringskort og rejseforsikring pakket og fotograferet digitalt",
+        "Pilgrimspas købt/reserveret, og første sted til stempel kendt",
+        "Alle bookingbekræftelser og adresser gemt som screenshots/offline",
+        "Telefoner, powerbank og ladekabler pakket og testet",
+        "Offline-kort til Portugal, Galicien og Senda da Auga downloadet",
+        "Skoene gået til, og mindst én længere træningstur med fuld oppakning",
+        "Compeed, solcreme, smertestillende og personlig medicin pakket",
+        "50–100 € i kontanter hævet til småkøb",
+        "Plan for bådoverfarten Caminha → A Guarda noteret",
+        "Taxa-planen til Zamáns/Senda da Auga aftalt med vært",
+        "Hjemrejse fra Pontevedra til Porto dobbelttjekket et par dage før"
+      ]}
+    ]},
+  { key:"ptvses", icon:"compass", title:"Portugal vs. Spanien",
+    blocks:[
+      {type:"p", text:"Der er en markant forskel på oplevelsen alt efter, om I er på den portugisiske side (Porto til grænsen) eller den spanske (grænsen og nordpå)."},
+      {type:"subhead", text:"Landskab og terræn"},
+      {type:"list", items:[
+        "Portugal: meget fladt, masser af passadiços (træbroer), vilde strande og lidt skygge.",
+        "Spanien: klippefyldt og kuperet fra floden Minho, flere bakker, mere læ i de galiciske eukalyptusskove."
+      ]},
+      {type:"subhead", text:"Byer og mad"},
+      {type:"list", items:[
+        "Portugal: klassiske feriebyer ved havet, billig café-kultur med Pastéis de Nata og espresso.",
+        "Spanien: middelalder-charme (Baiona, Pontevedra), tapas/raciones og livet på de små torve."
+      ]},
+      {type:"subhead", text:"Pilgrimsstemning"},
+      {type:"list", items:[
+        "Porto til grænsen: let, forventningsfuld stemning, føles lidt som en strandvandring.",
+        "Fra Redondela smelter kystruten sammen med den centrale rute – antallet af pilgrimme eksploderer, og den klassiske Camino-ånd med \"Buen Camino\" mærkes overalt."
+      ]},
+      {type:"table",
+        head:["Faktor","Portugal","Spanien"],
+        rows:[
+          ["Underlag","Træbroer og sand (fladt)","Klippestier, skovveje, asfalt (kuperet)"],
+          ["Vejr","Mere vind, eksponeret","Mere læ i skove og bugter"],
+          ["Mad/drikke","Billig kaffe, fisk","Tapas, Albariño, pulpo"],
+          ["Prisniveau","Generelt billigst","Lidt dyrere"],
+          ["Højdepunkt","Viana do Castelo & broerne","Baiona & de galiciske skove"]
+        ]}
+    ]}
+];

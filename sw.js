@@ -1,14 +1,15 @@
-// Service worker – offline-cache for Camino-appen
+// Service worker – offline-cache for Camino-appen.
+// CACHE-navnet stemples med commit-SHA ved deploy (se .github/workflows/deploy.yml),
+// så hver udrulning får et unikt cache og brugerne automatisk får seneste version.
 const CACHE = "camino-2026-v2";
-// Kernefiler der skal caches ved installation. Bemærk: markdown-dokumentet
-// caches ikke her, da det ikke ligger i denne mappe – det caches ved brug,
-// hvis/når det er tilgængeligt ved siden af index.html ved udrulning.
 const CORE = [
   "./",
   "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./data.js",
   "./manifest.webmanifest",
-  "./icon.svg",
-  "./Kort%20-%20dag%20for%20dag.html"
+  "./icon.svg"
 ];
 
 // Værter/filer vi cacher ved brug (kort-fliser, biblioteker, ruter, dokumentet)
