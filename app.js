@@ -265,6 +265,8 @@
   function closeModal() {
     const m = document.getElementById("modal");
     if (m) m.remove();
+    const l = document.getElementById("lightbox");
+    if (l) l.remove();
     document.body.classList.remove("modal-open");
   }
   function openModal(html) {
@@ -275,6 +277,27 @@
     document.body.appendChild(o);
     document.body.classList.add("modal-open");
   }
+
+  /* ---------- Seværdigheds-info (modal + billed-lightbox) ---------- */
+  function closeLightbox() { const l = document.getElementById("lightbox"); if (l) l.remove(); }
+  function openLightbox(url) {
+    closeLightbox();
+    const o = document.createElement("div");
+    o.id = "lightbox"; o.className = "lightbox";
+    o.innerHTML = `<button class="lb-close" aria-label="Luk">✕</button><img src="${esc(url)}" alt="">`;
+    document.body.appendChild(o);
+  }
+  function sightModalHtml(s) {
+    const gallery = (s.images && s.images.length) ? `<div class="sightgallery">${s.images.map((im) =>
+      `<figure class="sightfig"><img class="sightthumb" loading="lazy" src="${esc(im.url)}" alt="${esc(im.caption || s.name)}" data-full="${esc(im.url)}">${im.caption ? `<figcaption>${esc(im.caption)}</figcaption>` : ""}</figure>`).join("")}</div>` : "";
+    const long = (s.long || []).map((p) => `<p>${esc(p)}</p>`).join("");
+    const links = (s.links && s.links.length) ? `<h4>Læs mere</h4><ul class="links">${s.links.map((l) =>
+      `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a></li>`).join("")}</ul>` : "";
+    return `<div class="modal-head"><h3><span class="ic">${ic("ic-star")}</span>${esc(s.name)}</h3>` +
+      `<button class="modal-close" data-modal-close aria-label="Luk">✕</button></div>` +
+      `<p class="modal-intro">${esc(s.short)}</p>${gallery}<div class="sightbody">${long}${links}</div>`;
+  }
+  const sightInfo = (name) => (typeof SIGHTS !== "undefined") ? SIGHTS[name] : null;
 
   const legendHtml = `<div class="legend">
       <span><i class="dot start"></i>Start</span>
@@ -400,7 +423,7 @@
         html += `<div class="card"><h3><span class="ic">${ic("ic-star")}</span>Højdepunkter</h3>
           ${day.highlights.map((h) => `<div class="hl">
             <span class="pin">${ic("ic-pin")}</span>
-            <span class="tx"><b>${esc(h.n)}</b><div>${esc(h.d)}</div></span></div>`).join("")}
+            <span class="tx"><b>${esc(h.n)}</b><div>${esc(h.d)}</div>${sightInfo(h.n) ? `<button class="sightbtn" data-sight="${esc(h.n)}">${ic("ic-info")}Læs mere & billeder</button>` : ""}</span></div>`).join("")}
         </div>`;
       }
       if (day.tips && day.tips.length) {
@@ -587,9 +610,14 @@
 
   /* ---------- events ---------- */
   document.addEventListener("click", (e) => {
+    const thumb = e.target.closest(".sightthumb");
+    if (thumb) { e.preventDefault(); openLightbox(thumb.getAttribute("data-full")); return; }
+    if (e.target.closest(".lightbox")) { closeLightbox(); return; }
     if (e.target.closest("[data-modal-close]") || (e.target.classList && e.target.classList.contains("modal-overlay"))) {
       e.preventDefault(); closeModal(); return;
     }
+    const sight = e.target.closest("[data-sight]");
+    if (sight) { e.preventDefault(); const s = sightInfo(sight.getAttribute("data-sight")); if (s) openModal(sightModalHtml(s)); return; }
     if (e.target.closest("[data-modal]")) { e.preventDefault(); openModal(GPX_HELP_HTML); return; }
     const dl = e.target.closest("[data-dl]");
     if (dl) { e.preventDefault(); handleDownload(dl); return; }
@@ -617,6 +645,7 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (document.getElementById("lightbox")) { closeLightbox(); return; }
       if (document.getElementById("modal")) { closeModal(); return; }
       const mapEl = document.getElementById("mapv");
       if (mapEl && currentMap && mapEl.classList.contains("fs")) setFs(currentMap, mapEl, false);

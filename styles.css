@@ -249,6 +249,26 @@ body.modal-open{overflow:hidden}
   font-size:.82rem;color:var(--ocean-dark);font-weight:600;line-height:1.5}
 @keyframes modalfade{from{opacity:0}to{opacity:1}}
 @keyframes modalup{from{transform:translateY(100%)}to{transform:translateY(0)}}
+
+/* Seværdigheds-info: knap, galleri, lightbox */
+.hl .sightbtn{display:inline-flex;align-items:center;gap:5px;margin-top:8px;padding:5px 11px;border:0;cursor:pointer;
+  background:var(--soft-ocean);color:var(--ocean-dark);border-radius:999px;font-size:.76rem;font-weight:800;transition:background .12s}
+.hl .sightbtn svg{width:14px;height:14px}
+.hl .sightbtn:hover{background:#c4e0e3}
+.sightgallery{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.sightfig{margin:0;flex:1 1 160px;max-width:220px}
+.sightthumb{width:100%;height:130px;object-fit:cover;border-radius:12px;cursor:zoom-in;background:var(--soft);display:block;box-shadow:var(--shadow)}
+.sightfig figcaption{font-size:.68rem;color:var(--muted);margin-top:5px;line-height:1.35}
+.sightbody p{font-size:.9rem;line-height:1.55;margin:0 0 11px}
+.sightbody h4{margin:15px 0 8px;font-size:.9rem;font-weight:900;color:var(--sun-dark)}
+.sightbody ul.links{list-style:none;margin:0;padding:0}
+.sightbody ul.links li{padding:7px 0;border-top:1px dashed var(--line);font-size:.86rem}
+.sightbody ul.links li:first-child{border-top:0}
+.sightbody a{color:var(--sun-dark);font-weight:700;word-break:break-word}
+.lightbox{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:18px;animation:modalfade .15s ease}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.lb-close{position:fixed;top:calc(10px + var(--safe-top));right:14px;width:42px;height:42px;border:0;border-radius:12px;background:rgba(255,255,255,.22);color:#fff;font-size:20px;cursor:pointer}
+.lb-close:hover{background:rgba(255,255,255,.35)}
 .fs-btn{background:#fff;border:0;width:40px;height:40px;border-radius:10px;cursor:pointer;font-size:20px;line-height:40px;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,.3);color:#222}
 .leaflet-tooltip.poi{background:rgba(255,255,255,.95);border:1px solid #ccc;border-radius:7px;font-size:.72rem;padding:1px 6px;color:#222;box-shadow:none;font-weight:800}
 .leaflet-tooltip.poi.start{border-color:var(--start);color:var(--start)}

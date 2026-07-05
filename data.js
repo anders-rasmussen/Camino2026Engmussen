@@ -1871,7 +1871,9 @@ const GENERAL = [
           "1 let fleece eller softshell (til kølige aftener)",
           "1-2 par lette shorts",
           "1 par lange vandrebukser/tights",
+          "Kjole til damerne?",
           "3 sæt hurtigtørrende undertøj (helst ikke bomuld)",
+          "Badetøj",
           "Solhat med bred skygge",
           "Solbriller"
         ]
@@ -1886,7 +1888,8 @@ const GENERAL = [
           "Let rygsæk (30-40 liter) med regncover",
           "Vandflasker/drikkeblære – mindst 1,5 liter kapacitet",
           "Powerbank + ladekabel",
-          "Opladning: Portugal og Spanien bruger primært stiktype C/F. De fleste danske mobilopladere passer direkte, men tjek evt. kraftige jordstik hjemmefra."
+          "Opladning: Portugal og Spanien bruger primært stiktype C/F. De fleste danske mobilopladere passer direkte, men tjek evt. kraftige jordstik hjemmefra.",
+          "Lette håndklæder til badetur"
         ]
       },
       {
