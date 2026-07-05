@@ -10,7 +10,9 @@ const CORE = [
   "./data.js",
   "./sights.js",
   "./manifest.webmanifest",
-  "./icon.svg"
+  "./icon.svg",
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
 // Værter/filer vi cacher ved brug (kort-fliser, biblioteker, ruter, dokumentet)
