@@ -157,7 +157,7 @@ const DAYS = [
     from: "Oia", to: "Baiona",
     dist: "~16 km", terrain: "Kuperet klippekyst, derefter faldende mod Baiona-bugten",
     lodging: "Airbnb-lejlighed",
-    address: "Baiona, Galicien (nøjagtig adresse oplyses efter booking; ca. ved Monterreal)",
+    address: "Camiño do Valentón, Baiona (Galicien, Spanien)",
     breakfast: "Nej", washer: "Ja",
     desc: "En fantastisk kystvandring langs Galiciens dramatiske Atlanterhavskyst. I forlader Oia og følger klippestien med åndeløse udsigter. Ved Cabo Silleiro passerer I det ikoniske fyrtårn, og herfra åbner Baiona-bugten sig med Monterreal-fæstningen tronende i horisonten. Nedgangen til Baiona er magisk – byen vokser langsomt frem foran jer.",
     highlights: [
@@ -179,7 +179,7 @@ const DAYS = [
     dist: "0 km", terrain: "Hviledag – afslapning",
     rest: true,
     lodging: "Airbnb-lejlighed",
-    address: "Baiona, Galicien",
+    address: "Camiño do Valentón, Baiona (Galicien, Spanien)",
     breakfast: "Nej", washer: "Ja",
     desc: "En velfortjent pause midt på turen. Baiona er som skabt til at slappe af i – en af Galiciens smukkeste kystbyer med historisk charme, der går helt tilbage til romertiden.",
     highlights: [
@@ -462,7 +462,8 @@ const GENERAL = [
       {type:"list", items:[
         "Hvor: køb online hos Pilgrim (pilgrim.es) eller den danske Camino-forening. Fås også ved katedralen i Porto eller pilgrimskontorer i startbyerne.",
         "Hvorfor: en fantastisk souvenir med stempler fra hele turen. Vil I senere forlænge til Santiago, kræves mindst 2 stempler pr. dag på de sidste 100 km for Compostela-certifikatet.",
-        "Tip: få mindst ét stempel om dagen – gerne to. Det er en del af oplevelsen at finde de mest kreative stempler."
+        "Tip: få mindst ét stempel om dagen – gerne to. Det er en del af oplevelsen at finde de mest kreative stempler.",
+        "Hvis I fortsætter til Santiago: pilgrimskontoret dér har normalt åbent dagligt kl. 09–19. I højsæson bruger de et QR-køsystem, og udlevering samme dag kan ikke altid garanteres."
       ]}
     ]},
   { key:"vejr", icon:"sun", title:"Vejr og klima i juli",
@@ -552,21 +553,96 @@ const GENERAL = [
         "Søndage og siesta: mindre butikker kan holde lukket – regn ikke med at kunne handle spontant på de lange etaper."
       ]}
     ]},
-  { key:"pauseguide", icon:"coffee", title:"Mad- og pauseguide by for by",
+  { key:"specialiteter", icon:"coffee", title:"Mad & drikke – specialiteter",
     blocks:[
+      {type:"p", text:"En guide til lokale specialiteter, vine og ting, der er værd at smage undervejs. Husk: I går netop gennem Minho (Vinho Verde-land) og Rías Baixas (Albariño-land) – to af de bedste vinregioner for lige præcis den mad, I møder."},
+      {type:"subhead", text:"Portugal · Morgenmad"},
       {type:"list", items:[
-        "Vila do Conde: god første pauseby – kaffe og Pastel de Nata ved floden, gem den store middag til aftenen.",
-        "Apúlia: ideelt kaffestop på den lange dag mod Esposende.",
-        "Esposende: fisk og skaldyr om aftenen, køb snacks/frugt til næste formiddag.",
-        "Viana do Castelo: en af rutens bedste frokostbyer – større udvalg og bedre stemning.",
-        "Caminha: sidste stærke portugisiske stop før Spanien – kaffe, toilet og tidlig frokost.",
-        "A Guarda: første spanske madstop – sen frokost og hvil efter overfarten.",
-        "Oia: smuk, men lille – hav snacks med fra tidligere på etapen.",
-        "Baiona: den bedste forkælelsesby – god middag, indkøb, vaskedag.",
-        "Playa América / Nigrán: strandpause og let frokost. Køb alt ind til Senda da Auga her.",
-        "Redondela: klassisk pilgrimstemning – enkelt menú del día eller tapas.",
-        "Arcade: østers, Albariño og lille luksusfrokost.",
-        "Pontevedra: turens stærkeste spiseby – marked om formiddagen, tapas om aftenen, afskedsmiddag."
+        "Pastel de nata – lille cremet vaniljetærte i sprød butterdej. Den klassiske følgesvend til morgenkaffen.",
+        "Galão – mild café latte serveret i et højt glas; portugisernes foretrukne morgenkaffe.",
+        "Cimbalino – sådan kalder man en espresso i Porto-området (i syd hedder den \"bica\"). Lille, stærk og billig.",
+        "Torrada – tykt ristet brød med masser af smør, ofte til kaffen.",
+        "Broa de milho – tæt, rustikt majsbrød – godt med ost eller marmelade."
+      ]},
+      {type:"subhead", text:"Portugal · Frokost"},
+      {type:"list", items:[
+        "Francesinha – Portos berømte \"lille franskmand\": sandwich med flere slags kød, dækket af smeltet ost og en krydret øl-tomatsauce, ofte med spejlæg og pommes. Del evt. én.",
+        "Bifana – varm sandwich med marineret, krydret svinekød. Billig, hurtig og lækker vandrefrokost.",
+        "Caldo verde – grøn kålsuppe med kartoffel og skiver chorizo. Let nordportugisisk klassiker.",
+        "Sardinha assada – grillede sardiner, allerbedst om sommeren, direkte fra kysten.",
+        "Bacalhau à Brás – revet klipfisk vendt med æg, løg og sprøde kartoffelstrimler."
+      ]},
+      {type:"subhead", text:"Portugal · Aftensmad"},
+      {type:"list", items:[
+        "Bacalhau – klipfisk, nationalretten, tilberedt på \"365 måder\". Prøv bacalhau à lagareiro (ovnbagt med olivenolie og kartofler).",
+        "Polvo à lagareiro – møre blæksprutte-arme bagt i ovn med små kartofler og rigelig olivenolie.",
+        "Arroz de marisco – saftig, suppet skaldyrsris – fyldig og fælles at dele.",
+        "Robalo/dourada grelhada – grillet havbars eller guldbrasen, frisk fra fiskebyerne langs ruten.",
+        "Arroz de pato – andekonfit bagt sammen med ris og chorizo; comfort food."
+      ]},
+      {type:"subhead", text:"Portugal · Snacks, ost og likør"},
+      {type:"list", items:[
+        "Pastéis de bacalhau – sprøde klipfiske-kroketter; perfekt snack eller forret.",
+        "Presunto – lufttørret skinke, ofte skåret tyndt til tapas-stil.",
+        "Queijo da Serra – blød, cremet fåremælksost fra Serra da Estrela.",
+        "Ginjinha – sød kirsebærlikør, drukket som en lille shot – gerne som afslutning."
+      ]},
+      {type:"subhead", text:"Portugal · Drikkevarer"},
+      {type:"list", items:[
+        "Vinho Verde – frisk, ung og let perlende \"grøn vin\" fra Minho – lige der hvor I vandrer. Lav alkohol, syrlig og perfekt sommervin til fisk.",
+        "Alvarinho – den fineste Vinho Verde-drue (Monção/Melgaço); mere aromatisk og fyldig.",
+        "Port (Porto) – Douro-hedvin. Prøv en white port med tonic som aperitif eller en tawny som dessert.",
+        "Douro tinto – kraftige røde fra samme dal som portvinen.",
+        "Moscatel – sød dessertvin, god til ost.",
+        "Super Bock / Sagres – de to store portugisiske øl; en kold én efter en varm etape.",
+        "Água das Pedras – Portugals ikoniske naturlige mineralvand med kraftig brus. En klassiker til maden.",
+        "Licor Beirão – Portugals egen urtelikør; drukket som digestif eller i en cocktail (Caipirinha do Beirão).",
+        "Aguardente / bagaço – klar, stærk druesnaps til at runde måltidet af.",
+        "Sumol – portugisisk frugtsodavand (appelsin eller ananas) – forfriskende og alkoholfri i varmen."
+      ]},
+      {type:"subhead", text:"Galicien · Morgenmad"},
+      {type:"list", items:[
+        "Café con leche – standard morgenkaffe med varm mælk.",
+        "Tostada con tomate – ristet brød med revet tomat, olivenolie og salt.",
+        "Churros con chocolate – friterede dejstænger dyppet i tyk, varm chokolade – en weekend-forkælelse.",
+        "Bica gallega – luftig galicisk sukkerkage (forveksl ikke med portugisisk \"bica\", som er kaffe!).",
+        "Empanada (en skive) – den galiciske tærte spises også fint til en sen morgenmad."
+      ]},
+      {type:"subhead", text:"Galicien · Frokost"},
+      {type:"list", items:[
+        "Pulpo á feira – kogt blæksprutte i skiver med groft salt, paprika og olivenolie. Galiciens signaturret – smag den i Arcade eller Pontevedra.",
+        "Empanada gallega – flad tærte fyldt med tun, kød eller skaldyr; perfekt at tage med som vandrefrokost.",
+        "Pimientos de Padrón – små stegte grønne peberfrugter med havsalt. De fleste er milde – men en enkelt brænder!",
+        "Caldo gallego – grøn suppe med grønkål (grelos), hvide bønner og svinekød.",
+        "Menú del día – fast 3-retters frokostmenu til fast pris (ofte m. vin) – den bedste værdi i Spanien."
+      ]},
+      {type:"subhead", text:"Galicien · Aftensmad"},
+      {type:"list", items:[
+        "Mariscada – stort fad med blandet skaldyr (muslinger, rurer, krebs, hummer). Fælles festmåltid.",
+        "Vieiras – kammuslinger – selveste Camino-symbolet – gratineret i skallen.",
+        "Zamburiñas – små, søde kammuslinger stegt med hvidløg og persille.",
+        "Mejillones – fjord-muslinger fra \"bateas\"-flådene; utroligt friske i Ría de Vigo.",
+        "Percebes – rurer/andeskaller fra klipperne; en dyr, men berømt delikatesse.",
+        "Ostras – friske østers, især fra Arcade (Galiciens østers-hovedstad). Nydes rå med citron og et glas kølig Albariño."
+      ]},
+      {type:"subhead", text:"Galicien · Kage, ost og likør"},
+      {type:"list", items:[
+        "Tarta de Santiago – mandelkage pudret med flormelis og Sankt Jakobs-korset. Den ægte Camino-dessert.",
+        "Tetilla – blød, mild ost formet som en lille kegle.",
+        "Queixo San Simón – røget, pæreformet ost med fyldig smag.",
+        "Orujo / licor café – kraftig druesnaps eller sød kaffelikør som digestif; den flammende version hedder queimada."
+      ]},
+      {type:"subhead", text:"Galicien · Drikkevarer"},
+      {type:"list", items:[
+        "Albariño – Galiciens stolthed fra Rías Baixas – lige det område I går igennem. Frisk, aromatisk hvidvin, skabt til skaldyr.",
+        "Ribeiro – lette, drikkevenlige hvid- og rødvine fra indlandet.",
+        "Godello – fyldig, mineralsk hvidvindrue (Valdeorras) – for dem der vil have mere krop end Albariño.",
+        "Mencía – frugtig, elegant rødvin fra de stejle skråninger i Ribeira Sacra.",
+        "Ribeira Sacra tinto – Mencía-baserede røde fra en af Europas mest dramatiske vinregioner.",
+        "Estrella Galicia – Galiciens egen pilsner – lokal stolthed. Prøv også den fyldigere premium-udgave 1906.",
+        "Queimada – flammende orujo-punch med sukker, kaffebønner og citronskal, ledsaget af en gammel besværgelse mod onde ånder.",
+        "Carajillo – espresso med et skud orujo eller brandy; kort og kraftig digestif.",
+        "Auga de Mondariz – lokalt galicisk mineralvand fra kilden i Pontevedra-provinsen – alkoholfrit alternativ."
       ]}
     ]},
   { key:"toilet", icon:"info", title:"Toiletforhold på ruten",

@@ -16,6 +16,9 @@
   const ic = (id, cls) => `<svg class="${cls || "icon"}" aria-hidden="true"><use href="#${id}"/></svg>`;
   const totalKm = 165; // omtrentlig sum af gå-etaperne
   const mapsUrl = (q) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+  // Vejrudsigt for overnatningsbyen (åbner Googles vejr-kort). Land ud fra dagen.
+  const weatherUrl = (d, i) => "https://www.google.com/search?q=" +
+    encodeURIComponent("vejr " + d.to + " " + (i <= 4 ? "Portugal" : "Spanien"));
 
   // Land pr. dag: 11.–15. juli Portugal, 16. juli grænseovergang, derefter Spanien
   const dayCountry = (i) => i <= 4 ? "pt" : i === 5 ? "cross" : "es";
@@ -78,16 +81,18 @@
     try {
       const r = await fetch(OSRM + coords + "?overview=full&geometries=geojson");
       const j = await r.json();
+      if (currentMap !== map) return; // navigeret væk mens vi ventede på OSRM
       if (j.code !== "Ok" || !j.routes || !j.routes.length) throw new Error("no route");
       const pts = j.routes[0].geometry.coordinates.map((c) => [c[1], c[0]]);
       L.polyline(pts, { color: FOOT_COLOR, weight: 4, opacity: .9, lineJoin: "round" }).addTo(map);
       pts.forEach((pt) => bounds.push(pt));
     } catch (e) {
+      if (currentMap !== map) return;
       const pts = via.map((c) => [c[1], c[0]]);
       L.polyline(pts, { color: FOOT_COLOR, weight: 4, opacity: .6, dashArray: "4,6", lineJoin: "round" }).addTo(map);
       pts.forEach((pt) => bounds.push(pt));
     }
-    if (bounds.length) map.fitBounds(bounds, { padding: [35, 35] });
+    if (currentMap === map && bounds.length) map.fitBounds(bounds, { padding: [35, 35] });
   }
   function addFsControl(map, mapEl) {
     const Ctrl = L.Control.extend({
@@ -172,26 +177,72 @@
     btn.disabled = true;
     try {
       if (val === "all") {
-        const total = DAYS.length; let body = ""; const seen = new Set();
+        // GPX 1.1 kræver alle <wpt> før alle <trk> – saml derfor hver for sig.
+        const total = DAYS.length; let wpts = "", trks = ""; const seen = new Set();
         for (let i = 0; i < total; i++) {
           if (span) span.textContent = `Henter ${i + 1}/${total}…`;
           const { trk, wptsArr } = await buildDayTrk(i);
-          wptsArr.forEach((w) => { if (!seen.has(w.key)) { seen.add(w.key); body += w.xml; } });
-          body += trk;
+          wptsArr.forEach((w) => { if (!seen.has(w.key)) { seen.add(w.key); wpts += w.xml; } });
+          trks += trk;
         }
-        saveGpx(gpxDoc("Camino Português da Costa 2026 – hele turen", body), "camino-hele-turen.gpx");
+        saveGpx(gpxDoc("Camino Português da Costa 2026 – hele turen", wpts + trks), "Camino2026-11-24_Juli.gpx");
       } else {
         const i = Number(val), day = DAYS[i];
         if (span) span.textContent = "Henter…";
         const { trk, wptsArr } = await buildDayTrk(i);
         saveGpx(gpxDoc(`Camino ${day.date} – ${day.to}`, wptsArr.map((w) => w.xml).join("") + trk),
-          `camino-dag-${day.short.replace("/", "-")}.gpx`);
+          `Camino2026-${day.short.split("/")[0]}_Juli.gpx`);
       }
     } catch (e) {
       alert("Kunne ikke hente GPX. Tjek internetforbindelsen og prøv igen.");
     } finally {
       btn.disabled = false; if (span) span.textContent = orig;
     }
+  }
+
+  /* ---------- GPX-knap + Maps.me-hjælp (modal) ---------- */
+  // Blå download-knap + lille info-knap side om side.
+  function gpxRow(attr, label) {
+    return `<div class="gpxrow">
+      <button class="gpxbtn" data-gpx="${attr}">${ic("ic-download")}<span>${label}</span></button>
+      <button class="gpxinfo" data-modal="gpxhelp" title="Sådan importerer du i Maps.me" aria-label="Vejledning: importér i Maps.me">${ic("ic-info")}</button>
+    </div>`;
+  }
+
+  const GPX_HELP_HTML = `
+    <div class="modal-head">
+      <h3><span class="ic">${ic("ic-map")}</span>Importér ruten i Maps.me</h3>
+      <button class="modal-close" data-modal-close aria-label="Luk">✕</button>
+    </div>
+    <p class="modal-intro">Gør det gerne hjemmefra på wi-fi, før I rejser – så virker kort og rute offline undervejs.</p>
+    <ol class="modal-steps">
+      <li><b>Installér Maps.me</b> fra App Store (iPhone) eller Google Play (Android), hvis I ikke allerede har den.</li>
+      <li><b>Hent offline-kortene</b> i Maps.me: åbn appen → menuen → “Download maps”, og hent <b>Portugal (Norte)</b> og <b>Spanien (Galicia)</b>. Så fungerer kortet uden internet på ruten.</li>
+      <li><b>Download GPX-filen</b> her i appen med den blå knap ved siden af. Filen (fx <b>Camino2026-16_Juli.gpx</b>) lander i “Overførsler”/Filer.</li>
+      <li><b>Åbn filen i Maps.me:</b>
+        <ul>
+          <li><b>iPhone:</b> åbn <b>Filer</b> → find GPX-filen under Overførsler → tryk på den → tryk på <b>Del</b>-ikonet → vælg <b>Maps.me</b> (eller “Kopiér til Maps.me”).</li>
+          <li><b>Android:</b> åbn <b>Downloads</b> eller filhåndtering → tryk på GPX-filen → vælg <b>Åbn med → Maps.me</b> (eller Del → Maps.me).</li>
+        </ul>
+      </li>
+      <li>Maps.me bekræfter med <b>“Bookmarks and tracks imported”</b>.</li>
+      <li><b>Find ruten:</b> tryk på <b>stjerne-/bogmærke-ikonet</b> nederst i Maps.me → vælg den importerede liste → tryk på sporet, så det tegnes på kortet.</li>
+      <li><b>Tip:</b> brug <b>øje-ikonet</b> ud for listen til at slå sporet til/fra på kortet. Seværdighederne ligger som nåle (waypoints) langs ruten.</li>
+    </ol>
+    <p class="modal-note">GPX-ruterne hentes live, så selve downloadet kræver internet. Bagefter kan vandringen foregå offline i Maps.me.</p>`;
+
+  function closeModal() {
+    const m = document.getElementById("modal");
+    if (m) m.remove();
+    document.body.classList.remove("modal-open");
+  }
+  function openModal(html) {
+    closeModal();
+    const o = document.createElement("div");
+    o.id = "modal"; o.className = "modal-overlay";
+    o.innerHTML = `<div class="modal" role="dialog" aria-modal="true">${html}</div>`;
+    document.body.appendChild(o);
+    document.body.classList.add("modal-open");
   }
 
   const legendHtml = `<div class="legend">
@@ -212,6 +263,7 @@
     if (bounds.length) map.fitBounds(bounds, { padding: [35, 35] });
     (route.legs || []).forEach((leg) => { if (leg.mode !== "foot") drawStraight(map, leg.via, TRANSPORT_COLOR); });
     for (const leg of (route.legs || [])) {
+      if (currentMap !== map) return; // brugeren har navigeret væk
       if (leg.mode === "foot") { await drawFoot(map, leg.via, bounds); await new Promise((r) => setTimeout(r, 200)); }
     }
   }
@@ -239,10 +291,9 @@
       <section class="fadein">
         <div class="hero">
           <svg class="shellwatermark"><use href="#ic-shell"/></svg>
-          <span class="chip">${ic("ic-shell")} Familietur på pilgrimsvej</span>
+          <span class="chip">${ic("ic-shell")} Familietur · 11.–24. juli 2026</span>
           <h2>Engmussen</h2>
           <p class="fam">Engblom &times; Rasmussen</p>
-          <p class="tour">Camino Português da Costa · 11.–24. juli 2026</p>
           <div class="stats">
             <div class="stat"><b>14</b><span>dage</span></div>
             <div class="stat"><b>~${totalKm} km</b><span>til fods</span></div>
@@ -351,8 +402,9 @@
           <button class="${!isMap ? "active" : ""}" data-go="#/dag/${i}">${ic("ic-info")}Al info</button>
           <button class="${isMap ? "active" : ""}" data-go="#/dag/${i}/kort">${ic("ic-map")}Kort &amp; rute</button>
         </div>
-        ${dayHasFoot(i) ? `<button class="gpxbtn" data-gpx="${i}">${ic("ic-download")}<span>Download GPX til Maps.me</span></button>` : ""}
+        ${isMap && dayHasFoot(i) ? gpxRow(i, "Download GPX til Maps.me") : ""}
         ${body}
+        ${day.lodging ? `<a class="weatherlink" href="${esc(weatherUrl(day, i))}" target="_blank" rel="noopener">${ic("ic-sun")}Vejrudsigt for ${esc(day.to)}</a>` : ""}
       </section>`;
   }
 
@@ -363,7 +415,7 @@
         <div class="map" id="mapv"></div>
         ${legendHtml}
         <div class="maphint">Linjen er en forenklet oversigt mellem overnatningsbyerne. Vælg en enkelt dag på forsiden for den detaljerede rute. Tryk ⛶ for fuld skærm.</div>
-        <button class="gpxbtn" data-gpx="all">${ic("ic-download")}<span>Download hele turen (GPX)</span></button>
+        ${gpxRow("all", "Download hele turen (GPX)")}
         <div class="maphint">GPX-filen indeholder alle etaper som spor + seværdigheder som waypoints. Åbn/del filen med <b>Maps.me</b> for at importere ruten – gør det gerne hjemmefra med wi-fi. Enkelte dage kan hentes hver for sig under den pågældende dag.</div>
       </section>`;
   }
@@ -476,6 +528,7 @@
 
   function render() {
     clearMap();
+    closeModal();
     const route = parseRoute();
     let html, showBack = false;
     switch (route.name) {
@@ -498,6 +551,10 @@
 
   /* ---------- events ---------- */
   document.addEventListener("click", (e) => {
+    if (e.target.closest("[data-modal-close]") || (e.target.classList && e.target.classList.contains("modal-overlay"))) {
+      e.preventDefault(); closeModal(); return;
+    }
+    if (e.target.closest("[data-modal]")) { e.preventDefault(); openModal(GPX_HELP_HTML); return; }
     const gpx = e.target.closest("[data-gpx]");
     if (gpx) { e.preventDefault(); handleGpx(gpx); return; }
     const reset = e.target.closest("[data-reset]");
@@ -524,6 +581,7 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (document.getElementById("modal")) { closeModal(); return; }
       const mapEl = document.getElementById("mapv");
       if (mapEl && currentMap && mapEl.classList.contains("fs")) setFs(currentMap, mapEl, false);
     }

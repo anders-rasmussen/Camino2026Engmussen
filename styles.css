@@ -75,7 +75,7 @@ main{flex:1;min-height:0}
 /* HERO – sol over hav */
 .hero{
   position:relative;overflow:hidden;border-radius:24px;margin-bottom:20px;
-  color:#fff;padding:24px 22px 66px;
+  color:#fff;padding:20px 22px 46px;
   background:linear-gradient(150deg,#ffa03e 0%,var(--sun) 26%,var(--coral) 66%,#b83a5b 116%);
   box-shadow:var(--shadow-lg);
 }
@@ -84,15 +84,15 @@ main{flex:1;min-height:0}
   border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 12px;font-size:.72rem;font-weight:800;
   letter-spacing:.5px;position:relative;backdrop-filter:blur(4px)}
 .hero .chip svg{width:15px;height:15px}
-.hero h2{margin:12px 0 2px;font-size:2.15rem;font-weight:900;letter-spacing:.5px;position:relative;line-height:1}
+.hero h2{margin:9px 0 2px;font-size:2.15rem;font-weight:900;letter-spacing:.5px;position:relative;line-height:1}
 .hero .fam{margin:0;font-size:.92rem;font-weight:800;position:relative;opacity:.96;letter-spacing:.3px}
 .hero .tour{margin:9px 0 0;font-size:.9rem;font-weight:600;position:relative;opacity:.92}
-.hero .stats{display:flex;gap:9px;margin-top:16px;position:relative;flex-wrap:wrap}
+.hero .stats{display:flex;gap:9px;margin-top:13px;position:relative;flex-wrap:wrap}
 .hero .stat{display:flex;flex-direction:column;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);
   border-radius:14px;padding:9px 14px;backdrop-filter:blur(4px)}
 .hero .stat b{font-size:1.22rem;font-weight:900;line-height:1}
 .hero .stat span{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;margin-top:3px;opacity:.9}
-.hero .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:52px;display:block}
+.hero .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:40px;display:block}
 
 /* Forside-genveje */
 .menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -199,6 +199,46 @@ body.fs-lock{overflow:hidden !important}
 .gpxbtn:hover{box-shadow:0 6px 18px rgba(14,127,140,.34)}
 .gpxbtn:active{transform:scale(.99)}
 .gpxbtn:disabled{opacity:.7;cursor:progress}
+.weatherlink{display:flex;align-items:center;justify-content:center;gap:6px;margin:16px auto 2px;
+  color:var(--muted);font-size:.82rem;font-weight:700;text-decoration:none;opacity:.9;transition:color .12s,opacity .12s}
+.weatherlink:hover{color:var(--sun-dark);opacity:1}
+.weatherlink svg{width:16px;height:16px;flex:none}
+
+/* GPX-knap + info-knap side om side */
+.gpxrow{display:flex;gap:10px;align-items:stretch;margin-bottom:14px}
+.gpxrow .gpxbtn{margin-bottom:0;flex:1}
+.gpxinfo{flex:none;width:52px;border:0;cursor:pointer;border-radius:15px;
+  background:var(--soft-ocean);color:var(--ocean-dark);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(14,127,140,.14);transition:background .12s,transform .12s}
+.gpxinfo svg{width:22px;height:22px}
+.gpxinfo:hover{background:#c4e0e3}
+.gpxinfo:active{transform:scale(.96)}
+
+/* Modal – Maps.me-hjælp */
+body.modal-open{overflow:hidden}
+.modal-overlay{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-end;justify-content:center;
+  background:rgba(30,20,12,.55);backdrop-filter:blur(2px);animation:modalfade .18s ease}
+.modal{background:var(--card);color:var(--ink);width:100%;max-width:560px;
+  border-radius:22px 22px 0 0;max-height:88vh;overflow-y:auto;
+  padding:20px 20px calc(22px + var(--safe-bottom));box-shadow:0 -10px 44px rgba(0,0,0,.32);
+  animation:modalup .24s cubic-bezier(.22,.61,.36,1)}
+@media(min-width:600px){.modal-overlay{align-items:center}.modal{border-radius:22px;max-height:84vh;animation:modalfade .2s ease}}
+.modal-head{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.modal-head h3{margin:0;font-size:1.12rem;font-weight:900;display:flex;align-items:center;gap:10px;flex:1;color:var(--ocean-dark)}
+.modal-head h3 .ic{width:32px;height:32px;border-radius:10px;background:linear-gradient(140deg,#1aa0af,var(--ocean-dark));color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.modal-head h3 .ic svg{width:19px;height:19px}
+.modal-close{flex:none;width:34px;height:34px;border:0;border-radius:10px;cursor:pointer;
+  background:var(--soft);color:var(--sun-dark);font-size:16px;font-weight:900;line-height:1}
+.modal-close:hover{background:#f6d8bf}
+.modal-intro{margin:2px 0 14px;color:var(--muted);font-size:.86rem;font-weight:600;line-height:1.5}
+.modal-steps{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:11px}
+.modal-steps li{font-size:.9rem;line-height:1.5}
+.modal-steps ul{list-style:disc;margin:7px 0 0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+.modal-steps b{font-weight:800}
+.modal-note{margin:15px 0 0;padding:11px 13px;background:var(--soft-ocean);border-radius:12px;
+  font-size:.82rem;color:var(--ocean-dark);font-weight:600;line-height:1.5}
+@keyframes modalfade{from{opacity:0}to{opacity:1}}
+@keyframes modalup{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .fs-btn{background:#fff;border:0;width:40px;height:40px;border-radius:10px;cursor:pointer;font-size:20px;line-height:40px;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,.3);color:#222}
 .leaflet-tooltip.poi{background:rgba(255,255,255,.95);border:1px solid #ccc;border-radius:7px;font-size:.72rem;padding:1px 6px;color:#222;box-shadow:none;font-weight:800}
 .leaflet-tooltip.poi.start{border-color:var(--start);color:var(--start)}
@@ -321,7 +361,7 @@ li.on .check .lbl{color:var(--muted);text-decoration:line-through;text-decoratio
 @media (max-width:560px){
   .menu{grid-template-columns:1fr}
   .hero h2{font-size:1.85rem}
-  .hero{padding:22px 18px 60px}
+  .hero{padding:18px 18px 40px}
 }
 @media (min-width:721px){
   .daygrid{grid-template-columns:repeat(3,minmax(0,1fr))}
