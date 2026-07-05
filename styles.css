@@ -199,10 +199,15 @@ body.fs-lock{overflow:hidden !important}
 .gpxbtn:hover{box-shadow:0 6px 18px rgba(14,127,140,.34)}
 .gpxbtn:active{transform:scale(.99)}
 .gpxbtn:disabled{opacity:.7;cursor:progress}
-.weatherlink{display:flex;align-items:center;justify-content:center;gap:6px;margin:16px auto 2px;
-  color:var(--muted);font-size:.82rem;font-weight:700;text-decoration:none;opacity:.9;transition:color .12s,opacity .12s}
-.weatherlink:hover{color:var(--sun-dark);opacity:1}
-.weatherlink svg{width:16px;height:16px;flex:none}
+.weatherlink{display:flex;width:fit-content;align-items:center;gap:8px;margin:18px auto 4px;
+  padding:9px 16px;border-radius:999px;background:var(--soft-ocean);border:1px solid #c4e0e3;
+  color:var(--ocean-dark);font-size:.86rem;font-weight:800;text-decoration:none;
+  box-shadow:0 2px 8px rgba(14,127,140,.1);transition:background .12s,transform .12s,box-shadow .12s}
+.weatherlink:hover{background:#c4e0e3;box-shadow:0 4px 12px rgba(14,127,140,.18)}
+.weatherlink:active{transform:scale(.97)}
+.weatherlink svg{width:18px;height:18px;flex:none;color:var(--sun)}
+.weatherlink .src{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;
+  opacity:.75;background:#fff;border-radius:6px;padding:2px 6px}
 
 /* GPX-knap + info-knap side om side */
 .gpxrow{display:flex;gap:10px;align-items:stretch;margin-bottom:14px}

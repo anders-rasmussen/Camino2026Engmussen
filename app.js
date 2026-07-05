@@ -16,9 +16,24 @@
   const ic = (id, cls) => `<svg class="${cls || "icon"}" aria-hidden="true"><use href="#${id}"/></svg>`;
   const totalKm = 165; // omtrentlig sum af gå-etaperne
   const mapsUrl = (q) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
-  // Vejrudsigt for overnatningsbyen (åbner Googles vejr-kort). Land ud fra dagen.
-  const weatherUrl = (d, i) => "https://www.google.com/search?q=" +
-    encodeURIComponent("vejr " + d.to + " " + (i <= 4 ? "Portugal" : "Spanien"));
+  // Direkte yr.no-vejrudsigt pr. overnatningsby (sted-ID slået op og verificeret mod koordinater).
+  const YR_ID = {
+    "Vila do Conde": "2-2732649",
+    "Esposende": "2-2739848",
+    "Castelo do Neiva": "2-2740999",
+    "Viana do Castelo": "2-2732773",
+    "Vila Praia de Âncora": "2-2732516",
+    "Oia": "2-3114702",
+    "Baiona": "2-3128462",
+    "Nigrán": "2-3115463",
+    "Redondela": "2-3112154",
+    "Arcade": "2-3129782",
+    "Pontevedra": "2-3113209"
+  };
+  const weatherUrl = (d) => {
+    const id = YR_ID[d.to];
+    return id ? "https://www.yr.no/en/forecast/daily-table/" + id : null;
+  };
 
   // Land pr. dag: 11.–15. juli Portugal, 16. juli grænseovergang, derefter Spanien
   const dayCountry = (i) => i <= 4 ? "pt" : i === 5 ? "cross" : "es";
@@ -399,7 +414,7 @@
         </div>
         ${isMap && dayHasFoot(i) ? gpxRow(i, "Download GPX til Maps.me") : ""}
         ${body}
-        ${day.lodging ? `<a class="weatherlink" href="${esc(weatherUrl(day, i))}" target="_blank" rel="noopener">${ic("ic-sun")}Vejrudsigt for ${esc(day.to)}</a>` : ""}
+        ${day.lodging && weatherUrl(day) ? `<a class="weatherlink" href="${esc(weatherUrl(day))}" target="_blank" rel="noopener">${ic("ic-sun")}Vejrudsigt for ${esc(day.to)}<span class="src">yr.no</span></a>` : ""}
       </section>`;
   }
 
