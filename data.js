@@ -456,293 +456,519 @@ const OVERVIEW_PTS = [
 
 /* Generel information – ikke-følsomme afsnit fra rejseguiden. */
 const GENERAL = [
-  { key:"pilgrimspas", icon:"passport", title:"Pilgrimspas (Credencial)",
-    blocks:[
-      {type:"p", text:"Et pilgrimspas er jeres officielle dokumentation som pilgrimme. I får det stemplet ved overnatningssteder, kirker, caféer og turistkontorer undervejs – stemplerne beviser, at I har gået ruten."},
-      {type:"list", items:[
-        "Hvor: køb online hos Pilgrim (pilgrim.es) eller den danske Camino-forening. Fås også ved katedralen i Porto eller pilgrimskontorer i startbyerne.",
-        "Hvorfor: en fantastisk souvenir med stempler fra hele turen. Vil I senere forlænge til Santiago, kræves mindst 2 stempler pr. dag på de sidste 100 km for Compostela-certifikatet.",
-        "Tip: få mindst ét stempel om dagen – gerne to. Det er en del af oplevelsen at finde de mest kreative stempler.",
-        "Hvis I fortsætter til Santiago: pilgrimskontoret dér har normalt åbent dagligt kl. 09–19. I højsæson bruger de et QR-køsystem, og udlevering samme dag kan ikke altid garanteres."
-      ]}
-    ]},
-  { key:"pakkeliste", icon:"backpack", title:"Pakkeliste",
-    blocks:[
-      {type:"subhead", text:"Fodtøj (det allervigtigste!)"},
-      {type:"checklist", items:[
-        "Vandresko/trail runners: lette, indgåede sko med god sål. Undgå tunge støvler – ruten er flad og varm. Trail runners er ideelle.",
-        "Sandaler til aftenen: giv fødderne luft efter dagens vandring.",
-        "Sokker: mindst 3-4 par vandresokker i merino-uld eller syntetisk materiale. Undgå bomuld – det holder på fugt og giver vabler."
-      ]},
-      {type:"subhead", text:"Tøj"},
-      {type:"checklist", items:[
-        "2-3 hurtigtørrende t-shirts",
-        "1 langærmet trøje (sol-/vindbeskyttelse)",
-        "1 let fleece eller softshell (til kølige aftener)",
-        "1-2 par lette shorts",
-        "1 par lange vandrebukser/tights",
-        "3 sæt hurtigtørrende undertøj (helst ikke bomuld)",
-        "Solhat med bred skygge",
-        "Solbriller"
-      ]},
-      {type:"subhead", text:"Udstyr"},
-      {type:"checklist", items:[
-        "Let rygsæk (30-40 liter) med regncover",
-        "Vandflasker/drikkeblære – mindst 1,5 liter kapacitet",
-        "Powerbank + ladekabel",
-        "Opladning: Portugal og Spanien bruger primært stiktype C/F. De fleste danske mobilopladere passer direkte, men tjek evt. kraftige jordstik hjemmefra."
-      ]},
-      {type:"subhead", text:"Pleje og førstehjælp"},
-      {type:"checklist", items:[
-        "Compeed (vabler!) – køb en stor pakke hjemmefra",
-        "Vaseline eller Bodyglide (mod gnavesår/skrubsår)",
-        "Solcreme SPF 50 + læbepomade med SPF",
-        "Håndsprit",
-        "Ibuprofen / paracetamol",
-        "Elastisk bandage",
-        "Personlig medicin",
-        "Fodpudder/talkum"
-      ]}
-    ]},
-  { key:"forberedelser", icon:"check", title:"Forberedelser hjemmefra",
-    blocks:[
-      {type:"subhead", text:"Fysisk træning"},
-      {type:"list", items:[
-        "Start træningen mindst 6-8 uger før afgang. Gå lange ture (15-25 km) med rygsæk, gerne i det terræn og de sko I vil bruge.",
-        "Fokusér på udholdenhed, ikke tempo. I skal gå 10-26 km dagligt i varme – det kræver tilvænning.",
-        "Træn gerne med den fulde rygsækvægt. Tommelfingerregel: maks 10 % af jeres kropsvægt (ekskl. vand)."
-      ]},
-      {type:"subhead", text:"Økonomi og betaling"},
-      {type:"list", items:[
-        "Valuta: både Portugal og Spanien bruger euro.",
-        "Kort: Visa/Mastercard accepteres de fleste steder, men hav altid lidt kontanter (50-100 €) til små caféer og landsbyer uden kortterminaler.",
-        "Budget: regn med ca. 30-50 € pr. person pr. dag til mad og drikke (frokost, aftensmad, snacks). Portugal er generelt billigere end Spanien."
-      ]},
-      {type:"subhead", text:"Forsikring og sundhed"},
-      {type:"list", items:[
-        "Rejseforsikring: sørg for en forsikring, der dækker vandring og eventuel hjemtransport. Tjek jeres eksisterende – mange kreditkortforsikringer dækker ikke langdistancevandring.",
-        "Det blå EU-sygesikringskort: giver ret til behandling på offentlige hospitaler i EU-lande. Bestil det gratis via borger.dk – det tager typisk 1-2 uger.",
-        "Apotek: både Portugal og Spanien har veludstyrede apoteker (farmácia/farmacia) i de fleste byer. Compeed og ibuprofen kan købes overalt."
-      ]}
-    ]},
-  { key:"apps", icon:"phone", title:"Apps og navigation",
-    blocks:[
-      {type:"list", items:[
-        "Buen Camino (app): gratis, med GPS-tracking, vandpunkter, caféer og herberger. Fungerer offline.",
-        "Maps.me eller Google Maps offline: download kort over Nordportugal og Galicien hjemmefra – svag dækning i klitter og skove.",
-        "Wise / Revolut: rejsekort med gode kurser og ingen udenlandske hævegebyrer."
-      ]}
-    ]},
-  { key:"raad", icon:"star", title:"Generelle råd til ruten",
-    blocks:[
-      {type:"list", items:[
-        "Start tidligt: den vigtigste regel i juli. Gå afsted mellem kl. 06 og 07, så I er fremme inden den værste middagsvarme. Mange pilgrimme starter endda ved solopgang (ca. 06.30 i juli).",
-        "Hydrering: drik løbende – vent ikke til I er tørstige. Regn med mindst 2-3 liter vand pr. person pr. dag. Fyld op ved hver mulighed.",
-        "Siesta-strategi: hvis I ankommer tidligt (kl. 12-14), tag en pause i skyggen og udforsk byen om aftenen, når det køler af.",
-        "Vabelforebyggelse: smør fødderne med Vaseline om morgenen. Skift sokker ved frokostpausen. Stop og behandl hotspots med det samme – vent ikke til det bliver en vabel.",
-        "Pak let: alt hvad I medbringer, skal I bære. Vær brutale med pakkelisten. I kan købe det meste undervejs i Portugal og Spanien.",
-        "Vasketøj: de fleste overnatningssteder har mulighed for håndvask. Hurtigtørrende tøj er klar igen næste morgen. I Baiona (17-18/7) har I adgang til vaskemaskine – planlæg en stor vask dér.",
-        "Grænseovergang: Portugal → Spanien foregår med båd over Rio Minho fra Caminha til A Guarda (ca. 10 min). Book den officielle Xacobeo Transfer online i forvejen på xacobeotransfer.com (6 € pr. person). Der er ingen pascheck, men det er et magisk øjeblik. Bekræft overfarten dagen før, da tider kan afhænge af vejr og tidevand.",
-        "Sprog: portugisisk i den første halvdel, galicisk/spansk i den anden. Basale fraser som Bom dia / Buenos días (godmorgen), Obrigado/a / Gracias (tak) og Buen Camino! (god vej!) er alt, hvad I behøver. Alle forstår den universelle pilgrimshilsen \"Buen Camino!\"."
-      ]}
-    ]},
-  { key:"mad", icon:"coffee", title:"Mad, tider og hverdagslogistik",
-    blocks:[
-      {type:"list", items:[
-        "Morgenmad: ikke alle steder inkluderer morgenmad. Hav altid en nødplan på værelset: bananer, havrebarer, nødder eller lidt brød fra aftenen før.",
-        "Tidlige starter: hvis I går kl. 06.00-06.30, er caféer ofte ikke åbne endnu. Køb vand og snacks aftenen før. I Portugal åbner mange caféer dog tidligt (fra ca. kl. 07.00-08.00) og serverer kaffe og pastel de nata.",
-        "Portugisiske spisetider: portugiserne spiser tidligere end spanierne. Frokost er typisk kl. 12.00-15.00 og aftensmad kl. 19.00-22.00. Køkkenerne er forholdsvis fleksible, og det er ofte muligt at få et varmt måltid tidligt på aftenen.",
-        "Spanske spisetider: i Spanien (Galicien) forskydes alt 1-2 timer. Frokost er kl. 13.30-16.00, og mange køkkener åbner først til aftensmad omkring kl. 20.00-20.30. En sen frokost eller tapas sidst på eftermiddagen er ofte lettere at finde end en \"normal\" dansk aftensmad kl. 18.",
-        "Søndage og siesta: mindre butikker kan holde lukket søndag eller midt på dagen (siesta, typisk kl. 14-17 – mest udpræget i Spanien). På de lange kystetaper bør I ikke regne med, at I altid kan handle spontant undervejs."
-      ]}
-    ]},
-  { key:"specialiteter", icon:"coffee", title:"Mad & drikke – specialiteter",
-    blocks:[
-      {type:"p", text:"En guide til lokale specialiteter, vine og ting, der er værd at smage undervejs. Husk: I går netop gennem Minho (Vinho Verde-land) og Rías Baixas (Albariño-land) – to af de bedste vinregioner for lige præcis den mad, I møder."},
-      {type:"subhead", text:"Portugal · Morgenmad"},
-      {type:"list", items:[
-        "Pastel de nata – lille cremet vaniljetærte i sprød butterdej. Den klassiske følgesvend til morgenkaffen.",
-        "Galão – mild café latte serveret i et højt glas; portugisernes foretrukne morgenkaffe.",
-        "Cimbalino – sådan kalder man en espresso i Porto-området (i syd hedder den \"bica\"). Lille, stærk og billig.",
-        "Torrada – tykt ristet brød med masser af smør, ofte til kaffen.",
-        "Broa de milho – tæt, rustikt majsbrød – godt med ost eller marmelade."
-      ]},
-      {type:"subhead", text:"Portugal · Frokost"},
-      {type:"list", items:[
-        "Francesinha – Portos berømte \"lille franskmand\": sandwich med flere slags kød, dækket af smeltet ost og en krydret øl-tomatsauce, ofte med spejlæg og pommes. Del evt. én.",
-        "Bifana – varm sandwich med marineret, krydret svinekød. Billig, hurtig og lækker vandrefrokost.",
-        "Caldo verde – grøn kålsuppe med kartoffel og skiver chorizo. Let nordportugisisk klassiker.",
-        "Sardinha assada – grillede sardiner, allerbedst om sommeren, direkte fra kysten.",
-        "Bacalhau à Brás – revet klipfisk vendt med æg, løg og sprøde kartoffelstrimler."
-      ]},
-      {type:"subhead", text:"Portugal · Aftensmad"},
-      {type:"list", items:[
-        "Bacalhau – klipfisk, nationalretten, tilberedt på \"365 måder\". Prøv bacalhau à lagareiro (ovnbagt med olivenolie og kartofler).",
-        "Polvo à lagareiro – møre blæksprutte-arme bagt i ovn med små kartofler og rigelig olivenolie.",
-        "Arroz de marisco – saftig, suppet skaldyrsris – fyldig og fælles at dele.",
-        "Robalo/dourada grelhada – grillet havbars eller guldbrasen, frisk fra fiskebyerne langs ruten.",
-        "Arroz de pato – andekonfit bagt sammen med ris og chorizo; comfort food."
-      ]},
-      {type:"subhead", text:"Portugal · Snacks, ost og likør"},
-      {type:"list", items:[
-        "Pastéis de bacalhau – sprøde klipfiske-kroketter; perfekt snack eller forret.",
-        "Presunto – lufttørret skinke, ofte skåret tyndt til tapas-stil.",
-        "Queijo da Serra – blød, cremet fåremælksost fra Serra da Estrela.",
-        "Ginjinha – sød kirsebærlikør, drukket som en lille shot – gerne som afslutning."
-      ]},
-      {type:"subhead", text:"Portugal · Drikkevarer"},
-      {type:"list", items:[
-        "Vinho Verde – frisk, ung og let perlende \"grøn vin\" fra Minho – lige der hvor I vandrer. Lav alkohol, syrlig og perfekt sommervin til fisk.",
-        "Alvarinho – den fineste Vinho Verde-drue (Monção/Melgaço); mere aromatisk og fyldig.",
-        "Port (Porto) – Douro-hedvin. Prøv en white port med tonic som aperitif eller en tawny som dessert.",
-        "Douro tinto – kraftige røde fra samme dal som portvinen.",
-        "Moscatel – sød dessertvin, god til ost.",
-        "Super Bock / Sagres – de to store portugisiske øl; en kold én efter en varm etape.",
-        "Água das Pedras – Portugals ikoniske naturlige mineralvand med kraftig brus. En klassiker til maden.",
-        "Licor Beirão – Portugals egen urtelikør; drukket som digestif eller i en cocktail (Caipirinha do Beirão).",
-        "Aguardente / bagaço – klar, stærk druesnaps til at runde måltidet af.",
-        "Sumol – portugisisk frugtsodavand (appelsin eller ananas) – forfriskende og alkoholfri i varmen."
-      ]},
-      {type:"subhead", text:"Galicien · Morgenmad"},
-      {type:"list", items:[
-        "Café con leche – standard morgenkaffe med varm mælk.",
-        "Tostada con tomate – ristet brød med revet tomat, olivenolie og salt.",
-        "Churros con chocolate – friterede dejstænger dyppet i tyk, varm chokolade – en weekend-forkælelse.",
-        "Bica gallega – luftig galicisk sukkerkage (forveksl ikke med portugisisk \"bica\", som er kaffe!).",
-        "Empanada (en skive) – den galiciske tærte spises også fint til en sen morgenmad."
-      ]},
-      {type:"subhead", text:"Galicien · Frokost"},
-      {type:"list", items:[
-        "Pulpo á feira – kogt blæksprutte i skiver med groft salt, paprika og olivenolie. Galiciens signaturret – smag den i Arcade eller Pontevedra.",
-        "Empanada gallega – flad tærte fyldt med tun, kød eller skaldyr; perfekt at tage med som vandrefrokost.",
-        "Pimientos de Padrón – små stegte grønne peberfrugter med havsalt. De fleste er milde – men en enkelt brænder!",
-        "Caldo gallego – grøn suppe med grønkål (grelos), hvide bønner og svinekød.",
-        "Menú del día – fast 3-retters frokostmenu til fast pris (ofte m. vin) – den bedste værdi i Spanien."
-      ]},
-      {type:"subhead", text:"Galicien · Aftensmad"},
-      {type:"list", items:[
-        "Mariscada – stort fad med blandet skaldyr (muslinger, rurer, krebs, hummer). Fælles festmåltid.",
-        "Vieiras – kammuslinger – selveste Camino-symbolet – gratineret i skallen.",
-        "Zamburiñas – små, søde kammuslinger stegt med hvidløg og persille.",
-        "Mejillones – fjord-muslinger fra \"bateas\"-flådene; utroligt friske i Ría de Vigo.",
-        "Percebes – rurer/andeskaller fra klipperne; en dyr, men berømt delikatesse.",
-        "Ostras – friske østers, især fra Arcade (Galiciens østers-hovedstad). Nydes rå med citron og et glas kølig Albariño."
-      ]},
-      {type:"subhead", text:"Galicien · Kage, ost og likør"},
-      {type:"list", items:[
-        "Tarta de Santiago – mandelkage pudret med flormelis og Sankt Jakobs-korset. Den ægte Camino-dessert.",
-        "Tetilla – blød, mild ost formet som en lille kegle.",
-        "Queixo San Simón – røget, pæreformet ost med fyldig smag.",
-        "Orujo / licor café – kraftig druesnaps eller sød kaffelikør som digestif; den flammende version hedder queimada."
-      ]},
-      {type:"subhead", text:"Galicien · Drikkevarer"},
-      {type:"list", items:[
-        "Albariño – Galiciens stolthed fra Rías Baixas – lige det område I går igennem. Frisk, aromatisk hvidvin, skabt til skaldyr.",
-        "Ribeiro – lette, drikkevenlige hvid- og rødvine fra indlandet.",
-        "Godello – fyldig, mineralsk hvidvindrue (Valdeorras) – for dem der vil have mere krop end Albariño.",
-        "Mencía – frugtig, elegant rødvin fra de stejle skråninger i Ribeira Sacra.",
-        "Ribeira Sacra tinto – Mencía-baserede røde fra en af Europas mest dramatiske vinregioner.",
-        "Estrella Galicia – Galiciens egen pilsner – lokal stolthed. Prøv også den fyldigere premium-udgave 1906.",
-        "Queimada – flammende orujo-punch med sukker, kaffebønner og citronskal, ledsaget af en gammel besværgelse mod onde ånder.",
-        "Carajillo – espresso med et skud orujo eller brandy; kort og kraftig digestif.",
-        "Auga de Mondariz – lokalt galicisk mineralvand fra kilden i Pontevedra-provinsen – alkoholfrit alternativ."
-      ]}
-    ]},
-  { key:"toilet", icon:"info", title:"Toiletforhold på ruten",
-    blocks:[
-      {type:"list", items:[
-        "Brug toilettet når I kan – langt mellem dem på lange kyststræk og især Senda da Auga.",
-        "Caféer, barer og restauranter er den sikreste løsning (køb en kaffe først).",
-        "Offentlige toiletter findes i byer og havne, men kan være lukkede eller mangle papir.",
-        "Hav altid en lille nødpakke: lommetørklæder, håndsprit, affaldspose.",
-        "Planlæg stop i Apúlia, Caminha, A Guarda og Nigrán før de øde stræk."
-      ]}
-    ]},
-  { key:"mobil", icon:"phone", title:"Mobil, strøm og dokumenter",
-    blocks:[
-      {type:"list", items:[
-        "EU-roaming: danske abonnementer virker normalt i både Portugal og Spanien – tjek fair-use hjemmefra.",
-        "Offline backup: gem bookingbekræftelser, adresser og værtsnumre som screenshots og i en note der kan åbnes offline.",
-        "Vandtæt dokumentpose: pas, pilgrimspas, EU-sygesikringskort og kort i en ziplock – kystvind og sved er hårdt ved papir.",
-        "Strømstrategi: lad powerbank og telefon fuldt op hver aften. Brug den anden telefon som reserve."
-      ]}
-    ]},
-  { key:"sikkerhed", icon:"shield", title:"Sikkerhed, varme og plan B",
-    blocks:[
-      {type:"list", items:[
-        "112 er gratis alarmnummer i både Portugal og Spanien, fra fastnet og mobil.",
-        "Varmeslag-plan: afkort etapen uden dårlig samvittighed hvis det bliver for varmt – en taxa er bedre end at miste vandredage.",
-        "Lokale taxaer: Uber/Bolt kan I ikke regne med uden for byerne – bed værten bestille taxa aftenen før.",
-        "Del dagens plan: send næste overnatningsadresse og forventet ankomst til hinanden eller familie hjemme.",
-        "Glatte underlag: træbroer, granit og skaller kan være glatte, især om morgenen eller efter regn."
-      ]}
-    ]},
-  { key:"checkliste", icon:"check", title:"Afrejsecheckliste",
-    blocks:[
-      {type:"checklist", items:[
-        "Pas, betalingskort, det blå EU-sygesikringskort og rejseforsikring er pakket og fotograferet digitalt",
-        "Pilgrimspas er købt eller reserveret, og første sted til stempel er kendt",
-        "Alle bookingbekræftelser og adresser er gemt som screenshots/offline",
-        "Telefoner, powerbank og ladekabler er pakket og testet",
-        "Offline-kort til Portugal, Galicien og Senda da Auga er downloadet",
-        "Skoene er gået til, og mindst én længere træningstur er gået med fuld oppakning",
-        "Compeed, solcreme, smertestillende og personlig medicin er pakket",
-        "50-100 € i kontanter er hævet til småkøb og steder uden kort",
-        "Plan for bådoverfarten Caminha → A Guarda er noteret",
-        "Taxa-planen til Zamáns/Senda da Auga er gemt i noter eller aftalt med vært",
-        "Hjemrejse med tog/bus fra Pontevedra til Porto er dobbelttjekket et par dage før",
-        "Første dags snack og vand er tænkt ind, så I ikke starter halvtomme fra lufthavnen"
-      ]}
-    ]},
-  { key:"ptvses", icon:"compass", title:"Portugal vs. Spanien",
-    blocks:[
-      {type:"p", text:"Der er en markant forskel på oplevelsen alt efter, om I er på den portugisiske side (Porto til grænsen) eller den spanske (grænsen og nordpå)."},
-      {type:"subhead", text:"Landskab og terræn"},
-      {type:"list", items:[
-        "Portugal: meget fladt, masser af passadiços (træbroer), vilde strande og lidt skygge.",
-        "Spanien: klippefyldt og kuperet fra floden Minho, flere bakker, mere læ i de galiciske eukalyptusskove."
-      ]},
-      {type:"subhead", text:"Byer og mad"},
-      {type:"list", items:[
-        "Portugal: klassiske feriebyer ved havet, billig café-kultur med Pastéis de Nata og espresso.",
-        "Spanien: middelalder-charme (Baiona, Pontevedra), tapas/raciones og livet på de små torve."
-      ]},
-      {type:"subhead", text:"Pilgrimsstemning"},
-      {type:"list", items:[
-        "Porto til grænsen: let, forventningsfuld stemning, føles lidt som en strandvandring.",
-        "Fra Redondela smelter kystruten sammen med den centrale rute – antallet af pilgrimme eksploderer, og den klassiske Camino-ånd med \"Buen Camino\" mærkes overalt."
-      ]},
-      {type:"table",
-        head:["Faktor","Portugal","Spanien"],
-        rows:[
-          ["Underlag","Træbroer og sand (fladt)","Klippestier, skovveje, asfalt (kuperet)"],
-          ["Vejr","Mere vind, eksponeret","Mere læ i skove og bugter"],
-          ["Mad/drikke","Billig kaffe, fisk","Tapas, Albariño, pulpo"],
-          ["Prisniveau","Generelt billigst","Lidt dyrere"],
-          ["Højdepunkt","Viana do Castelo & broerne","Baiona & de galiciske skove"]
-        ]},
-      {type:"subhead", text:"Kort sagt"},
-      {type:"p", text:"Den portugisiske del er en fantastisk, meditativ start, hvor I får kilometer i benene på fladt underlag med havet som fast følgesvend. Den spanske del er smukkere rent historisk og arkitektonisk, men kræver lidt mere fysisk indsats og byder på en mere intens social oplevelse med andre pilgrimme."}
-    ]},
-  { key:"smaating", icon:"star", title:"Små ting der ofte bliver glemt",
-    blocks:[
-      {type:"list", items:[
-        "Anti-gnidning: ud over fødderne er lår, hofter og skuldre klassiske problemzoner. Bodyglide eller Vaseline kan spare jer for meget irritation i varme og salt luft.",
-        "Undertøj i merino-uld: svedabsorberende og holder lugt væk. Icebreaker Anatomica (Fjeld og Fritid) er et godt mærke. Ellers er ExOfficio Give-N-Go 2.0 Sport Mesh også godt.",
-        "Småpenge: hav mønter og små sedler til kaffe, is, små køb og steder hvor kort ikke er en selvfølge.",
-        "Ziplocks og safety pins: guld værd til vådt tøj, opladere, kvitteringer og hurtig håndvask undervejs.",
-        "Aftenen før: fyld vand, tjek vejret, læg morgentøj frem og aftal første stop for kaffe eller mad, inden I går i seng. Det gør tidlige starter meget lettere.",
-        "Langærmet solbeskyttelse: trøje med hætte (Patagonia Capilene Cool Daily Hoody, Black Diamond Alpenglow) eller nylonskjorte (Columbia Silver Ridge Utility, Patagonia Self-Guided Hike Shirt)."
-      ]}
-    ]},
-  { key:"energilav", icon:"shield", title:"Hvis energien er lav – hvad er vigtigst?",
-    blocks:[
-      {type:"list", items:[
-        "Prioritér pausebyer frem for tilfældige stop: Viana do Castelo, Baiona og Pontevedra er de bedste steder at bruge ekstra tid og penge.",
-        "Brug de små byer funktionelt: Apúlia, Caminha, A Guarda og Nigrán er især gode til kaffe, vand, is, toilet og proviant.",
-        "På varme dage: spis mere til morgenmad og frokost, og mindre tungt om aftenen. Det gør de næste morgener lettere."
-      ]}
-    ]}
+  {
+    "key": "raad",
+    "icon": "star",
+    "title": "Generelle råd til ruten",
+    "blocks": [
+      {
+        "type": "list",
+        "items": [
+          "Start tidligt: den vigtigste regel i juli. Gå afsted mellem kl. 06 og 07, så I er fremme inden den værste middagsvarme. Mange pilgrimme starter endda ved solopgang (ca. 06.30 i juli).",
+          "Hydrering: drik løbende – vent ikke til I er tørstige. Regn med mindst 2-3 liter vand pr. person pr. dag. Fyld op ved hver mulighed.",
+          "Siesta-strategi: hvis I ankommer tidligt (kl. 12-14), tag en pause i skyggen og udforsk byen om aftenen, når det køler af.",
+          "Vabelforebyggelse: smør fødderne med Vaseline om morgenen. Skift sokker ved frokostpausen. Stop og behandl hotspots med det samme – vent ikke til det bliver en vabel.",
+          "Pak let: alt hvad I medbringer, skal I bære. Vær brutale med pakkelisten. I kan købe det meste undervejs i Portugal og Spanien.",
+          "Vasketøj: de fleste overnatningssteder har mulighed for håndvask. Hurtigtørrende tøj er klar igen næste morgen. I Baiona (17-18/7) har I adgang til vaskemaskine – planlæg en stor vask dér.",
+          "Grænseovergang: Portugal → Spanien foregår med båd over Rio Minho fra Caminha til A Guarda (ca. 10 min). Book den officielle Xacobeo Transfer online i forvejen på xacobeotransfer.com (6 € pr. person). Der er ingen pascheck, men det er et magisk øjeblik. Bekræft overfarten dagen før, da tider kan afhænge af vejr og tidevand.",
+          "Sprog: portugisisk i den første halvdel, galicisk/spansk i den anden. Basale fraser som Bom dia / Buenos días (godmorgen), Obrigado/a / Gracias (tak) og Buen Camino! (god vej!) er alt, hvad I behøver. Alle forstår den universelle pilgrimshilsen \"Buen Camino!\"."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Portugal vs Spanien"
+      },
+      {
+        "type": "p",
+        "text": "Der er en markant forskel på oplevelsen alt efter, om I er på den portugisiske side (Porto til grænsen) eller den spanske (grænsen og nordpå)."
+      },
+      {
+        "type": "subhead",
+        "text": "Landskab og terræn"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Portugal: meget fladt, masser af passadiços (træbroer), vilde strande og lidt skygge.",
+          "Spanien: klippefyldt og kuperet fra floden Minho, flere bakker, mere læ i de galiciske eukalyptusskove."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Byer og mad"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Portugal: klassiske feriebyer ved havet, billig café-kultur med Pastéis de Nata og espresso.",
+          "Spanien: middelalder-charme (Baiona, Pontevedra), tapas/raciones og livet på de små torve."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Pilgrimsstemning"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Porto til grænsen: let, forventningsfuld stemning, føles lidt som en strandvandring.",
+          "Fra Redondela smelter kystruten sammen med den centrale rute – antallet af pilgrimme eksploderer, og den klassiske Camino-ånd med \"Buen Camino\" mærkes overalt."
+        ]
+      },
+      {
+        "type": "table",
+        "head": [
+          "Faktor",
+          "Portugal",
+          "Spanien"
+        ],
+        "rows": [
+          [
+            "Underlag",
+            "Træbroer og sand (fladt)",
+            "Klippestier, skovveje, asfalt (kuperet)"
+          ],
+          [
+            "Vejr",
+            "Mere vind, eksponeret",
+            "Mere læ i skove og bugter"
+          ],
+          [
+            "Mad/drikke",
+            "Billig kaffe, fisk",
+            "Tapas, Albariño, pulpo"
+          ],
+          [
+            "Prisniveau",
+            "Generelt billigst",
+            "Lidt dyrere"
+          ],
+          [
+            "Højdepunkt",
+            "Viana do Castelo & broerne",
+            "Baiona & de galiciske skove"
+          ]
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Kort sagt"
+      },
+      {
+        "type": "p",
+        "text": "Den portugisiske del er en fantastisk, meditativ start, hvor I får kilometer i benene på fladt underlag med havet som fast følgesvend. Den spanske del er smukkere rent historisk og arkitektonisk, men kræver lidt mere fysisk indsats og byder på en mere intens social oplevelse med andre pilgrimme."
+      },
+      {
+        "type": "sub",
+        "text": "Forberedelser hjemmefra"
+      },
+      {
+        "type": "subhead",
+        "text": "Fysisk træning"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Start træningen mindst 6-8 uger før afgang. Gå lange ture (15-25 km) med rygsæk, gerne i det terræn og de sko I vil bruge.",
+          "Fokusér på udholdenhed, ikke tempo. I skal gå 10-26 km dagligt i varme – det kræver tilvænning.",
+          "Træn gerne med den fulde rygsækvægt. Tommelfingerregel: maks 10 % af jeres kropsvægt (ekskl. vand)."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Økonomi og betaling"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Valuta: både Portugal og Spanien bruger euro.",
+          "Kort: Visa/Mastercard accepteres de fleste steder, men hav altid lidt kontanter (50-100 €) til små caféer og landsbyer uden kortterminaler.",
+          "Budget: regn med ca. 30-50 € pr. person pr. dag til mad og drikke (frokost, aftensmad, snacks). Portugal er generelt billigere end Spanien."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Forsikring og sundhed"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Rejseforsikring: sørg for en forsikring, der dækker vandring og eventuel hjemtransport. Tjek jeres eksisterende – mange kreditkortforsikringer dækker ikke langdistancevandring.",
+          "Det blå EU-sygesikringskort: giver ret til behandling på offentlige hospitaler i EU-lande. Bestil det gratis via borger.dk – det tager typisk 1-2 uger.",
+          "Apotek: både Portugal og Spanien har veludstyrede apoteker (farmácia/farmacia) i de fleste byer. Compeed og ibuprofen kan købes overalt."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Apps og navigation"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Buen Camino (app): gratis, med GPS-tracking, vandpunkter, caféer og herberger. Fungerer offline.",
+          "Maps.me eller Google Maps offline: download kort over Nordportugal og Galicien hjemmefra – svag dækning i klitter og skove.",
+          "Wise / Revolut: rejsekort med gode kurser og ingen udenlandske hævegebyrer."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Toiletforhold på ruten"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Brug toilettet når I kan – langt mellem dem på lange kyststræk og især Senda da Auga.",
+          "Caféer, barer og restauranter er den sikreste løsning (køb en kaffe først).",
+          "Offentlige toiletter findes i byer og havne, men kan være lukkede eller mangle papir.",
+          "Hav altid en lille nødpakke: lommetørklæder, håndsprit, affaldspose.",
+          "Planlæg stop i Apúlia, Caminha, A Guarda og Nigrán før de øde stræk."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Sikkerhed, varme og plan B"
+      },
+      {
+        "type": "list",
+        "items": [
+          "112 er gratis alarmnummer i både Portugal og Spanien, fra fastnet og mobil.",
+          "Varmeslag-plan: afkort etapen uden dårlig samvittighed hvis det bliver for varmt – en taxa er bedre end at miste vandredage.",
+          "Lokale taxaer: Uber/Bolt kan I ikke regne med uden for byerne – bed værten bestille taxa aftenen før.",
+          "Del dagens plan: send næste overnatningsadresse og forventet ankomst til hinanden eller familie hjemme.",
+          "Glatte underlag: træbroer, granit og skaller kan være glatte, især om morgenen eller efter regn."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "praktisk",
+    "icon": "passport",
+    "title": "Praktisk guide – før I tager hjemmefra",
+    "blocks": [
+      {
+        "type": "sub",
+        "text": "Pilgrimspas (Credencial del Peregrino)"
+      },
+      {
+        "type": "p",
+        "text": "Et pilgrimspas er jeres officielle dokumentation som pilgrimme. I får det stemplet ved overnatningssteder, kirker, caféer og turistkontorer undervejs – stemplerne beviser, at I har gået ruten."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Hvor: køb online hos Pilgrim (pilgrim.es) eller den danske Camino-forening. Fås også ved katedralen i Porto eller pilgrimskontorer i startbyerne.",
+          "Hvorfor: en fantastisk souvenir med stempler fra hele turen. Vil I senere forlænge til Santiago, kræves mindst 2 stempler pr. dag på de sidste 100 km for Compostela-certifikatet.",
+          "Tip: få mindst ét stempel om dagen – gerne to. Det er en del af oplevelsen at finde de mest kreative stempler.",
+          "Hvis I fortsætter til Santiago: pilgrimskontoret dér har normalt åbent dagligt kl. 09–19. I højsæson bruger de et QR-køsystem, og udlevering samme dag kan ikke altid garanteres."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Pakke- og afrejsecheckliste"
+      },
+      {
+        "type": "subhead",
+        "text": "Fodtøj (det allervigtigste!)"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "Vandresko/trail runners: lette, indgåede sko med god sål. Undgå tunge støvler – ruten er flad og varm. Trail runners er ideelle.",
+          "Sandaler til aftenen: giv fødderne luft efter dagens vandring.",
+          "Sokker: mindst 3-4 par vandresokker i merino-uld eller syntetisk materiale. Undgå bomuld – det holder på fugt og giver vabler."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Tøj"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "2-3 hurtigtørrende t-shirts",
+          "1 langærmet trøje (sol-/vindbeskyttelse)",
+          "1 let fleece eller softshell (til kølige aftener)",
+          "1-2 par lette shorts",
+          "1 par lange vandrebukser/tights",
+          "3 sæt hurtigtørrende undertøj (helst ikke bomuld)",
+          "Solhat med bred skygge",
+          "Solbriller"
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Udstyr"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "Let rygsæk (30-40 liter) med regncover",
+          "Vandflasker/drikkeblære – mindst 1,5 liter kapacitet",
+          "Powerbank + ladekabel",
+          "Opladning: Portugal og Spanien bruger primært stiktype C/F. De fleste danske mobilopladere passer direkte, men tjek evt. kraftige jordstik hjemmefra."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Pleje og førstehjælp"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "Compeed (vabler!) – køb en stor pakke hjemmefra",
+          "Vaseline eller Bodyglide (mod gnavesår/skrubsår)",
+          "Solcreme SPF 50 + læbepomade med SPF",
+          "Håndsprit",
+          "Ibuprofen / paracetamol",
+          "Elastisk bandage",
+          "Personlig medicin",
+          "Fodpudder/talkum"
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Afrejsecheckliste"
+      },
+      {
+        "type": "checklist",
+        "items": [
+          "Pas, betalingskort, det blå EU-sygesikringskort og rejseforsikring er pakket og fotograferet digitalt",
+          "Pilgrimspas er købt eller reserveret, og første sted til stempel er kendt",
+          "Alle bookingbekræftelser og adresser er gemt som screenshots/offline",
+          "Telefoner, powerbank og ladekabler er pakket og testet",
+          "Offline-kort til Portugal, Galicien og Senda da Auga er downloadet",
+          "Skoene er gået til, og mindst én længere træningstur er gået med fuld oppakning",
+          "Compeed, solcreme, smertestillende og personlig medicin er pakket",
+          "50-100 € i kontanter er hævet til småkøb og steder uden kort",
+          "Plan for bådoverfarten Caminha → A Guarda er noteret",
+          "Taxa-planen til Zamáns/Senda da Auga er gemt i noter eller aftalt med vært",
+          "Hjemrejse med tog/bus fra Pontevedra til Porto er dobbelttjekket et par dage før",
+          "Første dags snack og vand er tænkt ind, så I ikke starter halvtomme fra lufthavnen"
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Mobil, strøm og dokumenter"
+      },
+      {
+        "type": "list",
+        "items": [
+          "EU-roaming: danske abonnementer virker normalt i både Portugal og Spanien – tjek fair-use hjemmefra.",
+          "Offline backup: gem bookingbekræftelser, adresser og værtsnumre som screenshots og i en note der kan åbnes offline.",
+          "Vandtæt dokumentpose: pas, pilgrimspas, EU-sygesikringskort og kort i en ziplock – kystvind og sved er hårdt ved papir.",
+          "Strømstrategi: lad powerbank og telefon fuldt op hver aften. Brug den anden telefon som reserve."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Små ting der ofte bliver glemt"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Anti-gnidning: ud over fødderne er lår, hofter og skuldre klassiske problemzoner. Bodyglide eller Vaseline kan spare jer for meget irritation i varme og salt luft.",
+          "Undertøj i merino-uld: svedabsorberende og holder lugt væk. Icebreaker Anatomica (Fjeld og Fritid) er et godt mærke. Ellers er ExOfficio Give-N-Go 2.0 Sport Mesh også godt.",
+          "Småpenge: hav mønter og små sedler til kaffe, is, små køb og steder hvor kort ikke er en selvfølge.",
+          "Ziplocks og safety pins: guld værd til vådt tøj, opladere, kvitteringer og hurtig håndvask undervejs.",
+          "Aftenen før: fyld vand, tjek vejret, læg morgentøj frem og aftal første stop for kaffe eller mad, inden I går i seng. Det gør tidlige starter meget lettere.",
+          "Langærmet solbeskyttelse: trøje med hætte (Patagonia Capilene Cool Daily Hoody, Black Diamond Alpenglow) eller nylonskjorte (Columbia Silver Ridge Utility, Patagonia Self-Guided Hike Shirt)."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Hvis energien er lav – hvad er vigtigst?"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Prioritér pausebyer frem for tilfældige stop: Viana do Castelo, Baiona og Pontevedra er de bedste steder at bruge ekstra tid og penge.",
+          "Brug de små byer funktionelt: Apúlia, Caminha, A Guarda og Nigrán er især gode til kaffe, vand, is, toilet og proviant.",
+          "På varme dage: spis mere til morgenmad og frokost, og mindre tungt om aftenen. Det gør de næste morgener lettere."
+        ]
+      }
+    ]
+  },
+  {
+    "key": "specialiteter",
+    "icon": "coffee",
+    "title": "Mad og drikke – specialiteter at prøve",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "En guide til lokale specialiteter, vine og ting, der er værd at smage undervejs. Husk: I går netop gennem Minho (Vinho Verde-land) og Rías Baixas (Albariño-land) – to af de bedste vinregioner for lige præcis den mad, I møder."
+      },
+      {
+        "type": "sub",
+        "text": "Portugal"
+      },
+      {
+        "type": "subhead",
+        "text": "Morgenmad"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Pastel de nata – lille cremet vaniljetærte i sprød butterdej. Den klassiske følgesvend til morgenkaffen.",
+          "Galão – mild café latte serveret i et højt glas; portugisernes foretrukne morgenkaffe.",
+          "Cimbalino – sådan kalder man en espresso i Porto-området (i syd hedder den \"bica\"). Lille, stærk og billig.",
+          "Torrada – tykt ristet brød med masser af smør, ofte til kaffen.",
+          "Broa de milho – tæt, rustikt majsbrød – godt med ost eller marmelade."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Frokost"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Francesinha – Portos berømte \"lille franskmand\": sandwich med flere slags kød, dækket af smeltet ost og en krydret øl-tomatsauce, ofte med spejlæg og pommes. Del evt. én.",
+          "Bifana – varm sandwich med marineret, krydret svinekød. Billig, hurtig og lækker vandrefrokost.",
+          "Caldo verde – grøn kålsuppe med kartoffel og skiver chorizo. Let nordportugisisk klassiker.",
+          "Sardinha assada – grillede sardiner, allerbedst om sommeren, direkte fra kysten.",
+          "Bacalhau à Brás – revet klipfisk vendt med æg, løg og sprøde kartoffelstrimler."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Aftensmad"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Bacalhau – klipfisk, nationalretten, tilberedt på \"365 måder\". Prøv bacalhau à lagareiro (ovnbagt med olivenolie og kartofler).",
+          "Polvo à lagareiro – møre blæksprutte-arme bagt i ovn med små kartofler og rigelig olivenolie.",
+          "Arroz de marisco – saftig, suppet skaldyrsris – fyldig og fælles at dele.",
+          "Robalo/dourada grelhada – grillet havbars eller guldbrasen, frisk fra fiskebyerne langs ruten.",
+          "Arroz de pato – andekonfit bagt sammen med ris og chorizo; comfort food."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Andet"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Pastéis de bacalhau – sprøde klipfiske-kroketter; perfekt snack eller forret.",
+          "Presunto – lufttørret skinke, ofte skåret tyndt til tapas-stil.",
+          "Queijo da Serra – blød, cremet fåremælksost fra Serra da Estrela.",
+          "Ginjinha – sød kirsebærlikør, drukket som en lille shot – gerne som afslutning."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Drikkevarer"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Vinho Verde – frisk, ung og let perlende \"grøn vin\" fra Minho – lige der hvor I vandrer. Lav alkohol, syrlig og perfekt sommervin til fisk.",
+          "Alvarinho – den fineste Vinho Verde-drue (Monção/Melgaço); mere aromatisk og fyldig.",
+          "Port (Porto) – Douro-hedvin. Prøv en white port med tonic som aperitif eller en tawny som dessert.",
+          "Douro tinto – kraftige røde fra samme dal som portvinen.",
+          "Moscatel – sød dessertvin, god til ost.",
+          "Super Bock / Sagres – de to store portugisiske øl; en kold én efter en varm etape.",
+          "Água das Pedras – Portugals ikoniske naturlige mineralvand med kraftig brus. En klassiker til maden.",
+          "Licor Beirão – Portugals egen urtelikør; drukket som digestif eller i en cocktail (Caipirinha do Beirão).",
+          "Aguardente / bagaço – klar, stærk druesnaps til at runde måltidet af.",
+          "Sumol – portugisisk frugtsodavand (appelsin eller ananas) – forfriskende og alkoholfri i varmen."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Spanien (Galicien)"
+      },
+      {
+        "type": "subhead",
+        "text": "Morgenmad"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Café con leche – standard morgenkaffe med varm mælk.",
+          "Tostada con tomate – ristet brød med revet tomat, olivenolie og salt.",
+          "Churros con chocolate – friterede dejstænger dyppet i tyk, varm chokolade – en weekend-forkælelse.",
+          "Bica gallega – luftig galicisk sukkerkage (forveksl ikke med portugisisk \"bica\", som er kaffe!).",
+          "Empanada (en skive) – den galiciske tærte spises også fint til en sen morgenmad."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Frokost"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Pulpo á feira – kogt blæksprutte i skiver med groft salt, paprika og olivenolie. Galiciens signaturret – smag den i Arcade eller Pontevedra.",
+          "Empanada gallega – flad tærte fyldt med tun, kød eller skaldyr; perfekt at tage med som vandrefrokost.",
+          "Pimientos de Padrón – små stegte grønne peberfrugter med havsalt. De fleste er milde – men en enkelt brænder!",
+          "Caldo gallego – grøn suppe med grønkål (grelos), hvide bønner og svinekød.",
+          "Menú del día – fast 3-retters frokostmenu til fast pris (ofte m. vin) – den bedste værdi i Spanien."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Aftensmad"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Mariscada – stort fad med blandet skaldyr (muslinger, rurer, krebs, hummer). Fælles festmåltid.",
+          "Vieiras – kammuslinger – selveste Camino-symbolet – gratineret i skallen.",
+          "Zamburiñas – små, søde kammuslinger stegt med hvidløg og persille.",
+          "Mejillones – fjord-muslinger fra \"bateas\"-flådene; utroligt friske i Ría de Vigo.",
+          "Percebes – rurer/andeskaller fra klipperne; en dyr, men berømt delikatesse.",
+          "Ostras – friske østers, især fra Arcade (Galiciens østers-hovedstad). Nydes rå med citron og et glas kølig Albariño."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Andet"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Tarta de Santiago – mandelkage pudret med flormelis og Sankt Jakobs-korset. Den ægte Camino-dessert.",
+          "Tetilla – blød, mild ost formet som en lille kegle.",
+          "Queixo San Simón – røget, pæreformet ost med fyldig smag.",
+          "Orujo / licor café – kraftig druesnaps eller sød kaffelikør som digestif; den flammende version hedder queimada."
+        ]
+      },
+      {
+        "type": "subhead",
+        "text": "Drikkevarer"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Albariño – Galiciens stolthed fra Rías Baixas – lige det område I går igennem. Frisk, aromatisk hvidvin, skabt til skaldyr.",
+          "Ribeiro – lette, drikkevenlige hvid- og rødvine fra indlandet.",
+          "Godello – fyldig, mineralsk hvidvindrue (Valdeorras) – for dem der vil have mere krop end Albariño.",
+          "Mencía – frugtig, elegant rødvin fra de stejle skråninger i Ribeira Sacra.",
+          "Ribeira Sacra tinto – Mencía-baserede røde fra en af Europas mest dramatiske vinregioner.",
+          "Estrella Galicia – Galiciens egen pilsner – lokal stolthed. Prøv også den fyldigere premium-udgave 1906.",
+          "Queimada – flammende orujo-punch med sukker, kaffebønner og citronskal, ledsaget af en gammel besværgelse mod onde ånder.",
+          "Carajillo – espresso med et skud orujo eller brandy; kort og kraftig digestif.",
+          "Auga de Mondariz – lokalt galicisk mineralvand fra kilden i Pontevedra-provinsen – alkoholfrit alternativ."
+        ]
+      },
+      {
+        "type": "sub",
+        "text": "Mad, åbningstider og hverdagslogistik"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Morgenmad: ikke alle steder inkluderer morgenmad. Hav altid en nødplan på værelset: bananer, havrebarer, nødder eller lidt brød fra aftenen før.",
+          "Tidlige starter: hvis I går kl. 06.00-06.30, er caféer ofte ikke åbne endnu. Køb vand og snacks aftenen før. I Portugal åbner mange caféer dog tidligt (fra ca. kl. 07.00-08.00) og serverer kaffe og pastel de nata.",
+          "Portugisiske spisetider: portugiserne spiser tidligere end spanierne. Frokost er typisk kl. 12.00-15.00 og aftensmad kl. 19.00-22.00. Køkkenerne er forholdsvis fleksible, og det er ofte muligt at få et varmt måltid tidligt på aftenen.",
+          "Spanske spisetider: i Spanien (Galicien) forskydes alt 1-2 timer. Frokost er kl. 13.30-16.00, og mange køkkener åbner først til aftensmad omkring kl. 20.00-20.30. En sen frokost eller tapas sidst på eftermiddagen er ofte lettere at finde end en \"normal\" dansk aftensmad kl. 18.",
+          "Søndage og siesta: mindre butikker kan holde lukket søndag eller midt på dagen (siesta, typisk kl. 14-17 – mest udpræget i Spanien). På de lange kystetaper bør I ikke regne med, at I altid kan handle spontant undervejs."
+        ]
+      }
+    ]
+  }
 ];
 
 /* Mad- og pausestop pr. dag (fra dokumentet). Nøgle = dagindeks. Vises på dag-visningen. */

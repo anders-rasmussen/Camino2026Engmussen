@@ -317,8 +317,15 @@ table.overview .fl{margin-right:5px}
 .infocard .ic svg{width:22px;height:22px}
 .infocard b{font-size:.88rem;font-weight:800;line-height:1.25}
 
+.prose h3.gsub{margin:26px 0 12px;padding:14px 0 0;border-top:2px solid var(--line-strong);
+  font-size:1.08rem;font-weight:900;color:var(--ocean-dark);letter-spacing:.2px;
+  display:flex;align-items:center;gap:8px}
+.prose h3.gsub::before{content:"";width:11px;height:11px;border-radius:3px;flex:none;
+  background:linear-gradient(140deg,#1aa0af,var(--ocean-dark))}
+.prose h3.gsub:first-child{margin-top:2px;padding-top:0;border-top:0}
 .prose h4{margin:17px 0 8px;font-size:.92rem;font-weight:900;color:var(--sun-dark)}
 .prose h4:first-child{margin-top:0}
+.prose h3.gsub + h4{margin-top:6px}
 .prose p{font-size:.92rem;margin:0 0 11px}
 .prose ul.plain{list-style:none;margin:0 0 11px;padding:0}
 .prose ul.plain li{position:relative;padding:7px 0 7px 22px;font-size:.9rem;border-top:1px dashed var(--line)}

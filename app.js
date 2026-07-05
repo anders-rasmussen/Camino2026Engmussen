@@ -498,6 +498,7 @@
   function renderBlocks(blocks, sectionKey) {
     return blocks.map((b) => {
       if (b.type === "p") return `<p>${esc(b.text)}</p>`;
+      if (b.type === "sub") return `<h3 class="gsub">${esc(b.text)}</h3>`;
       if (b.type === "subhead") return `<h4>${esc(b.text)}</h4>`;
       if (b.type === "list") return `<ul class="plain">${b.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
       if (b.type === "checklist") return `<ul class="checks">${b.items.map((x) => {
