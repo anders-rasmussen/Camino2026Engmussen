@@ -1,13 +1,13 @@
 {
-  "name": "Camino Português da Costa 2026",
-  "short_name": "Camino 2026",
-  "description": "Rejseplan, kort og guide til vores portugisiske kyst-camino.",
+  "name": "Engmussen · Camino 2026",
+  "short_name": "Engmussen",
+  "description": "Engblom & Rasmussens Camino Português da Costa, juli 2026 – rejseplan, kort og guide.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f6f1e7",
-  "theme_color": "#e65100",
+  "background_color": "#f4ede0",
+  "theme_color": "#e5512b",
   "icons": [
     { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]

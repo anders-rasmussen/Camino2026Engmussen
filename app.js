@@ -17,10 +17,15 @@
   const totalKm = 165; // omtrentlig sum af gå-etaperne
   const mapsUrl = (q) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
 
+  // Land pr. dag: 11.–15. juli Portugal, 16. juli grænseovergang, derefter Spanien
+  const dayCountry = (i) => i <= 4 ? "pt" : i === 5 ? "cross" : "es";
+  const badgeClass = (d, i) => d.depart ? "depart" : d.rest ? "rest" : dayCountry(i);
+  const countryTag = (i, d) => d.depart ? "HJEM" : dayCountry(i) === "pt" ? "PT" : dayCountry(i) === "cross" ? "PT–ES" : "ES";
+  const countryLabel = (i, d) => d.depart ? "Hjemrejse" : dayCountry(i) === "pt" ? "Portugal" : dayCountry(i) === "cross" ? "Portugal → Spanien" : "Spanien";
+
   function dayNumBadge(d, i) {
-    const cls = d.depart ? "depart" : d.rest ? "rest" : "";
     const parts = d.short.split("/");
-    return `<span class="daynum ${cls}"><span class="d">${esc(parts[0])}</span><span class="m">JUL</span></span>`;
+    return `<span class="daynum ${badgeClass(d, i)}"><span class="d">${esc(parts[0])}</span><span class="m">JUL</span></span>`;
   }
 
   /* ---------- kort ---------- */
@@ -139,23 +144,27 @@
       <section class="fadein">
         <div class="hero">
           <svg class="shellwatermark"><use href="#ic-shell"/></svg>
-          <h2>Camino Português da Costa</h2>
-          <p>Familietur langs Atlanterhavskysten – Porto til Pontevedra, juli 2026.</p>
+          <span class="chip">${ic("ic-shell")} Familietur på pilgrimsvej</span>
+          <h2>Engmussen</h2>
+          <p class="fam">Engblom &times; Rasmussen</p>
+          <p class="tour">Camino Português da Costa · 11.–24. juli 2026</p>
           <div class="stats">
             <div class="stat"><b>14</b><span>dage</span></div>
             <div class="stat"><b>~${totalKm} km</b><span>til fods</span></div>
             <div class="stat"><b>2</b><span>lande</span></div>
+            <div class="stat"><b>PT → ES</b><span>Porto → Pontevedra</span></div>
           </div>
+          <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#f4ede0" d="M0,32 C240,62 420,4 720,22 C1010,40 1220,64 1440,26 L1440,60 L0,60 Z"/></svg>
         </div>
 
         <div class="section-label">Vælg en dag</div>
         <div class="daygrid">
           ${DAYS.map((d, i) => `
-            <button class="daycard ${d.rest ? "rest" : ""} ${d.depart ? "depart" : ""}" data-go="#/dag/${i}">
+            <button class="daycard ${badgeClass(d, i)}" data-go="#/dag/${i}">
               ${dayNumBadge(d, i)}
               <span class="info">
                 <span class="t">${esc(d.to)}</span>
-                <span class="m">${esc(d.dist)}</span>
+                <span class="m"><span class="ctag">${countryTag(i, d)}</span><span class="dist">${esc(d.dist)}</span></span>
               </span>
             </button>`).join("")}
         </div>
@@ -187,6 +196,7 @@
     if (!day) return viewHome();
     const isMap = tab === "kort";
     const pills = [];
+    pills.push(`<span class="pill flagpill">${esc(countryLabel(i, day))}</span>`);
     pills.push(`<span class="pill">${ic("ic-ruler")}${esc(day.dist)}</span>`);
     pills.push(`<span class="pill">${ic("ic-terrain")}${esc(day.terrain)}</span>`);
     if (day.breakfast && day.breakfast !== "–" && day.breakfast !== "")
@@ -234,7 +244,7 @@
     return `
       <section class="fadein">
         <div class="crumbs"><button data-go="#/">${ic("ic-home")}Forside</button> ${ic("ic-chevron")} <span>${esc(day.date)}</span></div>
-        <div class="dayhero">
+        <div class="dayhero ${badgeClass(day, i)}">
           <div class="top">
             ${dayNumBadge(day, i)}
             <div><h2>${esc(day.title)}</h2>
@@ -265,9 +275,9 @@
       const bf = d.breakfast === "Ja" ? `<span class="yes">Ja</span>` :
         (d.breakfast === "Nej" ? `<span class="no">Nej</span>` : `<span class="no">–</span>`);
       const w = d.washer === "Ja" ? `<span class="yes">Ja</span>` : `<span class="no">–</span>`;
-      return `<tr class="rowclick ${d.rest ? "rest" : ""}" data-go="#/dag/${i}">
+      return `<tr class="rowclick ${badgeClass(d, i)} ${d.rest ? "rest" : ""}" data-go="#/dag/${i}">
         <td class="dt">${esc(d.short)}</td>
-        <td>${esc(d.from)} → ${esc(d.to)}</td>
+        <td><span class="ctag">${countryTag(i, d)}</span>${esc(d.from)} → ${esc(d.to)}</td>
         <td>${esc(d.dist)}</td>
         <td>${d.lodging ? esc(d.lodging) : "<span class='no'>–</span>"}</td>
         <td>${bf}</td>

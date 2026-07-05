@@ -14,12 +14,14 @@ const DAYS = [
     breakfast: "–", washer: "Ja",
     desc: "Efter landing i Porto kl. 09:30 starter eventyret. For at undgå Portos forstæder og industri tager I Metroens linje E (lilla) til stationen Verdes. Her skifter I til linje B (rød) mod Póvoa de Varzim og står af ved Mindelo. Herfra går I de få kilometer ned mod kysten, hvor I rammer de første træbroer (passadiços). Den perfekte bløde start langs vandet ind til Vila do Conde.",
     transport: {
-      title: "Fra lufthavnen til Mindelo",
+      title: "Transport fra lufthavnen til Mindelo",
       lines: [
-        "Linje E (lilla) starter direkte i terminalen, dagligt ca. 06:00–01:00, afgang hvert 20.–30. min.",
-        "Skift til linje B (rød) mod Póvoa de Varzim ved stationen Verdes; stå af ved Mindelo.",
-        "Billet: køb én Andante Azul-billet pr. person til Mindelo (papkort 0,60 € pr. stk. + zonebillet). Regn med ca. Z6–Z7 = 3,20–3,65 € pr. person.",
-        "Rejsetid ca. 45–60 min inkl. skiftet. Tjek på metrodoporto.pt at linje B-toget standser i Mindelo."
+        "Linje E (lilla) starter direkte i terminalen og kører dagligt fra ca. 06:00 til 01:00.",
+        "Afgangsfrekvens: ca. hvert 20.–30. minut (intervaller mellem ca. 18 og 35 min afhængigt af tidspunkt og ugedag). Med landing kl. 09:30 venter I sjældent mere end 20 min – regn med at være på metroen ca. kl. 10:00–10:15 efter bagage og billetkøb.",
+        "Skift: linje E løber sammen med linje B ved stationen Verdes – her skifter I til et linje B-tog mod Póvoa de Varzim og står af ved Mindelo.",
+        "Billet: køb én enkelt Andante Azul-billet pr. person til Mindelo. Ved automaten i lufthavnen køber I fire genopladelige Andante Azul-papkort (0,60 € pr. stk., ét pr. person) og lægger én enkeltbillet på hvert til Mindelo. Turen krydser flere zoner: regn med ca. Z6–Z7 = 3,20–3,65 € pr. person, i alt ca. 15–17 € for jer fire. Ingen alders- eller grupperabat.",
+        "Rejsetid: ca. 45–60 min i alt inkl. skiftet ved Verdes.",
+        "Tjek før afrejse: bekræft på metrodoporto.pt at jeres linje B-tog faktisk standser i Mindelo (enkelte afgange springer mindre stationer over), og at sommertabellen ikke har ændret sig."
       ]
     },
     highlights: [
@@ -128,10 +130,12 @@ const DAYS = [
     transport: {
       title: "Bådoverfart Caminha → A Guarda",
       lines: [
-        "Booket med Xacobeo Transfer (den officielle pilgrimsbåd). Afgang kl. 09:30 (portugisisk tid) fra Caminha.",
-        "Overfarten tager ca. 10 min. I lander i Camposancos (A Guarda) ca. 10:40 spansk tid – Spanien er én time foran.",
-        "Vær ved kajen i Caminha i god tid før 09:30. Ved vejrvarsel der suspenderer sejladsen, giver de besked.",
-        "Kontakt: +34 613 01 12 26 / info@xacobeotransfer.com. Hold jer til Xacobeo Transfer – ikke konkurrenten Taximar."
+        "Booket med Xacobeo Transfer (den officielle pilgrimsbåd). Afgang kl. 09:30 (portugisisk tid) fra Caminha → Camposancos (A Guarda). Kan bookes online i forvejen på xacobeotransfer.com (6 € pr. person).",
+        "NB – portugisisk tid: bådens tid er portugisisk tid. I lander i Spanien ca. kl. 10:40 spansk tid (Spanien er én time foran). Vær ved kajen i Caminha i god tid før kl. 09:30 (portugisisk tid).",
+        "Overfarten tager ca. 10 min port-til-port. Afbestilling/ændring er mulig indtil 24 timer før afgang. Ved vejrvarsel der suspenderer sejladsen, giver de besked.",
+        "Kontakt: +34 613 01 12 26 / info@xacobeotransfer.com.",
+        "Advarsel: hold jer til Xacobeo Transfer – konkurrenten Taximar (Bar do Ferry) har ikke en autoriseret havn i Spanien og kan påstå, at Xacobeo ikke sejler.",
+        "Der er ingen pascheck ved overfarten, men det er et magisk øjeblik. Bekræft overfarten dagen før, da tider kan afhænge af vejr og tidevand."
       ]
     },
     highlights: [
@@ -221,10 +225,12 @@ const DAYS = [
     transport: {
       title: "Undgå det kedelige gennem Vigo",
       lines: [
-        "Taxi (anbefalet): bestil fra overnatningsstedet direkte til Zamáns (\"inicio de la Senda da Auga\", koordinater 42.1880, -8.6970). Ca. 20 min, ~15–20 €.",
-        "Alternativ: bybus L15A mod Zamáns fra Vigo busstation – men taxa hele vejen er nemmere med rygsække og 4 personer.",
-        "Fra Zamáns er der ca. 12–15 km ad Senda da Auga ned til Redondela.",
-        "INGEN caféer eller butikker på selve Senda da Auga – pak frokost, snacks og rigeligt vand. Download ruten offline (Mapy.cz / Gronze)."
+        "Den officielle kystrute går tværs igennem Vigo – ca. 25 km ad trafikerede veje, industrikvarterer og kedelig forstad. Det er turens eneste virkelig grimme strækning.",
+        "Taxi (anbefalet): bestil fra Rincón Do Demo direkte til Zamáns (landsbyen hvor Senda da Auga begynder). Bed chaufføren køre til \"inicio de la Senda da Auga en Zamáns\" eller koordinaterne 42.1880, -8.6970. Ca. 20 min, koster omkring 15–20 €.",
+        "Bybus: Vigo har et godt busnet (Vitrasa/Vigobus). I kan tage taxa til Vigo busstation og derfra bybus L15A mod Zamáns – men taxa hele vejen er nemmere med rygsække og 4 personer.",
+        "Ruten: fra Zamáns er der ca. 12–15 km ad Senda da Auga ned til Redondela. Stien følger den gamle vandkanal (\"Traída de Aguas\") langs bjergsiden – bred, flad og næsten helt skygget af eukalyptus- og egeskove. Ingen nævneværdig stigning; I passerer små vandfald og mosbegroede stenmure.",
+        "Vand og mad: der er INGEN caféer eller butikker på selve Senda da Auga. Pak frokost, snacks og rigeligt vand inden I starter.",
+        "Navigation: download ruten på forhånd i Mapy.cz eller Gronze Maps. Stien er velmarkeret med blå pile, men et offline kort giver tryghed."
       ]
     },
     highlights: [
@@ -314,9 +320,11 @@ const DAYS = [
       title: "FlixBus Pontevedra → Porto Lufthavn",
       lines: [
         "Afgang fredag 24. juli kl. 08:15 fra Pontevedra busterminal (Rúa da Estación).",
-        "Stop i Vigo 08:35, videre 08:50 – samme bus fortsætter, I skal ikke skifte.",
-        "Ankomst Porto Lufthavn kl. 10:10 (stoppested P8, ankomstniveau).",
-        "Fly afgår kl. 13:00 – ca. 2t50 buffer. Vær ved lufthavnen senest kl. 11:00 og ved Pontevedra busterminal senest kl. 08:00."
+        "Stop i Vigo: ankomst busterminal 08:35, videre kl. 08:50. Samme bus fortsætter – I skal ikke skifte (rute CES062/MonBus fortsætter som FlixBus 1783).",
+        "Ankomst Porto Lufthavn kl. 10:10 (stoppested P8 – Parque de Estacionamento BUS, ankomstniveau).",
+        "Bagage: lille håndtaske pr. person + kufferter i lastrum (20 kg pr. stk.).",
+        "God buffer: fly afgår kl. 13:00 – ca. 2t50 til check-in. Vær ved lufthavnen senest kl. 11:00.",
+        "Mød i god tid: vær ved Pontevedra busterminal senest kl. 08:00 (FlixBus anbefaler fremmøde 15 min før afgang). Følg bussen i realtid via FlixBus-appen."
       ]
     },
     highlights: [],
@@ -529,8 +537,10 @@ const GENERAL = [
         "Hydrering: drik løbende, vent ikke til I er tørstige. Regn med 2–3 liter pr. person pr. dag.",
         "Siesta-strategi: ankommer I kl. 12–14, tag pause i skyggen og udforsk byen om aftenen.",
         "Vabelforebyggelse: smør fødderne med Vaseline om morgenen, skift sokker ved frokost, behandl hotspots med det samme.",
-        "Pak let: alt hvad I medbringer skal I bære. I kan købe det meste undervejs.",
-        "Vasketøj: hurtigtørrende tøj er klar næste morgen. Planlæg en stor vask i Baiona (17.–18./7)."
+        "Pak let: alt hvad I medbringer skal I bære. Vær brutale med pakkelisten – I kan købe det meste undervejs.",
+        "Vasketøj: de fleste steder har mulighed for håndvask, og hurtigtørrende tøj er klar næste morgen. Planlæg en stor vask i Baiona (17.–18./7), hvor der er vaskemaskine.",
+        "Grænseovergang: Portugal → Spanien foregår med båd over Rio Minho fra Caminha til A Guarda (ca. 10 min). Book den officielle Xacobeo Transfer online i forvejen på xacobeotransfer.com (6 € pr. person). Bekræft dagen før, da tider kan afhænge af vejr og tidevand.",
+        "Sprog: portugisisk i første halvdel, galicisk/spansk i anden. Basale fraser som Bom dia / Buenos días (godmorgen), Obrigado/a / Gracias (tak) og Buen Camino! er alt, hvad I behøver. Alle forstår den universelle pilgrimshilsen \"Buen Camino!\"."
       ]}
     ]},
   { key:"mad", icon:"coffee", title:"Mad, tider og hverdagslogistik",
@@ -630,6 +640,27 @@ const GENERAL = [
           ["Mad/drikke","Billig kaffe, fisk","Tapas, Albariño, pulpo"],
           ["Prisniveau","Generelt billigst","Lidt dyrere"],
           ["Højdepunkt","Viana do Castelo & broerne","Baiona & de galiciske skove"]
-        ]}
+        ]},
+      {type:"subhead", text:"Kort sagt"},
+      {type:"p", text:"Den portugisiske del er en fantastisk, meditativ start, hvor I får kilometer i benene på fladt underlag med havet som fast følgesvend. Den spanske del er smukkere rent historisk og arkitektonisk, men kræver lidt mere fysisk indsats og byder på en mere intens social oplevelse med andre pilgrimme."}
+    ]},
+  { key:"smaating", icon:"star", title:"Små ting der ofte bliver glemt",
+    blocks:[
+      {type:"list", items:[
+        "Anti-gnidning: ud over fødderne er lår, hofter og skuldre klassiske problemzoner. Bodyglide eller Vaseline kan spare jer for meget irritation i varme og salt luft.",
+        "Undertøj i merino-uld: svedabsorberende og holder lugt væk. Icebreaker Anatomica er et godt mærke; ellers er ExOfficio Give-N-Go 2.0 Sport Mesh også godt.",
+        "Småpenge: hav mønter og små sedler til kaffe, is, små køb og steder hvor kort ikke er en selvfølge.",
+        "Ziplocks og safety pins: guld værd til vådt tøj, opladere, kvitteringer og hurtig håndvask undervejs.",
+        "Aftenen før: fyld vand, tjek vejret, læg morgentøj frem og aftal første stop for kaffe eller mad, inden I går i seng. Det gør tidlige starter meget lettere.",
+        "Langærmet solbeskyttelse: trøje med hætte (Patagonia Capilene Cool Daily Hoody, Black Diamond Alpenglow) eller nylonskjorte (Columbia Silver Ridge Utility, Patagonia Self-Guided Hike Shirt)."
+      ]}
+    ]},
+  { key:"energilav", icon:"shield", title:"Hvis energien er lav – hvad er vigtigst?",
+    blocks:[
+      {type:"list", items:[
+        "Prioritér pausebyer frem for tilfældige stop: Viana do Castelo, Baiona og Pontevedra er de bedste steder at bruge ekstra tid og penge.",
+        "Brug de små byer funktionelt: Apúlia, Caminha, A Guarda og Nigrán er især gode til kaffe, vand, is, toilet og proviant.",
+        "På varme dage: spis mere til morgenmad og frokost, og mindre tungt om aftenen. Det gør de næste morgener lettere."
+      ]}
     ]}
 ];
