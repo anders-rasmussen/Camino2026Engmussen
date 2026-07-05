@@ -28,6 +28,24 @@
     return `<span class="daynum ${badgeClass(d, i)}"><span class="d">${esc(parts[0])}</span><span class="m">JUL</span></span>`;
   }
 
+  /* ---------- afkrydsning (huskes i localStorage) ---------- */
+  const hashStr = (s) => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
+  const checkKey = (sectionKey, text) => "cm:" + sectionKey + ":" + hashStr(text);
+  const lsGet = (k) => { try { return localStorage.getItem(k) === "1"; } catch (e) { return false; } };
+  const lsSet = (k, v) => { try { v ? localStorage.setItem(k, "1") : localStorage.removeItem(k); } catch (e) {} };
+  function sectionCheckKeys(g) {
+    const keys = [];
+    (g.blocks || []).forEach((b) => { if (b.type === "checklist") b.items.forEach((x) => keys.push(checkKey(g.key, x))); });
+    return keys;
+  }
+  function updateProgress(sectionKey) {
+    const g = GENERAL.find((x) => x.key === sectionKey); if (!g) return;
+    const keys = sectionCheckKeys(g), done = keys.filter(lsGet).length;
+    const bar = document.getElementById("progbar"), txt = document.getElementById("progtext");
+    if (bar) bar.style.width = (keys.length ? Math.round(done / keys.length * 100) : 0) + "%";
+    if (txt) txt.textContent = done + " / " + keys.length + " afkrydset";
+  }
+
   /* ---------- kort ---------- */
   function poiColor(t) { return t === "start" ? "#2e7d32" : t === "end" ? "#c62828" : "#1565c0"; }
 
@@ -310,12 +328,17 @@
       </section>`;
   }
 
-  function renderBlocks(blocks) {
+  function renderBlocks(blocks, sectionKey) {
     return blocks.map((b) => {
       if (b.type === "p") return `<p>${esc(b.text)}</p>`;
       if (b.type === "subhead") return `<h4>${esc(b.text)}</h4>`;
       if (b.type === "list") return `<ul class="plain">${b.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
-      if (b.type === "checklist") return `<ul class="checks">${b.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+      if (b.type === "checklist") return `<ul class="checks">${b.items.map((x) => {
+        const key = checkKey(sectionKey, x), on = lsGet(key);
+        return `<li class="${on ? "on" : ""}"><label class="check">
+          <input type="checkbox" data-check="${esc(key)}" data-section="${esc(sectionKey)}" ${on ? "checked" : ""}>
+          <span class="box">${ic("ic-check")}</span><span class="lbl">${esc(x)}</span></label></li>`;
+      }).join("")}</ul>`;
       if (b.type === "table") return `<div class="mini-table"><table>
         <thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead>
         <tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>
@@ -327,11 +350,22 @@
   function viewInfoSection(key) {
     const g = GENERAL.find((x) => x.key === key);
     if (!g) return viewInfoIndex();
+    const keys = sectionCheckKeys(g);
+    let progress = "";
+    if (keys.length) {
+      const done = keys.filter(lsGet).length, pct = Math.round(done / keys.length * 100);
+      progress = `<div class="progress">
+        <div class="bar"><span id="progbar" style="width:${pct}%"></span></div>
+        <div class="progmeta"><span id="progtext">${done} / ${keys.length} afkrydset</span>
+          <button class="resetbtn" data-reset="${esc(g.key)}">Nulstil</button></div>
+      </div>`;
+    }
     return `
       <section class="fadein">
         <div class="crumbs"><button data-go="#/info">${ic("ic-info")}Generel info</button> ${ic("ic-chevron")} <span>${esc(g.title)}</span></div>
-        <div class="pagehead"><h2>${esc(g.title)}</h2></div>
-        <div class="card prose">${renderBlocks(g.blocks)}</div>
+        <div class="pagehead"><h2>${esc(g.title)}</h2>${keys.length ? `<p>Kryds af undervejs – appen husker det.</p>` : ""}</div>
+        ${progress}
+        <div class="card prose">${renderBlocks(g.blocks, g.key)}</div>
       </section>`;
   }
 
@@ -384,8 +418,22 @@
 
   /* ---------- events ---------- */
   document.addEventListener("click", (e) => {
+    const reset = e.target.closest("[data-reset]");
+    if (reset) {
+      e.preventDefault();
+      const g = GENERAL.find((x) => x.key === reset.getAttribute("data-reset"));
+      if (g) { sectionCheckKeys(g).forEach((k) => lsSet(k, false)); render(); }
+      return;
+    }
     const el = e.target.closest("[data-go]");
     if (el) { e.preventDefault(); location.hash = el.getAttribute("data-go"); }
+  });
+  document.addEventListener("change", (e) => {
+    const cb = e.target.closest("input[data-check]");
+    if (!cb) return;
+    lsSet(cb.getAttribute("data-check"), cb.checked);
+    const li = cb.closest("li"); if (li) li.classList.toggle("on", cb.checked);
+    updateProgress(cb.getAttribute("data-section"));
   });
   backBtn.addEventListener("click", () => {
     const r = parseRoute();

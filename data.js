@@ -478,24 +478,24 @@ const GENERAL = [
   { key:"pakkeliste", icon:"backpack", title:"Pakkeliste",
     blocks:[
       {type:"subhead", text:"Fodtøj (det allervigtigste!)"},
-      {type:"list", items:[
+      {type:"checklist", items:[
         "Vandresko / trail runners: lette, indgåede sko med god sål. Undgå tunge støvler – ruten er flad og varm.",
         "Sandaler til aftenen: giv fødderne luft efter dagens vandring.",
         "Sokker: 3–4 par i merino-uld eller syntetisk. Undgå bomuld – det giver vabler."
       ]},
       {type:"subhead", text:"Tøj"},
-      {type:"list", items:[
+      {type:"checklist", items:[
         "2 hurtigtørrende t-shirts","1 langærmet trøje (sol-/vindbeskyttelse)","1 let fleece eller softshell til kølige aftener",
         "2 par lette vandrebukser/tights (gerne zip-off)","3 sæt hurtigtørrende undertøj (merino uld anbefales)",
         "Let regnjakke eller poncho","Solhat med bred skygge + solbriller"
       ]},
       {type:"subhead", text:"Udstyr"},
-      {type:"list", items:[
+      {type:"checklist", items:[
         "Let rygsæk (30–40 liter) med regncover","Vandflasker/drikkeblære – mindst 1,5 liter","Vandrestave (sparer knæene på de lange etaper)",
         "Pandelampe (tidlige morgenstarter)","Powerbank + ladekabel","Opladning: Portugal/Spanien bruger stiktype C/F – de fleste danske opladere passer."
       ]},
       {type:"subhead", text:"Pleje og førstehjælp"},
-      {type:"list", items:[
+      {type:"checklist", items:[
         "Compeed (vabler!) – køb en stor pakke hjemmefra","Vaseline eller Bodyglide mod gnavesår","Solcreme SPF 50 + læbepomade med SPF",
         "Håndsprit","Ibuprofen / paracetamol","Elastisk bandage","Personlig medicin","Fodpudder/talkum"
       ]}
