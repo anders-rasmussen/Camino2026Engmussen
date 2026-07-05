@@ -117,6 +117,83 @@
     document.body.classList.remove("fs-lock");
   }
 
+  /* ---------- GPX-download (til Maps.me m.fl.) ---------- */
+  const dayHasFoot = (i) => ((ROUTES[i] || {}).legs || []).some((l) => l.mode === "foot");
+  const gpxEsc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const trkpts = (coords) => coords.map((c) => `<trkpt lat="${c[1].toFixed(6)}" lon="${c[0].toFixed(6)}"></trkpt>`).join("");
+
+  async function osrmFoot(via) {
+    const coords = via.map((c) => c[0] + "," + c[1]).join(";");
+    try {
+      const r = await fetch(OSRM + coords + "?overview=full&geometries=geojson");
+      const j = await r.json();
+      if (j.code !== "Ok" || !j.routes || !j.routes.length) return null;
+      return j.routes[0].geometry.coordinates; // [[lon,lat],…]
+    } catch (e) { return null; }
+  }
+
+  // Bygger track + waypoints for én dag. Foot-ben bruger OSRM-geometri;
+  // transport-ben (båd/taxi/bus) bruges som rette segmenter.
+  async function buildDayTrk(i) {
+    const day = DAYS[i], route = ROUTES[i] || { pois: [], legs: [] };
+    let segs = "";
+    for (const leg of (route.legs || [])) {
+      let coords = leg.mode === "foot" ? await osrmFoot(leg.via) : null;
+      if (!coords) coords = leg.via;
+      segs += `<trkseg>${trkpts(coords)}</trkseg>`;
+    }
+    const name = `${day.date} – ${day.from} → ${day.to}`;
+    const trk = segs ? `<trk><name>${gpxEsc(name)}</name>${segs}</trk>` : "";
+    const wptsArr = (route.pois || []).map((p) => ({
+      key: p.n,
+      xml: `<wpt lat="${p.lat.toFixed(6)}" lon="${p.lon.toFixed(6)}"><name>${gpxEsc(p.n)}</name></wpt>`
+    }));
+    return { trk, wptsArr };
+  }
+
+  const gpxDoc = (name, body) =>
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<gpx version="1.1" creator="Engmussen Camino 2026" xmlns="http://www.topografix.com/GPX/1/1">\n` +
+    `<metadata><name>${gpxEsc(name)}</name></metadata>\n${body}\n</gpx>\n`;
+
+  function saveGpx(text, filename) {
+    const blob = new Blob([text], { type: "application/gpx+xml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
+  }
+
+  async function handleGpx(btn) {
+    const val = btn.getAttribute("data-gpx");
+    const span = btn.querySelector("span"), orig = span ? span.textContent : "";
+    if (btn.disabled) return;
+    btn.disabled = true;
+    try {
+      if (val === "all") {
+        const total = DAYS.length; let body = ""; const seen = new Set();
+        for (let i = 0; i < total; i++) {
+          if (span) span.textContent = `Henter ${i + 1}/${total}…`;
+          const { trk, wptsArr } = await buildDayTrk(i);
+          wptsArr.forEach((w) => { if (!seen.has(w.key)) { seen.add(w.key); body += w.xml; } });
+          body += trk;
+        }
+        saveGpx(gpxDoc("Camino Português da Costa 2026 – hele turen", body), "camino-hele-turen.gpx");
+      } else {
+        const i = Number(val), day = DAYS[i];
+        if (span) span.textContent = "Henter…";
+        const { trk, wptsArr } = await buildDayTrk(i);
+        saveGpx(gpxDoc(`Camino ${day.date} – ${day.to}`, wptsArr.map((w) => w.xml).join("") + trk),
+          `camino-dag-${day.short.replace("/", "-")}.gpx`);
+      }
+    } catch (e) {
+      alert("Kunne ikke hente GPX. Tjek internetforbindelsen og prøv igen.");
+    } finally {
+      btn.disabled = false; if (span) span.textContent = orig;
+    }
+  }
+
   const legendHtml = `<div class="legend">
       <span><i class="dot start"></i>Start</span>
       <span><i class="dot end"></i>Slut</span>
@@ -274,6 +351,7 @@
           <button class="${!isMap ? "active" : ""}" data-go="#/dag/${i}">${ic("ic-info")}Al info</button>
           <button class="${isMap ? "active" : ""}" data-go="#/dag/${i}/kort">${ic("ic-map")}Kort &amp; rute</button>
         </div>
+        ${dayHasFoot(i) ? `<button class="gpxbtn" data-gpx="${i}">${ic("ic-download")}<span>Download GPX til Maps.me</span></button>` : ""}
         ${body}
       </section>`;
   }
@@ -285,6 +363,8 @@
         <div class="map" id="mapv"></div>
         ${legendHtml}
         <div class="maphint">Linjen er en forenklet oversigt mellem overnatningsbyerne. Vælg en enkelt dag på forsiden for den detaljerede rute. Tryk ⛶ for fuld skærm.</div>
+        <button class="gpxbtn" data-gpx="all">${ic("ic-download")}<span>Download hele turen (GPX)</span></button>
+        <div class="maphint">GPX-filen indeholder alle etaper som spor + seværdigheder som waypoints. Åbn/del filen med <b>Maps.me</b> for at importere ruten – gør det gerne hjemmefra med wi-fi. Enkelte dage kan hentes hver for sig under den pågældende dag.</div>
       </section>`;
   }
 
@@ -418,6 +498,8 @@
 
   /* ---------- events ---------- */
   document.addEventListener("click", (e) => {
+    const gpx = e.target.closest("[data-gpx]");
+    if (gpx) { e.preventDefault(); handleGpx(gpx); return; }
     const reset = e.target.closest("[data-reset]");
     if (reset) {
       e.preventDefault();

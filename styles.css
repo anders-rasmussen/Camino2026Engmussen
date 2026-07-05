@@ -189,6 +189,16 @@ body.fs-lock{overflow:hidden !important}
 .dot.start{background:var(--start)} .dot.end{background:var(--end)} .dot.sight{background:var(--sight)}
 .line-solid{width:20px;border-top:4px solid var(--sun)} .line-dash{width:20px;border-top:4px dashed var(--transport)}
 .maphint{background:linear-gradient(135deg,#fff7ec,#fdefe0);border:1px solid #f2dcc0;border-radius:14px;padding:12px 14px;font-size:.8rem;color:#8a663d;margin-top:12px}
+
+/* GPX-download-knap */
+.gpxbtn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:0;cursor:pointer;
+  background:linear-gradient(135deg,#1aa0af,var(--ocean-dark));color:#fff;border-radius:15px;
+  padding:14px;font-weight:800;font-size:.92rem;margin-bottom:14px;box-shadow:0 4px 14px rgba(14,127,140,.28);
+  transition:transform .12s,box-shadow .12s}
+.gpxbtn svg{width:19px;height:19px}
+.gpxbtn:hover{box-shadow:0 6px 18px rgba(14,127,140,.34)}
+.gpxbtn:active{transform:scale(.99)}
+.gpxbtn:disabled{opacity:.7;cursor:progress}
 .fs-btn{background:#fff;border:0;width:40px;height:40px;border-radius:10px;cursor:pointer;font-size:20px;line-height:40px;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,.3);color:#222}
 .leaflet-tooltip.poi{background:rgba(255,255,255,.95);border:1px solid #ccc;border-radius:7px;font-size:.72rem;padding:1px 6px;color:#222;box-shadow:none;font-weight:800}
 .leaflet-tooltip.poi.start{border-color:var(--start);color:var(--start)}

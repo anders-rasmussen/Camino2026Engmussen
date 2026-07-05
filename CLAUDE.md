@@ -150,6 +150,13 @@ nulstilles netop det punkt** hos brugeren — men omrokering bevarer afkrydsning
 **Leaflet + kort-fliser** hentes fra CDN (cdnjs) / OSM-fliser / OSRM-ruter. Disse
 værter caches runtime af service workeren, så kortet virker offline efter første brug.
 
+**GPX-download:** appen genererer GPX **på stedet** (ingen gemte filer). `handleGpx()`
+i `app.js` bygger track (foot-ben via OSRM-geometri, transport-ben som rette
+segmenter) + waypoints (POI'er) og downloader via Blob. Knap pr. gå-dag
+(`data-gpx="<i>"`) og "hele turen" på `#/rute` (`data-gpx="all"`). Kræver internet
+på download-tidspunktet (gøres typisk hjemmefra før import i Maps.me). Ændrer du
+`ROUTES`, opdateres GPX automatisk — intet at regenerere.
+
 ---
 
 ## Kør lokalt / forhåndsvis
