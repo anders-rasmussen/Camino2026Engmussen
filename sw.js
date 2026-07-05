@@ -1,5 +1,5 @@
 // Service worker – offline-cache for Camino-appen
-const CACHE = "camino-2026-v2";
+const CACHE = "camino-2026-v3";
 // Kernefiler der skal caches ved installation. Bemærk: markdown-dokumentet
 // caches ikke her, da det ikke ligger i denne mappe – det caches ved brug,
 // hvis/når det er tilgængeligt ved siden af index.html ved udrulning.
